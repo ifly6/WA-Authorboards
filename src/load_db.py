@@ -2,6 +2,8 @@ import csv
 from datetime import datetime
 
 
+# consider rewriting with pandas
+
 class Database:
     def __init__(self):
         self.resolutions = []
@@ -29,7 +31,7 @@ class Database:
             csv_reader = csv.reader(csv_file)
             for row in csv_reader:
                 player_name = row[0]
-                aliases = row[1].split(",")
+                aliases = [s.strip() for s in row[1].split(",")]
                 aliases.append(player_name)
                 self.aliases[player_name] = aliases
 
@@ -75,9 +77,13 @@ class Resolution:
                     resolution.repealed_by = self
                     break
             else:
-                raise RuntimeError(f"Error processing resolution {number}:"
-                                   f" no resolution found with number"
-                                   f" {repeal_number}")
+                if int(self.number) < int(self.subcategory):
+                    raise RuntimeError(f'Resolution number is less than the number of the resolution this is '
+                                       f'supposedly repealing (num={self.number}; subcat={self.subcategory})')
+                else:
+                    raise RuntimeError(f"Error processing resolution {number}:"
+                                       f" no resolution found with number"
+                                       f" {repeal_number}")
         else:
             self.repeal = None
 
@@ -91,7 +97,7 @@ class Resolution:
         self.author.authored_resolutions.append(self)
 
         self.coauthors = []
-        coauthor_names = coauthor_names.split(",")
+        coauthor_names = [s.strip() for s in coauthor_names.split(",")]
         for coauthor_name in coauthor_names:
             if coauthor_name == "":
                 continue
@@ -109,6 +115,9 @@ class Resolution:
 
         self.votes_for = int(votes_for)
         self.votes_against = int(votes_against)
+
+        # remove trailing in date
+        date = date[:date.index(' ')]
         self.date = datetime.strptime(date, "%Y-%m-%d")
 
         self.repealed_by = None

@@ -1,6 +1,6 @@
 from enum import Enum
 
-from src.db import Database
+from src.load_db import Database
 
 
 class OrderType(Enum):
@@ -49,7 +49,7 @@ def generate_author_index(db: Database):
             bbcode += f'[*]{entry}\n'
         bbcode += '[/list]\n\n'
 
-    print(bbcode)
+    return bbcode
 
 
 def generate_author_table(db: Database, order_type: OrderType):
@@ -222,7 +222,7 @@ def generate_author_table(db: Database, order_type: OrderType):
 
     bbcode += '[/table]'
 
-    print(bbcode)
+    return bbcode
 
 
 def generate_known_aliases(db: Database):
@@ -244,4 +244,4 @@ def generate_known_aliases(db: Database):
 
     bbcode += '[/table]'
 
-    print(bbcode)
+    return bbcode

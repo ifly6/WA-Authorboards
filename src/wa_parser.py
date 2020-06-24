@@ -1,0 +1,328 @@
+import html
+import io
+import re
+from datetime import datetime
+from typing import Tuple
+
+import numpy as np
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+from lxml import etree
+from pytz import timezone
+from ratelimit import rate_limited
+
+""" Imperium Anglorum:
+
+This is adapted from proprietary InfoEurope code which in part does most of this already. Eg the proposal portions 
+which translate, the locality adjustments, API reading, etc. There is also code in beta (not-in-production)
+which would have done this entirely, but I never got around to developing the VIEWS for that portion of the website.
+
+It seems much easier just to commit something like this given that all the code is already present. """
+
+_headers = {
+    'User-Agent': 'WA parser (Auralia; Imperium Anglorum)'
+}
+
+
+class ApiError(Exception):
+    pass
+
+
+@rate_limited(35, 30)
+def call_api(url) -> str:
+    response = requests.get(url, headers=_headers)
+    if response.status_code != 200:
+        raise ApiError('{} error at api url: {}'.format(response.status_code, str(url)))
+    return response.text
+
+
+def clean_chamber_input(chamber):
+    """ Turns ambiguous chamber information into tuple (int, str) with chamber id and chamber name """
+    if type(chamber) == str:
+        if chamber == '1':
+            chamber = 1
+        elif chamber == '2':
+            chamber = 2
+        elif chamber == 'GA':
+            chamber = 1
+        elif chamber == 'SC':
+            chamber = 2
+
+    chamber_name = 'GA' if chamber == 1 else \
+        'SC' if chamber == 2 else ''
+    return chamber, chamber_name
+
+
+def localised(dt: 'datetime', tz='US/Eastern'):
+    return timezone(tz).localize(dt)
+
+
+def as_ref_name(s: str) -> str:
+    """ Turn it into a NationStates ref name """
+    return s.strip().replace(' ', '_').lower()
+
+
+def _translate_category(category: str, s: str) -> Tuple[bool, str]:
+    if s != '0':
+        # if it isn't 0, then it doesn't apply
+        return False, s
+
+    d = {'Advancement of Industry': 'Environmental Deregulation',
+         'Civil Rights': 'Mild',
+         'Education and Creativity': 'Artistic',
+         'Environmental': 'Automotive',
+         'Free Trade': 'Mild',
+         'Furtherment of Democracy': 'Mild',
+         'Global Disarmament': 'Mild',
+         'Health': 'Healthcare',
+         'International Security': 'Mild',
+         'Moral Decency': 'Mild',
+         'Political Stability': 'Mild',
+         'Regulation': 'Consumer Protection',
+         'Social Justice': 'Mild'}
+    d = {as_ref_name(k): v for k, v in d.items()}  # force ref name for matching
+
+    try:
+        return True, d[as_ref_name(category)]  # yield correct name from ref name of category
+    except KeyError:
+        return False, s
+
+
+def capitalise(s):
+    s = s.replace('_', ' ').strip()
+
+    # exceptions
+    known_names = {
+        'Cormac A Stark',
+        'Mahaj WA Seat',
+        'Astro-Malsitari WA Seat',
+        'Unibotian WA Mission',
+        'WA Mission of NERV-UN',
+        'Glen-Rhodes',
+        'Darenjon WA Embassy',
+        'SchutteGod',
+        'Linux and the X'
+    }
+    for i in known_names:
+        if s.lower() == i.lower():
+            return i  # replace
+
+    # only capitalise words longer than 2 letters ('new') and always capitalise first
+    # unless the word is and
+    # > fanboys
+    s = " ".join(
+        w.capitalize()
+        if (len(w) > 2 and w not in ['for', 'and', 'nor', 'but', 'yet', 'the']) or (i == 0) else w
+        for i, w in enumerate(s.split())
+    ).strip()  # avoid apostrophe capitalisations
+
+    # for split in ['-']:
+    #     # as first should always be capitalised, not checking doesn't matter
+    #     s = split.join(w[:1].upper() + w[1:] for i, w in enumerate(s.split(split)))  # capitalise first letter only
+    # "Christian DeMocrats"
+    # python str.capitalize forces all other chars to lower
+    # don't use str.capitalize above
+
+    for numeral in ['ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x']:
+        s = re.sub(r'(?<=\s){}$'.format(numeral), numeral.upper(), s)  # matches only trailing numerals
+
+    # people used to use WA missions; capitalise these, they are separate words
+    s = re.sub(r'(?<=\s)(Wa|wa|wA)(?=\s)', 'WA', s)
+
+    return s
+
+
+class WaPassedResolution:
+
+    def __init__(self, **kwargs):
+        # core vote information
+        self.resolution_num = None
+        self.title = None
+        self.implementation = None
+
+        # category and strength
+        self.chamber = None
+        self.category = None
+        self.strength = None
+
+        # handle repeals
+        self.is_repealed = None
+        self.repealed_by = None
+        self.is_repeal = None
+        self.repeals = None
+
+        # text
+        self.text = None
+
+        # ancillary information
+        self.author = None
+        self.coauthor0 = None
+        self.coauthor1 = None
+        self.coauthor2 = None
+
+        self.votes_for = None
+        self.votes_against = None
+
+        self.__dict__.update(kwargs)  # django does this automatically, i'm not updating it; lazy
+
+    def __str__(self):
+        return f'WA History: {self.title} ({self.implementation})'
+
+    def get_coauthors(self):
+        return [self.coauthor0, self.coauthor1, self.coauthor2]
+
+    def get_authors(self):
+        return [self.author] + self.get_coauthors()
+
+    @staticmethod
+    def parse_ga(res_num):
+
+        from src.wa_cacher import Cacher
+        try:
+            cacher = Cacher.load()
+        except FileNotFoundError:
+            cacher = Cacher()  # init new
+
+        api_url = 'https://www.nationstates.net/cgi-bin/api.cgi?wa=1&id={}&q=resolution'.format(res_num)
+        in_cacher = cacher.contains(api_url)
+        if not in_cacher:
+            this_response = call_api(api_url)
+            cacher.update(api_url, this_response)
+        else:
+            this_response = cacher.get(api_url)
+
+        xml = etree.parse(io.StringIO(this_response))
+        if not xml.xpath('/WA/RESOLUTION/NAME'):
+            raise ValueError(f'resolution number {res_num} is invalid; no such resolution exists')
+
+        resolution_is_repealed = xml.xpath('/WA/RESOLUTION/REPEALED_BY') != []
+        resolution_is_a_repeal = xml.xpath('/WA/RESOLUTION/REPEALS_COUNCILID') != []
+
+        resolution_text = html.unescape(xml.xpath('/WA/RESOLUTION/DESC')[0].text)  # FUCK ROVIKSTEAD's FORMFEED CHAR
+
+        resolution_author = xml.xpath('/WA/RESOLUTION/PROPOSED_BY')[0].text
+        print(resolution_author)
+        print(type(resolution_author))
+        if resolution_author is None or str(resolution_author).strip() == '':
+            raise RuntimeError('resolution author is empty')
+
+        author = capitalise(resolution_author)
+
+        resolution = WaPassedResolution(
+            resolution_num=res_num,
+            title=xml.xpath('/WA/RESOLUTION/NAME')[0].text,
+            implementation=localised(
+                datetime.utcfromtimestamp(int(xml.xpath('/WA/RESOLUTION/IMPLEMENTED')[0].text)),
+                'UTC'
+            ).astimezone(timezone('US/Eastern')),  # convert to eastern time
+            chamber=clean_chamber_input(xml.xpath('/WA/RESOLUTION/COUNCIL')[0].text)[1],
+
+            category=capitalise(xml.xpath('/WA/RESOLUTION/CATEGORY')[0].text),
+            strength=capitalise(
+                _translate_category(
+                    xml.xpath('/WA/RESOLUTION/CATEGORY')[0].text,  # category
+                    xml.xpath('/WA/RESOLUTION/OPTION')[0].text  # option
+                )[1]  # get name
+            ),
+
+            is_repealed=resolution_is_repealed,
+            repealed_by=int(xml.xpath('/WA/RESOLUTION/REPEALED_BY')[0].text) if resolution_is_repealed else None,
+            is_repeal=resolution_is_a_repeal,
+            repeals=int(xml.xpath('/WA/RESOLUTION/REPEALS_COUNCILID')[0].text) if resolution_is_a_repeal else None,
+
+            # text and author
+            text=resolution_text,
+            author=author,
+
+            # vote data
+            votes_for=int(xml.xpath('/WA/RESOLUTION/TOTAL_VOTES_FOR')[0].text),
+            votes_against=int(xml.xpath('/WA/RESOLUTION/TOTAL_VOTES_AGAINST')[0].text)
+        )
+
+        # overwrite category if repeal with the repeals field; NS API is broken sometimes for some reason
+        if resolution_is_a_repeal:
+            resolution.strength = str(int(resolution.repeals))  # cast to integer
+
+        # check for co-authors
+        coauthor_matches = [s for s in resolution_text.splitlines()
+                            if re.search(r'Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:? ', s, re.IGNORECASE)]
+        if len(coauthor_matches) > 0:
+            coauthor_line = re.sub(r'Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:? ', repl='',
+                                   string=coauthor_matches[0], flags=re.IGNORECASE)
+            print(f'\tidentified coauthor line: "{coauthor_line}"')
+            coauthor_line = coauthor_line \
+                .replace('[i]', '') \
+                .replace('[/i]', '') \
+                .replace('[b]', '') \
+                .replace('[/b]', '') \
+                .replace('[u]', '') \
+                .replace('[/u]', '')
+
+            if '[nation' in coauthor_line.lower():
+                amended_line = re.sub(r'(?<=\[nation)\=(.*?)(?=\])', '', coauthor_line.lower())
+                coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[\/nation\])', amended_line.lower())
+
+            else:
+                coauthors = re.split(r'(,? and )|(, )', coauthor_line, re.IGNORECASE)
+                coauthors = [i for i in coauthors if i is not None and i.strip() != 'and']  # post facto patching...
+
+            coauthors = [as_ref_name(s).replace('.', '') for s in coauthors]
+            print(f'\tidentified coauthors as {coauthors}')
+
+            # pass each co-author in turn
+            try:
+                resolution.coauthor0 = capitalise(coauthors[0])
+            except IndexError:
+                pass
+
+            try:
+                resolution.coauthor1 = capitalise(coauthors[1])
+            except IndexError:
+                pass
+
+            try:
+                resolution.coauthor2 = capitalise(coauthors[2])
+            except IndexError:
+                pass
+
+        cacher.save()
+        return resolution
+
+
+def parse():
+    reslist = []
+    soup = BeautifulSoup(call_api('http://forum.nationstates.net/viewtopic.php?f=9&t=30'), 'lxml')
+    resolution = soup.select('div#p310 div.content a')
+
+    resolution_number = len(resolution)
+    print(f'found {resolution_number} resolutions')
+
+    for i in range(resolution_number):
+        print(f'calling for GA {i + 1} of {resolution_number}')
+        d = WaPassedResolution.parse_ga(i + 1).__dict__  # note that 0 returns resolution at vote
+        reslist.append(d)
+
+    df = pd.DataFrame(reslist).replace({None: np.nan})
+    df.drop(columns=['text'], inplace=True)
+    df.rename(columns={
+        'resolution_num': 'Number',
+        'title': 'Title',
+        'category': 'Category',
+        'strength': 'Sub-category',
+        'votes_for': 'Votes For',
+        'votes_against': 'Votes Against',
+        'implementation': 'Date Implemented',
+        'author': 'Author'
+    }, inplace=True)
+
+    def join_coauthors(l):
+        authors = [s for s in l if s.strip() != '']
+        return ', '.join(authors)
+
+    df['Co-authors'] = df[['coauthor0', 'coauthor1', 'coauthor2']] \
+        .replace({np.nan: ''}) \
+        .agg(join_coauthors, axis=1)
+
+    return df[['Number', 'Title', 'Category', 'Sub-category', 'Author', 'Co-authors',
+               'Votes For', 'Votes Against', 'Date Implemented']].copy()

@@ -1,2 +1,5 @@
-nswadb  
-Copyright (C) 2014-2017 Auralia
+# Copyright notice
+
+Copyright 2014-2017. Auralia.
+
+Copyright 2020. Imperium Anglorum.
