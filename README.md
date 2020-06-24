@@ -1,6 +1,6 @@
-# nswadb #
+# NS WA Authorboards #
 
-nswadb is free and open source. There is—
+NS WA Authorboards is forked from nswadb. It is free and open source. There is—
 
 * a CSV database containing information on all General Assembly resolutions;
 
@@ -13,4 +13,4 @@ nswadb is free and open source. There is—
 
 ## Licence ##
 
-nswadb is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+This project is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
