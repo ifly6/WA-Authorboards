@@ -31,19 +31,23 @@ class Database:
             csv_reader = csv.reader(csv_file)
             for row in csv_reader:
                 player_name = row[0]
+
                 aliases = [s.strip() for s in row[1].split(",")]
                 aliases.append(player_name)
                 self.aliases[player_name] = aliases
 
                 player = Author(player_name, is_player=True)
+
                 for resolution in self.resolutions:
                     for alias in aliases:
-                        if alias == resolution.author.name:
+                        if alias.lower() == resolution.author.name.lower():  # make it case-insensitive
                             player.authored_resolutions.append(resolution)
                             resolution.player_author = player
-                        elif alias in [r.name for r in resolution.coauthors]:
+
+                        elif alias.lower() in [r.name.lower() for r in resolution.coauthors]:
                             player.coauthored_resolutions.append(resolution)
                             resolution.player_coauthors.append(player)
+
                 self.player_authors.append(player)
 
 
@@ -88,12 +92,13 @@ class Resolution:
             self.repeal = None
 
         for author in db.authors:
-            if author.name == author_name:
+            if author.name.lower() == author_name.lower():  # case insensitive
                 self.author = author
                 break
         else:
             self.author = Author(author_name)
             db.authors.append(self.author)
+
         self.author.authored_resolutions.append(self)
 
         self.coauthors = []
@@ -103,7 +108,7 @@ class Resolution:
                 continue
 
             for author in db.authors:
-                if author.name == coauthor_name:
+                if author.name.lower() == coauthor_name.lower():
                     coauthor = author
                     self.coauthors.append(author)
                     break
@@ -117,7 +122,9 @@ class Resolution:
         self.votes_against = int(votes_against)
 
         # remove trailing in date
-        date = date[:date.index(' ')]
+        if ' ' in date:  # if date has time info at the end
+            date = date[:date.index(' ')]
+
         self.date = datetime.strptime(date, "%Y-%m-%d")
 
         self.repealed_by = None

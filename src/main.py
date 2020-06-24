@@ -38,7 +38,7 @@ os.makedirs('../output', exist_ok=True)
 
 write_file('../output/author_index', generate_author_index(db))
 write_file('../output/table_AUTHOR', generate_author_table(db, OrderType.AUTHOR))
-write_file('../output/table_TOTAL', generate_author_table(db, OrderType.TOTAL))
+write_file('../output/table_LEADERBOARDS', generate_author_table(db, OrderType.TOTAL))
 write_file('../output/table_ACTIVE_TOTAL', generate_author_table(db, OrderType.ACTIVE_TOTAL))
 write_file('../output/table_NON_REPEALS', generate_author_table(db, OrderType.ACTIVE_NON_REPEALS_TOTAL))
 write_file('../output/table_REPEALS', generate_author_table(db, OrderType.ACTIVE_REPEALS_TOTAL))
