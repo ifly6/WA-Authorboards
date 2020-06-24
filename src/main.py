@@ -24,7 +24,6 @@ if updating_database:
     df = wa_parser.parse()
     df.to_csv(newdf_path, index=False)
 
-
 print('parsing database')
 
 resolution_csvs = glob.glob('../db/resolutions*.csv')
