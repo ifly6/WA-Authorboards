@@ -112,8 +112,7 @@ def capitalise(s):
     # unless the word is and
     # > fanboys
     s = " ".join(
-        w.capitalize()
-        if (len(w) > 2 and w not in ['for', 'and', 'nor', 'but', 'yet', 'the']) or (i == 0) else w
+        w.capitalize() if (len(w) > 2 and w not in ['for', 'and', 'nor', 'but', 'yet', 'the']) or (i == 0) else w
         for i, w in enumerate(s.split())
     ).strip()  # avoid apostrophe capitalisations
 
