@@ -9,7 +9,7 @@ nswadb is a free and open source. It contains—
   containing statistical information; and
 
 * Parsing code to poll the NS API to generate an updated version of that database, along with code necessary to properly
-  capitalise names, categories, etc.
+  capitalise names, categories, etc. **You should check automated parser output for errors.**
 
 ## Licence ##
 

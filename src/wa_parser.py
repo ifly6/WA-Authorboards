@@ -259,11 +259,12 @@ class WaPassedResolution:
                 .replace('[u]', '') \
                 .replace('[/u]', '')
 
-            if '[nation' in coauthor_line.lower():
+            if '[nation' in coauthor_line.lower():  # scion used the [Nation] tag instead of lower case once
                 amended_line = re.sub(r'(?<=\[nation)\=(.*?)(?=\])', '', coauthor_line.lower())
                 coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[\/nation\])', amended_line.lower())
 
             else:
+                # this will break with names like "Sch'tz and West Runk'land"
                 coauthors = re.split(r'(,? and )|(, )', coauthor_line, re.IGNORECASE)
                 coauthors = [i for i in coauthors if i is not None and i.strip() != 'and']  # post facto patching...
 
