@@ -1,6 +1,6 @@
-# NS WA Authorboards #
+# WA Authorboards #
 
-NS WA Authorboards is forked from nswadb. It is free and open source. There is—
+WA Authorboards is forked from Auralia's [nswadb](https://github.com/auralia/nswadb). It is free and open source. There is—
 
 * a CSV database containing information on all General Assembly resolutions;
 
