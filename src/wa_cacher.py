@@ -34,6 +34,6 @@ class Cacher(object):
 
 @lru_cache(maxsize=None)
 def load_capitalisation_exceptions(p='../db/names.txt'):
-    """ Cached to reduce disk IO times on repeated calls """
+    """ Cached to reduce disk IO times on repeated calls. Data here should not change. """
     with open(p, 'r') as f:
         return set(f.readlines())

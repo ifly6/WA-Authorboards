@@ -2,7 +2,9 @@ import csv
 from datetime import datetime
 
 
-# consider rewriting with pandas
+def is_same_name(i, a):
+    return i.lower() == a.lower()
+
 
 class Database:
     def __init__(self):
@@ -32,21 +34,25 @@ class Database:
             for row in csv_reader:
                 player_name = row[0]
 
+                # create dict entry k=player_name, v=[aliases..., main_name]
                 aliases = [s.strip() for s in row[1].split(",")]
                 aliases.append(player_name)
                 self.aliases[player_name] = aliases
 
                 player = Author(player_name, is_player=True)
 
-                for resolution in self.resolutions:
+                # for all resolutions, construct alias data
+                for res in self.resolutions:
                     for alias in aliases:
-                        if alias.lower() == resolution.author.name.lower():  # make it case-insensitive
-                            player.authored_resolutions.append(resolution)
-                            resolution.player_author = player
+                        if is_same_name(alias, res.author.name):
+                            player.authored_resolutions.append(res)
+                            res.player_author = player
 
-                        elif alias.lower() in [r.name.lower() for r in resolution.coauthors]:
-                            player.coauthored_resolutions.append(resolution)
-                            resolution.player_coauthors.append(player)
+                        elif any(is_same_name(alias, r.name) for r in res.coauthors):
+                            # ^ case insensitive check
+                            # OG: elif alias.lower() in [r.name.lower() for r in resolution.coauthors]:
+                            player.coauthored_resolutions.append(res)
+                            res.player_coauthors.append(player)
 
                 self.player_authors.append(player)
 
@@ -75,12 +81,13 @@ class Resolution:
 
         if self.category == "Repeal":
             repeal_number = int(self.subcategory)
-            for resolution in db.resolutions:
-                if resolution.number == int(self.subcategory):
-                    self.repeal = resolution
-                    resolution.repealed_by = self
+            for res in db.resolutions:
+                if res.number == int(self.subcategory):
+                    self.repeal = res
+                    res.repealed_by = self
                     break
-            else:
+
+            else:  # if no resolution was found
                 if int(self.number) < int(self.subcategory):
                     raise RuntimeError(f'Resolution number is less than the number of the resolution this is '
                                        f'supposedly repealing (num={self.number}; subcat={self.subcategory})')
@@ -91,9 +98,10 @@ class Resolution:
         else:
             self.repeal = None
 
-        for author in db.authors:
-            if author.name.lower() == author_name.lower():  # case insensitive
-                self.author = author
+        # get or create authors
+        for a in db.authors:
+            if is_same_name(a.name, author_name):
+                self.author = a
                 break
         else:
             self.author = Author(author_name)
@@ -101,34 +109,34 @@ class Resolution:
 
         self.author.authored_resolutions.append(self)
 
+        # get or create co-authors
         self.coauthors = []
-        coauthor_names = [s.strip() for s in coauthor_names.split(",")]
-        for coauthor_name in coauthor_names:
+        for coauthor_name in [s.strip() for s in coauthor_names.split(",")]:
             if coauthor_name == "":
                 continue
 
-            for author in db.authors:
-                if author.name.lower() == coauthor_name.lower():
-                    coauthor = author
-                    self.coauthors.append(author)
+            for a in db.authors:
+                if is_same_name(a.name, coauthor_name):
+                    coauthor = a
+                    self.coauthors.append(a)
                     break
             else:
                 coauthor = Author(coauthor_name)
                 self.coauthors.append(coauthor)
                 db.authors.append(coauthor)
+
             coauthor.coauthored_resolutions.append(self)
 
         self.votes_for = int(votes_for)
         self.votes_against = int(votes_against)
 
-        # remove trailing in date
-        if ' ' in date:  # if date has time info at the end
-            date = date[:date.index(' ')]
+        self.date = datetime.strptime(
+            date if ' ' not in date else date[:date.index(' ')],  # if date has time info at the end cut it off
+            "%Y-%m-%d"
+        )
 
-        self.date = datetime.strptime(date, "%Y-%m-%d")
-
-        self.repealed_by = None
-        self.player_author = None
+        self.repealed_by = None  # this is safe because it will be overwritten when parsing the repeal
+        self.player_author = None  # constructed when aliases are parsed
         self.player_coauthors = []
 
     def __str__(self):
