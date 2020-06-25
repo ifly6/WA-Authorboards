@@ -1,7 +1,10 @@
 import json
+from functools import lru_cache
 
 
 class Cacher(object):
+    """ Caches all the API responses and persists it as `api_cache.json`. If you want to re-pull that data, delete the
+    cache file and it will do that automatically. """
 
     def __init__(self, d=None):
         if d is None:
@@ -27,3 +30,10 @@ class Cacher(object):
         with open(path, 'r') as f:
             d = json.load(f)
             return Cacher(d)
+
+
+@lru_cache(maxsize=None)
+def load_capitalisation_exceptions(p='../db/names.txt'):
+    """ Cached to reduce disk IO times on repeated calls """
+    with open(p, 'r') as f:
+        return set(f.readlines())

@@ -12,13 +12,17 @@ from lxml import etree
 from pytz import timezone
 from ratelimit import rate_limited
 
+from src import wa_cacher
+
 """ Imperium Anglorum:
 
 This is adapted from proprietary InfoEurope code which in part does most of this already. Eg the proposal portions 
 which translate, the locality adjustments, API reading, etc. There is also code in beta (not-in-production)
 which would have done this entirely, but I never got around to developing the VIEWS for that portion of the website.
 
-It seems much easier just to commit something like this given that all the code is already present. """
+It seems much easier just to commit something like this given that all the code is already present.
+
+See ifly6.no-ip.org for more information. """
 
 _headers = {
     'User-Agent': 'WA parser (Auralia; Imperium Anglorum)'
@@ -86,33 +90,25 @@ def _translate_category(category: str, s: str) -> Tuple[bool, str]:
     try:
         return True, d[as_ref_name(category)]  # yield correct name from ref name of category
     except KeyError:
-        return False, s
+        return False, s  # if not in the list, what is given
 
 
 def capitalise(s):
     s = s.replace('_', ' ').strip()
 
     # exceptions
-    known_names = {
-        'Cormac A Stark',
-        'Mahaj WA Seat',
-        'Astro-Malsitari WA Seat',
-        'Unibotian WA Mission',
-        'WA Mission of NERV-UN',
-        'Glen-Rhodes',
-        'Darenjon WA Embassy',
-        'SchutteGod',
-        'Linux and the X'
-    }
-    for i in known_names:
+    capitalisation_exceptions = wa_cacher.load_capitalisation_exceptions()
+    for i in capitalisation_exceptions:
         if s.lower() == i.lower():
-            return i  # replace
+            return i  # replace with manual correction
 
     # only capitalise words longer than 2 letters ('new') and always capitalise first
-    # unless the word is and
-    # > fanboys
+    # unless the word is in given list
+    # > fanboys & the
     s = " ".join(
-        w.capitalize() if (len(w) > 2 and w not in ['for', 'and', 'nor', 'but', 'yet', 'the']) or (i == 0) else w
+        w.capitalize()
+        if (len(w) > 2 and w not in ['for', 'and', 'nor', 'but', 'yet', 'the']) or (i == 0)
+        else w
         for i, w in enumerate(s.split())
     ).strip()  # avoid apostrophe capitalisations
 
@@ -127,7 +123,8 @@ def capitalise(s):
         s = re.sub(r'(?<=\s){}$'.format(numeral), numeral.upper(), s)  # matches only trailing numerals
 
     # people used to use WA missions; capitalise these, they are separate words
-    s = re.sub(r'(?<=\s)(Wa|wa|wA)(?=\s)', 'WA', s)
+    s = re.sub(r'(?<=\s)(Wa|wa|wA)(?=\s)', 'WA', s)  # if between two spaces
+    s = re.sub(r'^(Wa|wa|wA)(?=\s)', 'WA', s)  # if at start (eg WA Mission of NERV-UN)
 
     return s
 
@@ -164,15 +161,6 @@ class WaPassedResolution:
         self.votes_against = None
 
         self.__dict__.update(kwargs)  # django does this automatically, i'm not updating it; lazy
-
-    def __str__(self):
-        return f'WA History: {self.title} ({self.implementation})'
-
-    def get_coauthors(self):
-        return [self.coauthor0, self.coauthor1, self.coauthor2]
-
-    def get_authors(self):
-        return [self.author] + self.get_coauthors()
 
     @staticmethod
     def parse_ga(res_num):
@@ -267,7 +255,7 @@ class WaPassedResolution:
                 coauthors = re.split(r'(,? and )|(, )', coauthor_line, re.IGNORECASE)
                 coauthors = [i for i in coauthors if i is not None and i.strip() != 'and']  # post facto patching...
 
-            coauthors = [as_ref_name(s).replace('.', '') for s in coauthors]
+            coauthors = [as_ref_name(s).replace('.', '') for s in coauthors]  # cast to reference name
             print(f'\tidentified coauthors as {coauthors}')
 
             # pass each co-author in turn
@@ -291,22 +279,24 @@ class WaPassedResolution:
 
 
 def parse():
+    # find the number of resolutions from Passed GA Resolutions
     reslist = []
     soup = BeautifulSoup(call_api('http://forum.nationstates.net/viewtopic.php?f=9&t=30'), 'lxml')
     resolution = soup.select('div#p310 div.content a')
-
     resolution_number = len(resolution)
     print(f'found {resolution_number} resolutions')
 
+    # get API information for each resolution
     for i in range(resolution_number):
         print(f'calling for GA {i + 1} of {resolution_number}')
-        d = WaPassedResolution.parse_ga(i + 1).__dict__  # note that 0 returns resolution at vote
+        d = WaPassedResolution.parse_ga(i + 1).__dict__  # note that 0 returns resolution at vote, need to 1-index
         reslist.append(d)
 
+    # put it up in pandas
     df = pd.DataFrame(reslist).replace({None: np.nan})
     df.drop(columns=['text'], inplace=True)
     df.rename(columns={
-        'resolution_num': 'Number',
+        'resolution_num': 'Number',  # Auralia used these names for columns
         'title': 'Title',
         'category': 'Category',
         'strength': 'Sub-category',
@@ -316,13 +306,14 @@ def parse():
         'author': 'Author'
     }, inplace=True)
 
-    def join_coauthors(l):
+    def join_coauthors(l, j=', '):
+        """ Removes empty/whitespace-only strings and then joins """
         authors = [s for s in l if s.strip() != '']
-        return ', '.join(authors)
+        return j.join(authors)
 
     df['Co-authors'] = df[['coauthor0', 'coauthor1', 'coauthor2']] \
         .replace({np.nan: ''}) \
         .agg(join_coauthors, axis=1)
 
     return df[['Number', 'Title', 'Category', 'Sub-category', 'Author', 'Co-authors',
-               'Votes For', 'Votes Against', 'Date Implemented']].copy()
+               'Votes For', 'Votes Against', 'Date Implemented']].copy()  # take only relevant vars
