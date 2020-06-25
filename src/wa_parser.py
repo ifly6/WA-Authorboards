@@ -186,7 +186,7 @@ class WaPassedResolution:
         resolution_is_repealed = xml.xpath('/WA/RESOLUTION/REPEALED_BY') != []
         resolution_is_a_repeal = xml.xpath('/WA/RESOLUTION/REPEALS_COUNCILID') != []
 
-        resolution_text = html.unescape(xml.xpath('/WA/RESOLUTION/DESC')[0].text)  # FUCK ROVIKSTEAD's FORMFEED CHAR
+        resolution_text = html.unescape(xml.xpath('/WA/RESOLUTION/DESC')[0].text)
 
         resolution_author = xml.xpath('/WA/RESOLUTION/PROPOSED_BY')[0].text
         print(resolution_author)
@@ -287,10 +287,15 @@ def parse():
     print(f'found {resolution_number} resolutions')
 
     # get API information for each resolution
-    for i in range(resolution_number):
-        print(f'calling for GA {i + 1} of {resolution_number}')
-        d = WaPassedResolution.parse_ga(i + 1).__dict__  # note that 0 returns resolution at vote, need to 1-index
-        reslist.append(d)
+    i = 1
+    for i in range(resolution_number + 20):  # passed resolutions should never be more than 20 behind... hopefully
+        try:
+            print(f'calling for GA {i + 1} of {resolution_number} predicted resolutions')
+            d = WaPassedResolution.parse_ga(i + 1).__dict__  # note that 0 returns resolution at vote, need to 1-index
+            reslist.append(d)
+        except ValueError:
+            print('out of resolutions; data should be complete')
+            break
 
     # put it up in pandas
     df = pd.DataFrame(reslist).replace({None: np.nan})
