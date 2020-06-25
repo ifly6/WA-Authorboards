@@ -9,9 +9,7 @@ from src.reports import (generate_author_index, generate_author_table,
 
 
 def write_file(path, s):
-    if not path.endswith('.txt'):
-        path = path + '.txt'
-
+    path = path + '.txt' if not path.endswith('.txt') else path
     with open(path, 'w') as f:
         f.write(s)
 
@@ -19,22 +17,24 @@ def write_file(path, s):
 print('starting')
 updating_database = True
 
+# ensure folders for relevant directories exist
+for p in ['../output', '../db']:
+    os.makedirs(p, exist_ok=True)
+
 if updating_database:
-    newdf_path = '../db/resolutions_{}.csv'.format(pd.Timestamp.now().strftime('%Y-%m-%d'))
+    df_path = '../db/resolutions_{}.csv'.format(pd.Timestamp.now().strftime('%Y-%m-%d'))
     df = wa_parser.parse()
-    df.to_csv(newdf_path, index=False)
+    df.to_csv(df_path, index=False)
 
 print('parsing database')
 
-resolution_csvs = glob.glob('../db/resolutions*.csv')
-latest = max(resolution_csvs, key=os.path.getctime)
-
+# > uncomment below to generate for explicit path
 # db = Database.create('../db/resolutions.csv', '../db/aliases.csv')
-db = Database.create(latest, '../db/aliases.csv')
+
+resolutions_list = glob.glob('../db/resolutions*.csv')
+db = Database.create(max(resolutions_list, key=os.path.getctime), '../db/aliases.csv')
 
 print('saving tables')
-
-os.makedirs('../output', exist_ok=True)
 
 write_file('../output/author_index', generate_author_index(db))
 write_file('../output/table_AUTHOR', generate_author_table(db, OrderType.AUTHOR))
