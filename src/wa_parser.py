@@ -287,7 +287,6 @@ def parse():
     print(f'found {resolution_number} resolutions')
 
     # get API information for each resolution
-    i = 1
     for i in range(resolution_number + 20):  # passed resolutions should never be more than 20 behind... hopefully
         try:
             print(f'calling for GA {i + 1} of {resolution_number} predicted resolutions')
