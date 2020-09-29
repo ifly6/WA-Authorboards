@@ -20,24 +20,25 @@ for p in ['../output', '../db']:
     os.makedirs(p, exist_ok=True)
 
 if updating_database:
+    print('updating database')
     df_path = '../db/resolutions_{}.csv'.format(pd.Timestamp.now().strftime('%Y-%m-%d'))
     df = wa_parser.parse()
     df.to_csv(df_path, index=False)
 
+# parse database
 print('parsing database')
-
+db = Database.create(max(glob.glob('../db/resolutions*.csv'), key=os.path.getctime), '../db/aliases.csv')
 # > uncomment below to generate for explicit path
 # db = Database.create('../db/resolutions.csv', '../db/aliases.csv')
 
-resolutions_list = glob.glob('../db/resolutions*.csv')
-db = Database.create(max(resolutions_list, key=os.path.getctime), '../db/aliases.csv')
-
 # create table
+print('creating markdown table')
 s = create_leaderboards(db, format='markdown')
 write_file('../md_output/leaderboard.md', s)
 print(s)
 
 # create chart
+print('creating chart')
 ranks = create_leaderboards(db, format='pandas', keep_puppets=False)
 ranks['Name'] = ranks['Name'].str.replace(r'\[PLAYER\]', '').str.strip()  # de-dup from players
 ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
@@ -47,13 +48,14 @@ f, ax = plt.subplots(figsize=(8.25, 11.71))
 ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'))
 ax.set_ylim([-1, ranks['Name'].size])
 ax.invert_yaxis()
-ax.xaxis.grid(True)
+ax.xaxis.grid(True, linestyle='--')
 ax.set_title('Players with most WA resolutions')
 ax.annotate('As of {}'.format(datetime.today().strftime('%Y-%m-%d')), (0, 0), (0, -20),
             xycoords='axes fraction', textcoords='offset points', va='top')
 
 f.tight_layout()
-f.savefig('../md_output/leaderboard_top30.png')
+f.savefig('../md_output/leaderboard_top30.pdf')
+print('wrote chart')
 
 # write old bbCode files
 if writing_files:
