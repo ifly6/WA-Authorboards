@@ -100,7 +100,7 @@ def capitalise(s):
     # exceptions
     capitalisation_exceptions = wa_cacher.load_capitalisation_exceptions()
     for i in capitalisation_exceptions:
-        if s.lower() == i.lower():
+        if s.strip().lower() == i.strip().lower():
             return i  # replace with manual correction
 
     # only capitalise words longer than 2 letters ('new') and always capitalise first
