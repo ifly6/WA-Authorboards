@@ -327,16 +327,16 @@ def parse() -> 'pd.DataFrame':
     for i in reversed(range(0, passed_res_max - 1)):  # passed_res_max is already called above
         print(f'got {max_res - passed_res_max + i} of {max_res} resolutions')
         print(f'getting GA {i + 1}')
-        r = WaPassedResolution.parse_ga(i + 1)
-        d = r.__dict__  # note that 0 returns resolution at vote, need to 1-index
+        r = WaPassedResolution.parse_ga(i + 1)  # note that 0 returns resolution at vote, need to 1-index
+        d = r.__dict__  # hacky cheating to get into dict
         res_list.append(d)
 
     # put it up in pandas
     df = pd.DataFrame(res_list).replace({None: np.nan})
     df.drop(columns=['text'], inplace=True)
     df.rename(columns={
-        'council': 'Council',
-        'resolution_num': 'Number',  # Auralia used these names for columns
+        'council': 'Council',  # Auralia used these names for columns
+        'resolution_num': 'Number',
         'title': 'Title',
         'category': 'Category',
         'strength': 'Sub-category',
