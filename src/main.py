@@ -1,7 +1,10 @@
 import glob
 import os
+from datetime import datetime
 
 import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
 
 from src import wa_parser
 from src.helpers import write_file
@@ -29,10 +32,30 @@ print('parsing database')
 resolutions_list = glob.glob('../db/resolutions*.csv')
 db = Database.create(max(resolutions_list, key=os.path.getctime), '../db/aliases.csv')
 
+# create table
 s = create_leaderboards(db, format='markdown')
 write_file('../md_output/leaderboard.md', s)
 print(s)
 
+# create chart
+ranks = create_leaderboards(db, format='pandas', keep_puppets=False)
+ranks['Name'] = ranks['Name'].str.replace(r'\[PLAYER\]', '').str.strip()  # de-dup from players
+ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
+ranks = ranks.head(30)
+
+f, ax = plt.subplots(figsize=(8.25, 11.71))
+ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'))
+ax.set_ylim([-1, ranks['Name'].size])
+ax.invert_yaxis()
+ax.xaxis.grid(True)
+ax.set_title('Players with most WA resolutions')
+ax.annotate('As of {}'.format(datetime.today().strftime('%Y-%m-%d')), (0, 0), (0, -20),
+            xycoords='axes fraction', textcoords='offset points', va='top')
+
+f.tight_layout()
+f.savefig('../md_output/leaderboard_top30.png')
+
+# write old bbCode files
 if writing_files:
     print('saving tables')
     write_file('../output/author_index', generate_author_index(db))
