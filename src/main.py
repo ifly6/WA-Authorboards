@@ -29,7 +29,9 @@ print('parsing database')
 resolutions_list = glob.glob('../db/resolutions*.csv')
 db = Database.create(max(resolutions_list, key=os.path.getctime), '../db/aliases.csv')
 
-print(create_leaderboards(db))
+s = create_leaderboards(db, format='markdown')
+write_file('../md_output/leaderboard.md', s)
+print(s)
 
 if writing_files:
     print('saving tables')
