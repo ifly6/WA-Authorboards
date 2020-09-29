@@ -1,26 +1,26 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
 | Imperium Anglorum                        |         31 |             5 |        15 |       18 |      36 |
-| [PLAYER] Sciongrad                       |         19 |             5 |         7 |       10 |      24 |
+| **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
-| [PLAYER] Auralia                         |         23 |             0 |         9 |       12 |      23 |
+| **[PLAYER]** Auralia                     |         23 |             0 |         9 |       12 |      23 |
 | The Dourian Embassy                      |         16 |             4 |        13 |        5 |      20 |
 | Auralia                                  |         19 |             0 |         8 |       11 |      19 |
 | Separatist Peoples                       |         15 |             1 |         1 |       15 |      16 |
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
-| [PLAYER] Bears Armed                     |          9 |             3 |         0 |       12 |      12 |
-| [PLAYER] Unibot                          |          9 |             3 |         0 |        6 |      12 |
+| **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
+| **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
-| [PLAYER] Cowardly Pacifists              |         11 |             0 |         3 |        6 |      11 |
-| [PLAYER] United Federation of Canada     |         10 |             1 |         3 |        3 |      11 |
+| **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
+| **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
 | Charlotte Ryberg                         |          8 |             2 |         1 |        3 |      10 |
 | Connopolis                               |          6 |             4 |         1 |        3 |      10 |
 | Bears Armed Mission                      |          9 |             0 |         0 |        9 |       9 |
 | Knootoss                                 |          6 |             3 |         2 |        6 |       9 |
 | Ossitania                                |          6 |             3 |         2 |        5 |       9 |
-| [PLAYER] Gruenberg                       |          9 |             0 |         4 |        4 |       9 |
-| [PLAYER] Wallenburg                      |          9 |             0 |         2 |        6 |       9 |
+| **[PLAYER]** Gruenberg                   |          9 |             0 |         4 |        4 |       9 |
+| **[PLAYER]** Wallenburg                  |          9 |             0 |         2 |        6 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
 | Glen-rhodes                              |          7 |             1 |         1 |        3 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
@@ -42,8 +42,8 @@
 | Quadrimmina                              |          2 |             3 |         0 |        4 |       5 |
 | Ransium                                  |          5 |             0 |         1 |        4 |       5 |
 | Vancouvia                                |          5 |             0 |         3 |        1 |       5 |
-| [PLAYER] Omigodtheykilledkenny           |          5 |             0 |         1 |        2 |       5 |
-| [PLAYER] Tinfect                         |          5 |             0 |         2 |        2 |       5 |
+| **[PLAYER]** Omigodtheykilledkenny       |          5 |             0 |         1 |        2 |       5 |
+| **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        2 |       5 |
 | Araraukar                                |          0 |             4 |         0 |        4 |       4 |
 | Embolalia                                |          4 |             0 |         1 |        3 |       4 |
 | Jean Pierre Trudeau                      |          4 |             0 |         3 |        1 |       4 |
@@ -51,8 +51,8 @@
 | Railana                                  |          4 |             0 |         1 |        1 |       4 |
 | Studly Penguins                          |          4 |             0 |         1 |        0 |       4 |
 | Topid                                    |          4 |             0 |         0 |        2 |       4 |
-| [PLAYER] Ainocra                         |          3 |             1 |         1 |        2 |       4 |
-| [PLAYER] Wrapper                         |          3 |             1 |         1 |        3 |       4 |
+| **[PLAYER]** Ainocra                     |          3 |             1 |         1 |        2 |       4 |
+| **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        3 |       4 |
 | Ainocra                                  |          2 |             1 |         1 |        1 |       3 |
 | Ceni                                     |          2 |             1 |         0 |        0 |       3 |
 | Cool Egg Sandwich                        |          2 |             1 |         1 |        0 |       3 |
@@ -72,8 +72,8 @@
 | Tinfect                                  |          3 |             0 |         2 |        1 |       3 |
 | Umeria                                   |          3 |             0 |         1 |        1 |       3 |
 | Wrapper                                  |          2 |             1 |         1 |        2 |       3 |
-| [PLAYER] Goddess Relief Office           |          3 |             0 |         1 |        2 |       3 |
-| [PLAYER] Yelda                           |          2 |             1 |         0 |        2 |       3 |
+| **[PLAYER]** Goddess Relief Office       |          3 |             0 |         1 |        2 |       3 |
+| **[PLAYER]** Yelda                       |          2 |             1 |         0 |        2 |       3 |
 | A Mean Old Man                           |          1 |             1 |         0 |        0 |       2 |
 | American Capitalist                      |          2 |             0 |         0 |        1 |       2 |
 | Bananaistan                              |          2 |             0 |         1 |        1 |       2 |
@@ -108,8 +108,8 @@
 | Unibot                                   |          0 |             2 |         0 |        1 |       2 |
 | Urgench                                  |          2 |             0 |         0 |        1 |       2 |
 | Wachichi                                 |          1 |             1 |         1 |        1 |       2 |
-| [PLAYER] Defwa                           |          2 |             0 |         0 |        1 |       2 |
-| [PLAYER] Gorundu                         |          2 |             0 |         1 |        1 |       2 |
+| **[PLAYER]** Defwa                       |          2 |             0 |         0 |        1 |       2 |
+| **[PLAYER]** Gorundu                     |          2 |             0 |         1 |        1 |       2 |
 | Akohos                                   |          0 |             1 |         0 |        1 |       1 |
 | Alba and Cymru                           |          1 |             0 |         0 |        0 |       1 |
 | Alqania                                  |          1 |             0 |         1 |        0 |       1 |
