@@ -5,3 +5,4 @@ ratelimit
 bs4
 pytz
 numpy
+tabulate
