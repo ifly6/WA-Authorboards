@@ -1,8 +1,10 @@
-lxml
-requests
-pandas
-ratelimit
-bs4
-pytz
-numpy
+lxml~=4.5.2
+requests~=2.24.0
+pandas~=1.1.0
+ratelimit~=2.2.1
+pytz~=2020.1
+numpy~=1.19.1
 tabulate
+
+matplotlib~=3.3.1
+beautifulsoup4~=4.9.1
