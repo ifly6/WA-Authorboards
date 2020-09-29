@@ -55,6 +55,7 @@ ax.annotate('As of {}'.format(datetime.today().strftime('%Y-%m-%d')), (0, 0), (0
 
 f.tight_layout()
 f.savefig('../md_output/leaderboard_top30.pdf')
+f.savefig('../md_output/leaderboard_top30.jpg')
 print('wrote chart')
 
 # write old bbCode files
