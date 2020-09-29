@@ -31,6 +31,7 @@ def create_leaderboards(db: Database, format='markdown'):
     df = __create_leaderboard_df(db)
 
     if format == 'markdown':
+        df['Name'] = df['Name'].str.replace(r'\[PLAYER\]', r'**[PLAYER]**')
         return df.to_markdown(index=False)
 
     if format == 'bbCode':
