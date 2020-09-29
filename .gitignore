@@ -1,4 +1,4 @@
 .idea/
-db/api_cache.json
+db/api_cache*.json
 output
 *.pyc

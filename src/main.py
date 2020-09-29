@@ -1,18 +1,13 @@
 import glob
 import os
+
 import pandas as pd
 
 from src import wa_parser
+from src.helpers import write_file
 from src.load_db import Database
 from src.reports import (generate_author_index, generate_author_table,
                          generate_known_aliases, OrderType)
-
-
-def write_file(path, s):
-    path = path + '.txt' if not path.endswith('.txt') else path
-    with open(path, 'w') as f:
-        f.write(s)
-
 
 print('starting')
 updating_database = True

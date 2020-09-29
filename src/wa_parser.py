@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 from lxml import etree
 from pytz import timezone
-from ratelimit import rate_limited
+from ratelimit import rate_limited, sleep_and_retry
 
 from src import wa_cacher
 
@@ -33,6 +33,7 @@ class ApiError(Exception):
     pass
 
 
+@sleep_and_retry
 @rate_limited(35, 30)
 def call_api(url) -> str:
     response = requests.get(url, headers=_headers)
@@ -129,6 +130,13 @@ def capitalise(s):
     return s
 
 
+def _get_council(i):
+    if i == 'GA' or i == 1: return 'GA'
+    if i == 'SC' or i == 2: return 'SC'
+    if i == 'UN' or i == 0: return 'UN'
+    raise ValueError(f'provided council code {i} is invalid')
+
+
 class WaPassedResolution:
 
     def __init__(self, **kwargs):
@@ -160,10 +168,12 @@ class WaPassedResolution:
         self.votes_for = None
         self.votes_against = None
 
+        self.council = None
+
         self.__dict__.update(kwargs)  # django does this automatically, i'm not updating it; lazy
 
     @staticmethod
-    def parse_ga(res_num):
+    def parse_ga(res_num, council=1):
 
         from src.wa_cacher import Cacher
         try:
@@ -171,7 +181,7 @@ class WaPassedResolution:
         except FileNotFoundError:
             cacher = Cacher()  # init new
 
-        api_url = 'https://www.nationstates.net/cgi-bin/api.cgi?wa=1&id={}&q=resolution'.format(res_num)
+        api_url = 'https://www.nationstates.net/cgi-bin/api.cgi?wa={}&id={}&q=resolution'.format(council, res_num)
         in_cacher = cacher.contains(api_url)
         if not in_cacher:
             this_response = call_api(api_url)
@@ -197,6 +207,7 @@ class WaPassedResolution:
         author = capitalise(resolution_author)
 
         resolution = WaPassedResolution(
+            council=_get_council(council),
             resolution_num=res_num,
             title=xml.xpath('/WA/RESOLUTION/NAME')[0].text,
             implementation=localised(
@@ -232,8 +243,16 @@ class WaPassedResolution:
             resolution.strength = str(int(resolution.repeals))  # cast to integer
 
         # check for co-authors
-        coauthor_matches = [s for s in resolution_text.splitlines()
-                            if re.search(r'Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:? ', s, re.IGNORECASE)]
+        cleaned_resolution_text = resolution_text \
+            .replace('[i]', '').replace('[/i]', '') \
+            .replace('[b]', '').replace('[/b]', '') \
+            .replace('[u]', '').replace('[/u]', '')
+        coauthor_matches = [s for s in cleaned_resolution_text.splitlines()
+                            if re.search(
+                r'(Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:?)|'
+                r'(This resolution includes significant contributions made by\s+)',
+                s, re.IGNORECASE
+            )]
         if len(coauthor_matches) > 0:
             coauthor_line = re.sub(r'Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:? ', repl='',
                                    string=coauthor_matches[0], flags=re.IGNORECASE)
@@ -247,8 +266,8 @@ class WaPassedResolution:
                 .replace('[/u]', '')
 
             if '[nation' in coauthor_line.lower():  # scion used the [Nation] tag instead of lower case once
-                amended_line = re.sub(r'(?<=\[nation)\=(.*?)(?=\])', '', coauthor_line.lower())
-                coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[\/nation\])', amended_line.lower())
+                amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower())
+                coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[/nation\])', amended_line.lower())
 
             else:
                 # this will break with names like "Sch'tz and West Runk'land"
@@ -278,28 +297,45 @@ class WaPassedResolution:
         return resolution
 
 
-def parse():
-    # find the number of resolutions from Passed GA Resolutions
-    reslist = []
+def get_count() -> int:
     soup = BeautifulSoup(call_api('http://forum.nationstates.net/viewtopic.php?f=9&t=30'), 'lxml')
     resolution = soup.select('div#p310 div.content a')
-    resolution_number = len(resolution)
-    print(f'found {resolution_number} resolutions')
+    return len(resolution)
 
-    # get API information for each resolution
-    for i in range(resolution_number + 20):  # passed resolutions should never be more than 20 behind... hopefully
+
+def parse() -> 'pd.DataFrame':
+    # find the number of resolutions from Passed GA Resolutions
+    passed_res_max = get_count()
+    print(f'found {passed_res_max} resolutions')
+
+    # confirm that we have X resolutions
+    res_list = []
+    max_res = -1
+    for i in range(passed_res_max - 1, passed_res_max + 20):  # passed resolutions should never be more than 20 behind
         try:
-            print(f'calling for GA {i + 1} of {resolution_number} predicted resolutions')
+            print(f'gettingGA {i + 1} of {passed_res_max} predicted resolutions')
             d = WaPassedResolution.parse_ga(i + 1).__dict__  # note that 0 returns resolution at vote, need to 1-index
-            reslist.append(d)
+            res_list.append(d)
         except ValueError:
             print('out of resolutions; data should be complete')
+            max_res = i
             break
 
+    print(f'found {max_res} resolutions; getting historical')
+
+    # get API information for each resolution
+    for i in reversed(range(0, passed_res_max - 1)):  # passed_res_max is already called above
+        print(f'got {max_res - passed_res_max + i} of {max_res} resolutions')
+        print(f'getting GA {i + 1}')
+        r = WaPassedResolution.parse_ga(i + 1)
+        d = r.__dict__  # note that 0 returns resolution at vote, need to 1-index
+        res_list.append(d)
+
     # put it up in pandas
-    df = pd.DataFrame(reslist).replace({None: np.nan})
+    df = pd.DataFrame(res_list).replace({None: np.nan})
     df.drop(columns=['text'], inplace=True)
     df.rename(columns={
+        'council': 'Council',
         'resolution_num': 'Number',  # Auralia used these names for columns
         'title': 'Title',
         'category': 'Category',
@@ -309,6 +345,7 @@ def parse():
         'implementation': 'Date Implemented',
         'author': 'Author'
     }, inplace=True)
+    df.sort_values(by='Number', inplace=True)
 
     def join_coauthors(l, j=', '):
         """ Removes empty/whitespace-only strings and then joins """
