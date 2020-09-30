@@ -46,7 +46,7 @@ ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
 ranks = ranks.head(30)
 
 f, ax = plt.subplots(figsize=(8.25, 11.71))
-ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'), zorder=3)
+ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'), zorder=2)
 ax.set_ylim([-1, ranks['Name'].size])
 ax.invert_yaxis()
 ax.xaxis.set_minor_locator(AutoMinorLocator())
