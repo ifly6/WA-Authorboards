@@ -10,7 +10,7 @@ from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 from src import wa_parser
 from src.helpers import write_file
 from src.reports.bbcode_reports import *
-from src.reports.pandas_reports import create_leaderboards
+from src.reports.pandas_reports import create_leaderboards, create_aliases
 
 print('starting')
 updating_database = False
@@ -34,13 +34,17 @@ db = Database.create(max(glob.glob('../db/resolutions*.csv'), key=os.path.getcti
 
 # create table
 print('creating markdown table')
-s = create_leaderboards(db, format='markdown')
-write_file('../md_output/leaderboard.md', s)
-print(s)
+s = create_leaderboards(db, how='markdown')
+write_file('../md_output/leaderboard.md', s, print_input=True)
+
+# create alias table
+print('creating alias table')
+s = create_aliases()
+write_file('../md_output/aliases.md', s, print_input=True)
 
 # create chart
 print('creating chart')
-ranks = create_leaderboards(db, format='pandas', keep_puppets=False)
+ranks = create_leaderboards(db, how='pandas', keep_puppets=False)
 ranks['Name'] = ranks['Name'].str.replace(r'\[PLAYER\]', '').str.strip()  # de-dup from players
 ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
 ranks = ranks.head(30)
