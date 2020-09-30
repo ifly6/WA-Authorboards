@@ -3,8 +3,9 @@ import os
 from datetime import datetime
 
 import pandas as pd
-from matplotlib import pyplot as plt
 import seaborn as sns
+from matplotlib import pyplot as plt
+from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 
 from src import wa_parser
 from src.helpers import write_file
@@ -45,13 +46,17 @@ ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
 ranks = ranks.head(30)
 
 f, ax = plt.subplots(figsize=(8.25, 11.71))
-ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'))
+ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'), zorder=3)
 ax.set_ylim([-1, ranks['Name'].size])
 ax.invert_yaxis()
-ax.xaxis.grid(True, linestyle='--')
+ax.xaxis.set_minor_locator(AutoMinorLocator())
+ax.xaxis.grid(True, linestyle='dashed', which='major', zorder=0)
+ax.xaxis.grid(True, linestyle='dotted', which='minor', zorder=0)
 ax.set_title('Players with most WA resolutions')
-ax.annotate('As of {}'.format(datetime.today().strftime('%Y-%m-%d')), (0, 0), (0, -20),
-            xycoords='axes fraction', textcoords='offset points', va='top')
+ax.annotate(
+    'Data as of {}. See https://github.com/ifly6/WA-Authorboards.'.format(datetime.today().strftime('%Y-%m-%d')),
+    (0, 0), (0, -20), xycoords='axes fraction', textcoords='offset points', va='top'
+)
 
 f.tight_layout()
 f.savefig('../md_output/leaderboard_top30.pdf')
