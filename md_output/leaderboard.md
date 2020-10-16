@@ -10,6 +10,7 @@
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
 | **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
+| **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
 | **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
@@ -21,8 +22,8 @@
 | **[PLAYER]** Gruenberg                   |          9 |             0 |         4 |        4 |       9 |
 | **[PLAYER]** Wallenburg                  |          9 |             0 |         2 |        6 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
+| Glen-Rhodes                              |          7 |             1 |         1 |        3 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
-| Glen-Rhodes                              |          7 |             0 |         1 |        3 |       7 |
 | United Massachusetts                     |          6 |             1 |         1 |        6 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
 | Cretox State                             |          6 |             0 |         0 |        6 |       6 |
@@ -41,6 +42,7 @@
 | Quadrimmina                              |          2 |             3 |         0 |        4 |       5 |
 | Ransium                                  |          5 |             0 |         1 |        4 |       5 |
 | Vancouvia                                |          5 |             0 |         3 |        1 |       5 |
+| **[PLAYER]** Omigodtheykilledkenny       |          5 |             0 |         1 |        2 |       5 |
 | **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        2 |       5 |
 | Araraukar                                |          0 |             4 |         0 |        4 |       4 |
 | Embolalia                                |          4 |             0 |         1 |        3 |       4 |
@@ -50,8 +52,6 @@
 | Studly Penguins                          |          4 |             0 |         1 |        0 |       4 |
 | Topid                                    |          4 |             0 |         0 |        2 |       4 |
 | **[PLAYER]** Ainocra                     |          3 |             1 |         1 |        2 |       4 |
-| **[PLAYER]** Omigodtheykilledkenny       |          4 |             0 |         1 |        2 |       4 |
-| **[PLAYER]** Unibot                      |          1 |             3 |         0 |        1 |       4 |
 | **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        3 |       4 |
 | Ainocra                                  |          2 |             1 |         1 |        1 |       3 |
 | Ceni                                     |          2 |             1 |         0 |        0 |       3 |
@@ -150,7 +150,6 @@
 | Freewilltoall                            |          1 |             0 |         1 |        0 |       1 |
 | Frisbeeteria                             |          1 |             0 |         0 |        1 |       1 |
 | Gatchina                                 |          0 |             1 |         0 |        0 |       1 |
-| Glen-Rhodes                              |          0 |             1 |         0 |        0 |       1 |
 | Gorundu                                  |          1 |             0 |         1 |        0 |       1 |
 | Gotham Network                           |          1 |             0 |         0 |        0 |       1 |
 | Great Azarath                            |          1 |             0 |         0 |        0 |       1 |

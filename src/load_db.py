@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def is_same_name(i, a):
-    return i.lower() == a.lower()
+    return i.lower().strip() == a.lower().strip()
 
 
 class Database:
@@ -104,7 +104,7 @@ class Resolution:
                 self.author = a
                 break
         else:
-            self.author = Author(author_name)
+            self.author = Author(author_name.strip())
             db.authors.append(self.author)
 
         self.author.authored_resolutions.append(self)
