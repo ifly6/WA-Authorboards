@@ -13,8 +13,8 @@ from src.reports.bbcode_reports import *
 from src.reports.pandas_reports import create_leaderboards, create_aliases
 
 print('starting')
-updating_database = False
-writing_files = False
+updating_database = True
+writing_files = True
 
 # ensure folders for relevant directories exist
 for p in ['../output', '../db']:
