@@ -1,12 +1,12 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         31 |             5 |        15 |       18 |      36 |
+| Imperium Anglorum                        |         32 |             5 |        15 |       18 |      37 |
 | **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
 | **[PLAYER]** Auralia                     |         23 |             0 |         9 |       12 |      23 |
 | The Dourian Embassy                      |         16 |             4 |        13 |        5 |      20 |
 | Auralia                                  |         19 |             0 |         8 |       11 |      19 |
-| Separatist Peoples                       |         15 |             1 |         1 |       15 |      16 |
+| Separatist Peoples                       |         16 |             1 |         1 |       16 |      17 |
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
 | **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
@@ -25,6 +25,7 @@
 | Glen-Rhodes                              |          7 |             1 |         1 |        3 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
 | United Massachusetts                     |          6 |             1 |         1 |        6 |       7 |
+| **[PLAYER]** Cretox State                |          7 |             0 |         0 |        6 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
 | Cretox State                             |          6 |             0 |         0 |        6 |       6 |
 | Kenmoria                                 |          2 |             4 |         0 |        6 |       6 |
@@ -44,6 +45,7 @@
 | Vancouvia                                |          5 |             0 |         3 |        1 |       5 |
 | **[PLAYER]** Omigodtheykilledkenny       |          5 |             0 |         1 |        2 |       5 |
 | **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        2 |       5 |
+| **[PLAYER]** Topid                       |          5 |             0 |         1 |        2 |       5 |
 | Araraukar                                |          0 |             4 |         0 |        4 |       4 |
 | Embolalia                                |          4 |             0 |         1 |        3 |       4 |
 | Jean Pierre Trudeau                      |          4 |             0 |         3 |        1 |       4 |
@@ -73,6 +75,8 @@
 | Umeria                                   |          3 |             0 |         1 |        1 |       3 |
 | Wrapper                                  |          2 |             1 |         1 |        2 |       3 |
 | **[PLAYER]** Goddess Relief Office       |          3 |             0 |         1 |        2 |       3 |
+| **[PLAYER]** Gorundu                     |          3 |             0 |         2 |        1 |       3 |
+| **[PLAYER]** Rovikstead                  |          2 |             1 |         0 |        2 |       3 |
 | **[PLAYER]** Yelda                       |          2 |             1 |         0 |        2 |       3 |
 | A Mean Old Man                           |          1 |             1 |         0 |        0 |       2 |
 | American Capitalist                      |          2 |             0 |         0 |        1 |       2 |
@@ -86,6 +90,7 @@
 | Gobbannaen WA Mission                    |          2 |             0 |         1 |        0 |       2 |
 | Gobbannium                               |          2 |             0 |         0 |        1 |       2 |
 | Goddess Relief Office                    |          2 |             0 |         1 |        1 |       2 |
+| Gorundu                                  |          2 |             0 |         2 |        0 |       2 |
 | Greenlandic People                       |          2 |             0 |         0 |        1 |       2 |
 | Hiriaurtung Arororugul                   |          2 |             0 |         0 |        2 |       2 |
 | Icamera                                  |          1 |             1 |         0 |        0 |       2 |
@@ -109,7 +114,6 @@
 | Urgench                                  |          2 |             0 |         0 |        1 |       2 |
 | Wachichi                                 |          1 |             1 |         1 |        1 |       2 |
 | **[PLAYER]** Defwa                       |          2 |             0 |         0 |        1 |       2 |
-| **[PLAYER]** Gorundu                     |          2 |             0 |         1 |        1 |       2 |
 | Akohos                                   |          0 |             1 |         0 |        1 |       1 |
 | Alba and Cymru                           |          1 |             0 |         0 |        0 |       1 |
 | Alqania                                  |          1 |             0 |         1 |        0 |       1 |
@@ -150,7 +154,6 @@
 | Freewilltoall                            |          1 |             0 |         1 |        0 |       1 |
 | Frisbeeteria                             |          1 |             0 |         0 |        1 |       1 |
 | Gatchina                                 |          0 |             1 |         0 |        0 |       1 |
-| Gorundu                                  |          1 |             0 |         1 |        0 |       1 |
 | Gotham Network                           |          1 |             0 |         0 |        0 |       1 |
 | Great Azarath                            |          1 |             0 |         0 |        0 |       1 |
 | Greifenburg                              |          1 |             0 |         0 |        0 |       1 |
