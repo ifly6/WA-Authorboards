@@ -1,11 +1,11 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         32 |             5 |        15 |       18 |      37 |
+| Imperium Anglorum                        |         33 |             5 |        16 |       18 |      38 |
 | **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
-| **[PLAYER]** Auralia                     |         23 |             0 |         9 |       12 |      23 |
+| **[PLAYER]** Auralia                     |         23 |             0 |         9 |       11 |      23 |
 | The Dourian Embassy                      |         16 |             4 |        13 |        5 |      20 |
-| Auralia                                  |         19 |             0 |         8 |       11 |      19 |
+| Auralia                                  |         19 |             0 |         8 |       10 |      19 |
 | Separatist Peoples                       |         16 |             1 |         1 |       16 |      17 |
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
@@ -28,6 +28,7 @@
 | **[PLAYER]** Cretox State                |          7 |             0 |         0 |        6 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
 | Cretox State                             |          6 |             0 |         0 |        6 |       6 |
+| Honeydewistania                          |          6 |             0 |         2 |        4 |       6 |
 | Kenmoria                                 |          2 |             4 |         0 |        6 |       6 |
 | Maowi                                    |          5 |             1 |         0 |        5 |       6 |
 | Morover                                  |          6 |             0 |         2 |        4 |       6 |
@@ -38,7 +39,6 @@
 | Chester Pearson                          |          4 |             1 |         0 |        1 |       5 |
 | Cowardly Pacifists                       |          5 |             0 |         0 |        5 |       5 |
 | Excidium Planetis                        |          4 |             1 |         1 |        2 |       5 |
-| Honeydewistania                          |          5 |             0 |         2 |        3 |       5 |
 | Marxist Germany                          |          4 |             1 |         1 |        2 |       5 |
 | Quadrimmina                              |          2 |             3 |         0 |        4 |       5 |
 | Ransium                                  |          5 |             0 |         1 |        4 |       5 |
