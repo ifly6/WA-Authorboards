@@ -1,13 +1,12 @@
-lxml~=4.5.2
-requests~=2.24.0
-pandas~=1.1.2
+lxml~=4.6.2
+requests~=2.25.0
+pandas~=1.1.5
 ratelimit~=2.2.1
-pytz~=2020.1
-numpy~=1.19.2
+pytz~=2020.4
+numpy~=1.19.4
 tabulate
 
-matplotlib~=3.3.2
-beautifulsoup4~=4.9.2
+matplotlib~=3.3.3
+beautifulsoup4~=4.9.3
 
 seaborn~=0.11.0
-bs4~=0.0.1
