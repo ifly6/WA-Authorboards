@@ -1,21 +1,24 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         33 |             5 |        16 |       18 |      38 |
+| Imperium Anglorum                        |         34 |             5 |        17 |       18 |      39 |
 | **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
 | **[PLAYER]** Auralia                     |         23 |             0 |         9 |       11 |      23 |
 | The Dourian Embassy                      |         16 |             4 |        13 |        5 |      20 |
 | Auralia                                  |         19 |             0 |         8 |       10 |      19 |
-| Separatist Peoples                       |         16 |             1 |         1 |       16 |      17 |
+| Separatist Peoples                       |         17 |             1 |         1 |       17 |      18 |
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
 | **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
 | **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
 | **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
+| **[PLAYER]** Cretox State                |         11 |             0 |         1 |        7 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
 | Charlotte Ryberg                         |          8 |             2 |         1 |        3 |      10 |
 | Connopolis                               |          6 |             4 |         1 |        3 |      10 |
+| Cretox State                             |         10 |             0 |         1 |        7 |      10 |
+| Honeydewistania                          |          8 |             2 |         4 |        5 |      10 |
 | Bears Armed Mission                      |          9 |             0 |         0 |        9 |       9 |
 | Knootoss                                 |          6 |             3 |         2 |        6 |       9 |
 | Ossitania                                |          6 |             3 |         2 |        5 |       9 |
@@ -25,10 +28,7 @@
 | Glen-Rhodes                              |          7 |             1 |         1 |        3 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
 | United Massachusetts                     |          6 |             1 |         1 |        6 |       7 |
-| **[PLAYER]** Cretox State                |          7 |             0 |         0 |        6 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
-| Cretox State                             |          6 |             0 |         0 |        6 |       6 |
-| Honeydewistania                          |          6 |             0 |         2 |        4 |       6 |
 | Kenmoria                                 |          2 |             4 |         0 |        6 |       6 |
 | Maowi                                    |          5 |             1 |         0 |        5 |       6 |
 | Morover                                  |          6 |             0 |         2 |        4 |       6 |
@@ -109,7 +109,7 @@
 | Sierra Lyricalia                         |          1 |             1 |         0 |        1 |       2 |
 | Stoskavanya                              |          2 |             0 |         0 |        2 |       2 |
 | Tinfect Diplomatic Enclave               |          2 |             0 |         0 |        1 |       2 |
-| Tinhampton                               |          1 |             1 |         0 |        1 |       2 |
+| Tinhampton                               |          1 |             1 |         0 |        0 |       2 |
 | Unibot                                   |          0 |             2 |         0 |        1 |       2 |
 | Urgench                                  |          2 |             0 |         0 |        1 |       2 |
 | Wachichi                                 |          1 |             1 |         1 |        1 |       2 |
@@ -124,11 +124,12 @@
 | Australian Republic                      |          0 |             1 |         0 |        1 |       1 |
 | Belarum                                  |          1 |             0 |         0 |        1 |       1 |
 | Bitely                                   |          1 |             0 |         0 |        0 |       1 |
+| Boston Castle                            |          1 |             0 |         0 |        0 |       1 |
 | Broughdom                                |          1 |             0 |         0 |        1 |       1 |
 | Buffett and Colbert                      |          1 |             0 |         0 |        0 |       1 |
 | Burninati0n                              |          1 |             0 |         0 |        0 |       1 |
 | Bushsucks-istan                          |          1 |             0 |         0 |        0 |       1 |
-| Castle Federation                        |          1 |             0 |         0 |        1 |       1 |
+| Castle Federation                        |          1 |             0 |         0 |        0 |       1 |
 | Celsuis                                  |          1 |             0 |         1 |        0 |       1 |
 | Charlottle Ryberg                        |          0 |             1 |         0 |        0 |       1 |
 | Cievan                                   |          0 |             1 |         0 |        1 |       1 |
@@ -194,6 +195,7 @@
 | Omigodtheyclonedkenny                    |          1 |             0 |         1 |        0 |       1 |
 | Opiachus                                 |          1 |             0 |         0 |        0 |       1 |
 | Oppe Ruiver                              |          0 |             1 |         0 |        0 |       1 |
+| Orca and Narwhal                         |          1 |             0 |         0 |        1 |       1 |
 | Otrenia                                  |          1 |             0 |         0 |        0 |       1 |
 | Pan Master                               |          1 |             0 |         0 |        0 |       1 |
 | Pantherai                                |          1 |             0 |         1 |        0 |       1 |
@@ -203,6 +205,7 @@
 | Plessur                                  |          1 |             0 |         1 |        0 |       1 |
 | Pope Saint Peter the Apostle             |          1 |             0 |         0 |        1 |       1 |
 | R539                                     |          1 |             0 |         0 |        0 |       1 |
+| Regnum Italiae                           |          1 |             0 |         1 |        0 |       1 |
 | Rehochipe                                |          0 |             1 |         0 |        1 |       1 |
 | Renaissancistic People                   |          0 |             1 |         0 |        0 |       1 |
 | Revolutionist Britain                    |          1 |             0 |         0 |        1 |       1 |
@@ -231,7 +234,7 @@
 | The Defwaen Confederation                |          1 |             0 |         0 |        1 |       1 |
 | The Free and Sovereign State of Thailand |          1 |             0 |         0 |        0 |       1 |
 | The Global Republic                      |          1 |             0 |         1 |        0 |       1 |
-| The Greater Soviet North America         |          1 |             0 |         0 |        1 |       1 |
+| The Greater Soviet North America         |          1 |             0 |         0 |        0 |       1 |
 | The Last Homely House                    |          0 |             1 |         0 |        0 |       1 |
 | The Narnian Council                      |          1 |             0 |         0 |        0 |       1 |
 | The New Aryan State                      |          0 |             1 |         0 |        1 |       1 |
@@ -245,6 +248,7 @@
 | United States of Americanas              |          0 |             1 |         0 |        0 |       1 |
 | Veilyonia                                |          1 |             0 |         0 |        1 |       1 |
 | Venico                                   |          0 |             1 |         0 |        0 |       1 |
+| Verdant Haven                            |          0 |             1 |         0 |        0 |       1 |
 | WA Mission of NERV-UN                    |          1 |             0 |         0 |        1 |       1 |
 | Warzone Codger                           |          1 |             0 |         0 |        1 |       1 |
 | Weed                                     |          1 |             0 |         1 |        0 |       1 |
