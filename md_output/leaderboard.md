@@ -1,6 +1,6 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         34 |             5 |        17 |       18 |      39 |
+| Imperium Anglorum                        |         35 |             5 |        17 |       19 |      40 |
 | **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
 | **[PLAYER]** Auralia                     |         23 |             0 |         9 |       11 |      23 |
@@ -10,14 +10,14 @@
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
 | **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
+| **[PLAYER]** Cretox State                |         12 |             0 |         1 |        8 |      12 |
 | **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
+| Cretox State                             |         11 |             0 |         1 |        8 |      11 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
 | **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
-| **[PLAYER]** Cretox State                |         11 |             0 |         1 |        7 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
 | Charlotte Ryberg                         |          8 |             2 |         1 |        3 |      10 |
 | Connopolis                               |          6 |             4 |         1 |        3 |      10 |
-| Cretox State                             |         10 |             0 |         1 |        7 |      10 |
 | Honeydewistania                          |          8 |             2 |         4 |        5 |      10 |
 | Bears Armed Mission                      |          9 |             0 |         0 |        9 |       9 |
 | Knootoss                                 |          6 |             3 |         2 |        6 |       9 |
