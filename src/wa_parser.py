@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 from lxml import etree
 from pytz import timezone
-from ratelimit import rate_limited, sleep_and_retry
+from ratelimit import limits, sleep_and_retry
 
 from src import wa_cacher
 
@@ -34,7 +34,7 @@ class ApiError(Exception):
 
 
 @sleep_and_retry
-@rate_limited(35, 30)
+@limits(calls=25, period=30)  # 50 calls every 30 seconds they say but somehow this is fake news
 def call_api(url) -> str:
     response = requests.get(url, headers=_headers)
     if response.status_code != 200:
@@ -266,7 +266,7 @@ class WaPassedResolution:
                 .replace('[/u]', '')
 
             if '[nation' in coauthor_line.lower():  # scion used the [Nation] tag instead of lower case once
-                amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower())
+                amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower()) # remove 'noflag' etc
                 coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[/nation\])', amended_line.lower())
 
             else:
@@ -347,9 +347,9 @@ def parse() -> 'pd.DataFrame':
     }, inplace=True)
     df.sort_values(by='Number', inplace=True)
 
-    def join_coauthors(l, j=', '):
+    def join_coauthors(coauthor_list, j=', '):
         """ Removes empty/whitespace-only strings and then joins """
-        authors = [s for s in l if s.strip() != '']
+        authors = [s for s in coauthor_list if s.strip() != '']
         return j.join(authors)
 
     df['Co-authors'] = df[['coauthor0', 'coauthor1', 'coauthor2']] \

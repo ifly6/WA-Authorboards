@@ -180,6 +180,7 @@
 | Manticore Reborn                         |          0 |             1 |         0 |        1 |       1 |
 | Mavenu                                   |          1 |             0 |         0 |        1 |       1 |
 | Maxtopia                                 |          1 |             0 |         0 |        1 |       1 |
+| Merni                                    |          1 |             0 |         0 |        1 |       1 |
 | Milograd                                 |          1 |             0 |         1 |        0 |       1 |
 | Misrahistan                              |          1 |             0 |         0 |        0 |       1 |
 | Mundiferrum                              |          1 |             0 |         1 |        0 |       1 |
