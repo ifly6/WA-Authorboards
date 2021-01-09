@@ -66,11 +66,24 @@ def create_leaderboards(db: Database, how='markdown', keep_puppets=True):
                               if r.repealed_by is None and r.category not in ['Repeal', 'repeal'])}
         rows.append(d)
     df = pd.DataFrame(rows)
+
     # create totals and sort
     df['Total'] = df['Authored'] + df['Co-authored']
     df.sort_values(by=['Total', 'Name'], ascending=[False, True], inplace=True)
     df.reset_index(drop=True, inplace=True)
 
+    # create numbering
+    if keep_puppets is False:
+        df.insert(0, 'Rank', '')
+        for i, row in df.iterrows():
+            try:
+                same_total = row['Total'] == df.loc[i - 1, 'Total']
+            except KeyError:
+                same_total = False
+
+            df.loc[i, 'Rank'] = i + 1 if not same_total else df.loc[i - 1, 'Rank']
+
+    # output
     if how == 'pandas':
         return df
 

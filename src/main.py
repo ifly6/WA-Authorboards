@@ -37,6 +37,10 @@ print('creating markdown table')
 s = create_leaderboards(db, how='markdown')
 write_file('../md_output/leaderboard.md', s, print_input=True)
 
+print('creating markdown table no puppets')
+s = create_leaderboards(db, how='markdown', keep_puppets=False)
+write_file('../md_output/leaderboard-no-puppets.md', s, print_input=True)
+
 # create alias table
 print('creating alias table')
 s = create_aliases()
@@ -47,7 +51,7 @@ print('creating chart')
 ranks = create_leaderboards(db, how='pandas', keep_puppets=False)
 ranks['Name'] = ranks['Name'].str.replace(r'\[PLAYER\]', '').str.strip()  # de-dup from players
 ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
-ranks = ranks.head(30)
+ranks = ranks[ranks['Rank'] <= 30]
 
 f, ax = plt.subplots(figsize=(8.25, 11.71))
 ax.barh(ranks['Name'], ranks['Total'], color=sns.color_palette('muted'), zorder=2)
