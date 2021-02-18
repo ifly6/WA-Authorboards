@@ -1,5 +1,4 @@
-# Copyright (c) 2017 Auralia
-# Modifications, copyright (c) 2020 ifly6
+# Copyright (c) 2020 ifly6
 import html
 import io
 import re
