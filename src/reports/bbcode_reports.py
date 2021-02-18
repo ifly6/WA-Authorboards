@@ -1,4 +1,5 @@
-# Copyright (c) 2020 ifly6
+# Copyright (c) 2017 Auralia
+# Modifications, copyright (c) 2020 ifly6
 from enum import Enum
 
 from src.load_db import Database
