@@ -1,3 +1,4 @@
+# Copyright (c) 2020 ifly6
 import datetime
 import glob
 import os

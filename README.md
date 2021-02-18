@@ -13,4 +13,5 @@ WA Authorboards is forked from Auralia's [nswadb](https://github.com/auralia/nsw
 
 ## Licence ##
 
-This project is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+This project is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). A large number of
+files herein have been modified from Auralia's source. Modification copyright 2021 ifly6.

@@ -1,3 +1,5 @@
+# Copyright (c) 2017 Auralia
+# Modifications, copyright (c) 2020 ifly6
 import glob
 import os
 from datetime import datetime

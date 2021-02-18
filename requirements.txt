@@ -1,9 +1,12 @@
+# Copyright (c) 2017 Auralia
+# Modifications, copyright (c) 2020 ifly6
 lxml~=4.6.2
 requests~=2.25.0
-pandas~=1.1.5
 ratelimit~=2.2.1
-pytz~=2020.4
-numpy~=1.19.4
+
+pytz
+pandas
+numpy
 tabulate
 
 matplotlib~=3.3.3
