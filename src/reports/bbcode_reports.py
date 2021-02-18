@@ -1,3 +1,4 @@
+# Copyright (c) 2020 ifly6
 from enum import Enum
 
 from src.load_db import Database

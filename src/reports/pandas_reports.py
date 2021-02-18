@@ -1,3 +1,4 @@
+# Copyright (c) 2020 ifly6
 import pandas as pd
 
 from src.load_db import Database
@@ -13,7 +14,7 @@ def _flatten(l):
 
 def _df_to_bbcode(df, column_predicate={}):
     lines = [''.join('[td]{}[/td]'.format(str(s)) for s in df.columns)]  # init with header
-    for i, row in df.iterrows():
+    for _, row in df.iterrows():
         cells = ''.join('[td]{}[/td]'.format(str(s)) for s in row.values)
         lines.append(cells)
 
@@ -72,7 +73,7 @@ def create_leaderboards(db: Database, how='markdown', keep_puppets=True):
     df.sort_values(by=['Total', 'Name'], ascending=[False, True], inplace=True)
     df.reset_index(drop=True, inplace=True)
 
-    # create numbering
+    # create ranks, but only if enumerating players
     if keep_puppets is False:
         df.insert(0, 'Rank', '')
         for i, row in df.iterrows():
@@ -81,7 +82,8 @@ def create_leaderboards(db: Database, how='markdown', keep_puppets=True):
             except KeyError:
                 same_total = False
 
-            df.loc[i, 'Rank'] = i + 1 if not same_total else df.loc[i - 1, 'Rank']
+            df.loc[i, 'Rank'] = (df.loc[i - 1, 'Rank'] if same_total
+                                 else i + 1)
 
     # output
     if how == 'pandas':
