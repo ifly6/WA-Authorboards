@@ -1,0 +1,571 @@
+Number,Title,Category,Sub-category,Author,Co-authors,Votes For,Votes Against,Date Implemented
+1,The World Assembly,Bookkeeping,Sweeping,Maxtopia,,11609,2259,2008-04-06 13:00:02-04:00
+2,Rights and Duties of WA States,Political Stability,Mild,Frisbeeteria,,7501,2511,2008-04-11 13:00:01-04:00
+3,The Right to a Fair Trial,Civil Rights,Strong,South Oceana,,6062,4477,2008-04-16 13:00:01-04:00
+4,Restrictions on Child Labor,Civil Rights,Strong,The Dourian Embassy,,7785,2455,2008-04-23 13:00:02-04:00
+5,Coordinating Relief Aid,Social Justice,Mild,Charlotte Ryberg,Mikitivity,7923,2584,2008-05-01 13:00:09-04:00
+6,Humanitarian Transport,Civil Rights,Mild,Mikitivity,,6757,3243,2008-05-07 13:00:02-04:00
+7,Workplace Safety Standards Act,Civil Rights,Significant,The Dourian Embassy,Yelda,7675,2513,2008-05-12 13:00:02-04:00
+8,World Assembly Headquarters,Political Stability,Mild,Omigodtheykilledkenny,,4918,4499,2008-05-17 13:00:01-04:00
+9,Prevention of Torture,Civil Rights,Strong,Quintessence of Dust,,6502,4000,2008-05-22 13:00:01-04:00
+10,Nuclear Arms Possession Act,International Security,Mild,Flibbleites,,6313,4663,2008-06-06 13:00:01-04:00
+11,"Repeal ""The Right to a Fair Trial""",Repeal,3,The Dourian Embassy,,7187,3135,2008-06-12 13:00:01-04:00
+12,Prevention of Terrorism,International Security,Significant,Atrigea,,5660,3853,2008-06-17 13:00:01-04:00
+13,Fair Criminal Trial,Civil Rights,Significant,The Narnian Council,,6237,2027,2008-06-22 13:00:01-04:00
+14,Neutrality of Nations,Global Disarmament,Strong,Charlotte Ryberg,Wolfish,4910,2509,2008-07-30 13:00:01-04:00
+15,Freedom of Marriage Act,Civil Rights,Significant,Mendosia,,5506,4393,2008-09-03 13:00:01-04:00
+16,Sexual Privacy Act,Civil Rights,Significant,Mendosia,,5963,3138,2008-09-18 13:00:01-04:00
+17,WA General Fund,Furtherment of Democracy,Mild,Omigodtheykilledkenny,,5258,3273,2008-09-23 13:00:01-04:00
+18,The Prisoners of War Accord,Civil Rights,Mild,Cobdenia,,5561,2500,2008-09-28 13:00:01-04:00
+19,Child Protection Act,Civil Rights,Significant,Rutianas,,6426,1946,2008-10-03 13:00:01-04:00
+20,Suppress International Piracy,International Security,Significant,Mavenu,,5251,3392,2008-10-08 13:00:01-04:00
+21,Living Wage Act,Social Justice,Significant,Gobbannaen WA Mission,,4431,3305,2008-10-13 13:00:01-04:00
+22,Diplomat Protection Act,Furtherment of Democracy,Significant,Forensatha,Cobdenia,5236,2226,2008-10-18 13:00:01-04:00
+23,Ban on Slavery and Trafficking,Civil Rights,Strong,Quintessence of Dust,,5944,1319,2008-10-27 13:00:02-04:00
+24,"Repeal ""Prevention of Terrorism""",Repeal,12,Wachichi,,5516,1146,2008-11-15 13:00:01-05:00
+25,WA Counterterrorism Act,International Security,Significant,The Altan Steppes,Wachichi,3451,1247,2008-11-30 13:00:01-05:00
+26,World Assembly Economic Union,Free Trade,Strong,New Leicestershire,,2841,1622,2008-12-07 13:00:02-05:00
+27,Freedom of Assembly,Furtherment of Democracy,Strong,Cookesland,,3636,1487,2008-12-15 13:00:01-05:00
+28,"Repeal ""Fair Criminal Trial""",Repeal,13,Gobbannaen WA Mission,,2780,1577,2008-12-22 13:00:02-05:00
+29,Patient's Rights Act,Civil Rights,Significant,New Leicestershire,,3228,797,2008-12-27 13:00:01-05:00
+30,Freedom of Expression,Furtherment of Democracy,Mild,Omigodtheykilledkenny,,3225,992,2009-01-01 13:00:01-05:00
+31,World Health Authority,Social Justice,Significant,Belarum,,3284,838,2009-01-06 13:00:01-05:00
+32,Veterans Reform Act,Social Justice,Strong,Studly Penguins,Nebulantis,2423,2165,2009-01-22 13:00:01-05:00
+33,"Repeal ""Coordinating Relief Aid""",Repeal,5,Pantherai,,2582,1429,2009-01-27 13:00:01-05:00
+34,International Transport Safety,Free Trade,Mild,Cobdenia,,2839,1070,2009-02-01 13:00:01-05:00
+35,The Charter of Civil Rights,Civil Rights,Significant,Urgench,,3076,1513,2009-02-06 13:00:02-05:00
+36,"Repeal ""Veterans Reform Act""",Repeal,32,Zarquon Froods,,3122,892,2009-02-11 13:00:01-05:00
+37,Fairness in Criminal Trials,Civil Rights,Significant,Gobbannium,,2905,1058,2009-02-24 16:00:01-05:00
+38,Convention Against Genocide,Civil Rights,Significant,Kelssek,,3219,965,2009-03-01 16:00:01-05:00
+39,The Right to a Lawful Divorce,Civil Rights,Significant,Sionis Prioratus,,2833,1807,2009-03-07 16:00:01-05:00
+40,The Landmine Convention,Global Disarmament,Significant,Quintessence of Dust,,2766,1405,2009-03-19 16:00:01-04:00
+41,Access to Life-Saving Drugs,Social Justice,Significant,Sionis Prioratus,,3269,1183,2009-04-07 16:00:01-04:00
+42,WA Environmental Council,Environmental,All Businesses - Strong,Parilisa,,2832,1390,2009-04-12 16:00:02-04:00
+43,WA Labor Relations Act,Civil Rights,Significant,Hiriaurtung Arororugul,,2682,1661,2009-04-17 16:00:01-04:00
+44,Reduction of Abortion Act,Social Justice,Mild,The Cat-tribe,,3166,1516,2009-04-22 16:00:02-04:00
+45,"Repeal ""World Assembly Economic Union""",Repeal,26,Southeastern Evropa,,2963,1204,2009-04-28 16:00:01-04:00
+46,Right of Emigration,Civil Rights,Mild,Charlotte Ryberg,,3011,1673,2009-05-05 16:00:01-04:00
+47,Law of the Sea,Political Stability,Mild,Cobdenia,,3348,1065,2009-05-12 16:00:01-04:00
+48,Access to Science in Schools,Education and Creativity,Educational,Sionis Prioratus,,3023,1661,2009-05-26 16:00:01-04:00
+49,Stem Cells For Greater Health,Social Justice,Significant,Studly Penguins,,3528,1523,2009-05-31 16:00:01-04:00
+50,International Salvage Laws,Social Justice,Mild,Sydia,,3282,1345,2009-06-05 16:00:01-04:00
+51,Humanitarian Aid Coordination,Social Justice,Significant,Charlotte Ryberg,,3020,1036,2009-06-30 00:00:01-04:00
+52,Food Welfare Act,Social Justice,Strong,"Glen-Rhodes
+",,1855,578,2009-07-08 12:00:01-04:00
+53,Epidemic Response Act,International Security,Strong,Goddess Relief Office,,3735,1301,2009-07-16 12:00:01-04:00
+54,Dignified End of Life Choices,Civil Rights,Strong,Studly Penguins,Robert Hawkins,3235,1678,2009-07-24 12:00:01-04:00
+55,"Repeal ""Right of Emigration""",Repeal,46,Sionis Prioratus,,3669,1091,2009-08-01 12:00:02-04:00
+56,Numismatics Appreciation Act,Education and Creativity,Cultural Heritage,Buffett and Colbert,,3095,1942,2009-08-13 12:00:01-04:00
+57,Refugee Protection,Civil Rights,Significant,Kelssek,,4137,1254,2009-08-17 12:00:02-04:00
+58,Right to Privacy,Civil Rights,Strong,Greenlandic People,,3474,1767,2009-08-21 12:00:01-04:00
+59,The Right to Education,Education and Creativity,Educational,Meekinos,Charlotte Ryberg,4374,1176,2009-08-29 12:00:02-04:00
+60,Nuclear Disaster Response Act,International Security,Strong,Veilyonia,,4725,985,2009-09-02 12:00:01-04:00
+61,WA Copyright Charter,Education and Creativity,Artistic,"Glen-Rhodes
+",,3894,1335,2009-09-10 12:00:02-04:00
+62,For the Detained and Convicted,Civil Rights,Significant,R539,Meekinos,3115,2474,2009-09-14 12:00:01-04:00
+63,Protection of Outer Space Act,Environmental,All Businesses - Strong,Stash Kroh,,3995,1450,2009-09-18 12:00:01-04:00
+64,Food and Drug Standards,Social Justice,Significant,Greenlandic People,,3178,1864,2009-09-26 12:00:01-04:00
+65,Biological Weapons Conference,Global Disarmament,Significant,Bergnovinaia,,3490,2146,2009-09-30 12:00:01-04:00
+66,Endangered Species Protection,Environmental,All Businesses - Strong,Burninati0n,,4082,1381,2009-10-08 12:00:01-04:00
+67,Habeas Corpus,Civil Rights,Significant,Gobbannium,,4398,1636,2009-10-16 12:00:02-04:00
+68,National Economic Freedoms,Free Trade,Strong,Krioval,,4748,1365,2009-10-20 12:00:02-04:00
+69,Protection of monuments,Education and Creativity,Cultural Heritage,The Autumn Clans,,4326,1774,2009-10-30 12:00:01-04:00
+70,International Competition Law,Free Trade,Significant,"Glen-Rhodes
+",,3679,2019,2009-11-03 12:00:02-05:00
+71,"Repeal ""Protection of monuments""",Repeal,69,Grays Harbor,,3902,2291,2009-11-11 12:00:02-05:00
+72,Cultural Heritage Protection,Education and Creativity,Cultural Heritage,Bergnovinaia,Charlottle Ryberg,4173,1833,2009-11-21 00:00:01-05:00
+73,International Postal Union,Free Trade,Mild,Grays Harbor,,4292,1320,2009-12-19 12:00:02-05:00
+74,Medical Blockade Restriction,Free Trade,Strong,Philimbesi,,4299,1371,2010-01-11 00:00:02-05:00
+75,International Radio Act,Free Trade,Mild,"Linux and the X
+",,4328,1505,2010-01-27 00:00:02-05:00
+76,Standardised Passport Act,Political Stability,Mild,Cobdenia,,3573,1842,2010-02-04 00:00:01-05:00
+77,"Repeal ""The Right to Education""",Repeal,59,Jey,,3263,2610,2010-02-12 00:00:02-05:00
+78,Universal Library Coalition,Education and Creativity,Cultural Heritage,Mousebumples,,5095,693,2010-02-16 00:00:01-05:00
+79,Ban on Ex Post Facto Laws,Civil Rights,Significant,Hiriaurtung Arororugul,,4372,1188,2010-02-24 00:00:02-05:00
+80,A Promotion of Basic Education,Education and Creativity,Educational,Sionis Prioratus,Unibot,4605,1550,2010-03-04 00:00:01-05:00
+81,Disaster Preparedness Act,International Security,Mild,Topid,,4056,1988,2010-03-08 00:00:02-05:00
+82,Universal Clinical Trials Act,Social Justice,Mild,Revolutionist Britain,,3981,2260,2010-03-12 00:00:02-05:00
+83,International Road Safety,Free Trade,Mild,New Rockport,,3212,2996,2010-03-16 12:00:02-04:00
+84,A Ban on Forced Disappearances,Furtherment of Democracy,Significant,"Unibotian WA Mission
+",,3645,1941,2010-03-20 12:00:02-04:00
+85,"Repeal ""Disaster Preparedness Act""",Repeal,81,Charlotte Ryberg,,3062,2777,2010-03-24 12:00:02-04:00
+86,Museums of Musical Heritage,Education and Creativity,Cultural Heritage,Serrland,,3944,1811,2010-03-28 12:00:01-04:00
+87,Meteorological Cooperation,Free Trade,Mild,Bears Armed Mission,St Edmund,5036,958,2010-04-01 12:00:02-04:00
+88,WA Numeration and Units Act,Education and Creativity,Cultural Heritage,"Unibotian WA Mission
+",,4044,1289,2010-04-11 12:00:02-04:00
+89,Internet Net Neutrality Act,Education and Creativity,Free Press,Misrahistan,,4506,1220,2010-04-16 12:00:02-04:00
+90,Drug Trafficking Act,International Security,Mild,Enn,Rehochipe,4391,1623,2010-04-20 12:00:03-04:00
+91,A Convention on Gender,Civil Rights,Significant,Sionis Prioratus,,3363,2560,2010-04-29 00:00:01-04:00
+92,Cooperation in Science Act,Education and Creativity,Educational,Gotham Network,,5033,997,2010-05-03 00:00:02-04:00
+93,The General Patent Charter,Free Trade,Mild,Charlotte Ryberg,,4435,1701,2010-05-07 00:00:02-04:00
+94,Microcredit and Microgrants,Free Trade,Mild,"Glen-Rhodes
+",,3830,2215,2010-05-11 00:00:02-04:00
+95,Responsible Offshore Drilling,Environmental,All Businesses - Strong,Embolalia,,3803,2562,2010-05-23 00:00:02-04:00
+96,The Clean Water Resolution,Social Justice,Significant,Pan Master,,3316,3144,2010-05-27 00:00:01-04:00
+97,Quality in Health Services,Social Justice,Significant,Sionis Prioratus,,3517,1903,2010-05-31 00:00:02-04:00
+98,Oil Tanker Standards Act,Environmental,All Businesses - Strong,New Tarsas,,4891,1580,2010-06-04 00:00:02-04:00
+99,Multilateral Prosecution Act,Civil Rights,Mild,"Unibotian WA Mission
+",,3881,1893,2010-06-12 00:00:02-04:00
+100,Anti-Cyberterrorism Act ,International Security,Mild,American Capitalist,Charlotte Ryberg,3330,2955,2010-06-16 00:00:02-04:00
+101,"Repeal ""The Clean Water Resolution""",Repeal,96,Grays Harbor,,4285,1537,2010-06-24 00:00:02-04:00
+102,International Criminal Court,Civil Rights,Significant,Quelesh,,3679,2050,2010-06-28 00:00:01-04:00
+103,International Drug Education,Education and Creativity,Educational,Mousebumples,,4449,940,2010-07-11 12:00:01-04:00
+104,Nautical Pilotage Act,International Security,Mild,"Unibotian WA Mission
+",,4501,932,2010-07-27 00:00:02-04:00
+105,Preparing for Disasters,International Security,Mild,Topid,Cievan,3376,1922,2010-08-04 00:00:02-04:00
+106,Assitance Givers Protection,Advancement of Industry,Tort Reform,Bergnovinaia,,3501,2012,2010-08-08 00:00:01-04:00
+107,Clean Water Act,Social Justice,Significant,Embolalia,,4117,1556,2010-08-12 00:00:01-04:00
+108,For the Wrongly Convicted,Civil Rights,Significant,The Ainocran Embassy,,2962,2414,2010-08-16 00:00:01-04:00
+109,Rights of the Orphaned Child,Civil Rights,Mild,Sanctaria,,4019,1446,2010-08-20 00:00:02-04:00
+110,Identity Theft Prevention Act,International Security,Mild,American Capitalist,Quadrimmina,3936,1601,2010-09-07 00:00:02-04:00
+111,Medical Research Ethics Act,Civil Rights,Significant,Quadrimmina,Manticore Reborn,3710,1877,2010-09-15 00:00:02-04:00
+112,Convention on Execution,Civil Rights,Strong,"Glen-Rhodes
+",Unibot,3436,2280,2010-09-19 00:00:02-04:00
+113,The Gem Trading Accord,Free Trade,Significant,Urgench,,3013,2940,2010-09-23 00:00:02-04:00
+114,On Female Genital Mutilation,Civil Rights,Significant,Quelesh,,5009,665,2010-10-05 00:00:02-04:00
+115,Space Research Station Program,Education and Creativity,Educational,Northern Itasca,Libertytopia,4632,1314,2010-10-09 12:00:04-04:00
+116,Nuclear Waste Safety Act,International Security,Significant,Erythrina,,3680,2191,2010-10-17 12:00:03-04:00
+117,Delineation of Borders Act,Political Stability,Mild,Serrland,,3661,2446,2010-10-21 12:00:03-04:00
+118,Ethics in International Trade,Advancement of Industry,Protective Tariffs,"Unibotian WA Mission
+",,3153,2650,2010-10-25 12:00:02-04:00
+119,Nuclear Testing Safety,Global Disarmament,Significant,Darenjo,Cardoness,3103,2631,2010-11-02 12:00:01-04:00
+120,Missing Minors Database,International Security,Mild,Wildeson,Meekinos,3262,2398,2010-11-21 00:00:01-05:00
+121,Medical Facilities Protection,Global Disarmament,Mild,Warzone Codger,The New Aryan State,4495,1660,2010-11-30 12:00:01-05:00
+122,Read the Resolution Act,Furtherment of Democracy,Mild,Knootoss,,4594,2241,2010-12-04 12:00:01-05:00
+123,Reducing Problem Gambling,Education and Creativity,Educational,Charlotte Ryberg,Knootoss,3861,2675,2010-12-08 12:00:02-05:00
+124,Essential Medication Act,Recreational Drug Use,Legalize,Mousebumples,,4532,1807,2010-12-22 12:00:01-05:00
+125,"Repeal ""Missing Minors Database""",Repeal,120,"Darenjon WA Embassy
+",Quelesh,4884,1165,2011-01-01 12:00:01-05:00
+126,Extinction Preparation Act,Education and Creativity,Educational,The Associated Peoples,The Coyote Coalition,4442,3800,2011-01-07 00:00:01-05:00
+127,Conscientious Objector Act,Civil Rights,Significant,Otrenia,,4616,4578,2011-01-11 00:00:01-05:00
+128,On Abortion,Civil Rights,Mild,Charlotte Ryberg,,6359,2556,2011-01-15 00:00:02-05:00
+129,"Repeal ""Conscientious Objector Act""",Repeal,127,Diogenes Epicurius,,5747,2598,2011-01-19 00:00:01-05:00
+130,Elections and Assistance Act,Furtherment of Democracy,Significant,"Glen-Rhodes
+",,5374,2635,2011-01-23 00:00:01-05:00
+131,Missing Minors Act,International Security,Mild,"Mahaj WA Seat
+",,6404,1959,2011-02-02 00:00:01-05:00
+132,Military Freedom Act,Furtherment of Democracy,Significant,Embolalia,,4737,2925,2011-02-06 00:00:02-05:00
+133,"Repeal ""Missing Minors Act""",Repeal,131,Sanctaria,,6446,1996,2011-02-10 00:00:01-05:00
+134,Guns and Mental Capacity,Gun Control,0,Darenjo,,6027,3277,2011-02-16 00:00:01-05:00
+135,Universal Standard Time Act,Free Trade,Mild,Opiachus,,6342,3060,2011-02-20 00:00:02-05:00
+136,Convention On Wartime Deceased,Moral Decency,Mild,Serrland,,5922,3455,2011-02-24 00:00:01-05:00
+137,"Repeal ""Universal Standard Time Act""",Repeal,135,Krioval,,5520,4014,2011-02-28 00:00:02-05:00
+138,"Repeal ""Space Research Station Program""",Repeal,115,Darenjo,,6806,2814,2011-03-04 00:00:01-05:00
+139,Consumer Product Safety,Social Justice,Mild,Cool Egg Sandwich,,6047,3640,2011-03-08 00:00:01-05:00
+140,Institutional Psychiatry Act,Civil Rights,Significant,"Unibotian WA Mission
+",,6403,2277,2011-03-12 00:00:01-05:00
+141,Permit Male Circumcision,Civil Rights,Mild,Knootoss,,6495,2986,2011-03-16 12:00:02-04:00
+142,In Regards to Cloning,Civil Rights,Mild,"Mahaj WA Seat
+",Cool Egg Sandwich,5261,4520,2011-03-20 12:00:01-04:00
+143,"Repeal ""In Regards to Cloning""",Repeal,142,Parallaxium,,7762,2954,2011-03-30 12:00:02-04:00
+144,"Repeal ""Neutrality of Nations""",Repeal,14,Sionis Prioratus,,8253,2620,2011-04-09 12:00:01-04:00
+145,Animal Cruelty Prevention,Moral Decency,Mild,Luthiland,,7911,2850,2011-04-13 12:00:02-04:00
+146,Recognising Achievements Act,Free Trade,Mild,Ossitania,Knootoss,7529,2962,2011-04-17 12:00:02-04:00
+147,Extradition Rights,Civil Rights,Significant,Knootoss,,8071,2828,2011-04-21 12:00:01-04:00
+148,Against Conflict Minerals,Free Trade,Mild,"Unibotian WA Mission
+",,7882,2586,2011-04-25 12:00:01-04:00
+149,On Expiration Dates,Social Justice,Mild,A Mean Old Man,,8902,2228,2011-04-29 12:00:01-04:00
+150,"Repeal ""Guns and Mental Capacity""",Repeal,134,Mousebumples,Intellect and the Arts,10272,1639,2011-05-15 12:00:01-04:00
+151,Missing Individuals Act,International Security,Mild,Mousebumples,,10118,2615,2011-05-19 12:00:02-04:00
+152,"Repeal ""WA Environmental Council""",Repeal,42,Cool Egg Sandwich,Mousebumples,9564,2575,2011-05-23 12:00:01-04:00
+153,"Repeal ""Biological Weapons Conference""",Repeal,65,Knootoss,,10423,2260,2011-06-01 12:00:01-04:00
+154,"Repeal ""Extinction Preparation Act""",Repeal,126,Mallorea and Riva,Mousebumples,10499,1615,2011-06-14 12:00:02-04:00
+155,Freedom of the Press,Education and Creativity,Free Press,Broughdom,,9290,3670,2011-06-18 12:00:01-04:00
+156,Safety in Difficult Times,Social Justice,Significant,Sionis Prioratus,,8194,3693,2011-07-05 00:00:02-04:00
+157,"Repeal ""Safety in Difficult Times""",Repeal,156,Freewilltoall,,7652,3599,2011-07-17 00:00:02-04:00
+158,On Genetically Modified Foods,Free Trade,Mild,"Mahaj WA Seat
+",,8534,2923,2011-07-21 00:00:02-04:00
+159,Promotion of Intl Education,Education and Creativity,Educational,"WA Mission of NERV-UN
+",,7949,3090,2011-07-25 00:00:01-04:00
+160,Forced Marriages Ban Act,Civil Rights,Mild,Christian Democrats,,8695,2363,2011-08-17 00:00:02-04:00
+161,Medical Standards in Prisons,Civil Rights,Significant,Connopolis,Mousebumples,7177,4044,2011-08-21 00:00:02-04:00
+162,On Humanitarian Aid,Civil Rights,Significant,Connopolis,,6638,4172,2011-08-29 00:00:01-04:00
+163,"Repeal ""Law of the Sea""",Repeal,47,Goddess Relief Office,A Mean Old Man,8942,2053,2011-09-02 00:00:02-04:00
+164,Consular Rights,Civil Rights,Mild,Topid,,9325,1118,2011-09-07 12:00:01-04:00
+165,A Model World Assembly,Education and Creativity,Educational,"Mahaj WA Seat
+",,6624,4018,2011-09-13 00:00:02-04:00
+166,"Repeal ""On Humanitarian Aid""",Repeal,162,"Glen-Rhodes
+",,7409,2888,2011-09-17 00:00:01-04:00
+167,Legalizing Prostitution,Free Trade,Significant,Great Azarath,Connopolis,6343,4954,2011-10-10 00:00:01-04:00
+168,Law of the Seas,Global Disarmament,Mild,Bears Armed Mission,Cobdenia,7319,3987,2011-10-15 00:00:02-04:00
+169,Social Assistance Accord,Social Justice,Significant,Connopolis,,7091,4090,2011-10-19 00:00:01-04:00
+170,Protect War Correspondents,Civil Rights,Significant,Antartica55,Connopolis,8126,3365,2011-11-10 00:00:01-05:00
+171,Freedom in Medical Research,Free Trade,Significant,Connopolis,Quadrimmina,8216,2616,2011-11-22 00:00:02-05:00
+172,International Expositions Act,Education and Creativity,Cultural Heritage,"Astro-Malsitari WA Seat
+",Connopolis,8230,2820,2011-12-02 00:00:01-05:00
+173,"Repeal ""Social Assistance Accord""",Repeal,169,Knootoss,Unibot II,8997,2248,2011-12-06 00:00:01-05:00
+174,Right to Petition,Furtherment of Democracy,Mild,Knootoss,,8647,2318,2011-12-15 12:00:01-05:00
+175,Organ and Blood Donations Act,Social Justice,Significant,Christian Democrats,,7954,3791,2011-12-23 12:00:01-05:00
+176,Disability Welfare Act,Social Justice,Significant,Sanctaria,,6753,2531,2011-12-27 12:00:01-05:00
+177,Concerning Financial Fraud,Free Trade,Significant,Connopolis,Ossitania,6215,4363,2012-01-07 12:00:02-05:00
+178,"Repeal ""Legalizing Prostitution""",Repeal,167,Alqania,,6501,4631,2012-01-21 00:00:02-05:00
+179,Clean Prostitute Act,Free Trade,Mild,Flibbleites,,10639,1309,2012-01-29 00:00:02-05:00
+180,A Decriminalization of Suicide,Civil Rights,Significant,"Unibotian WA Mission
+",,10179,1962,2012-02-02 00:00:03-05:00
+181,"Repeal ""Medical Blockade Restriction""",Repeal,74,Connopolis,,9091,2429,2012-02-06 00:00:01-05:00
+182,Renewable Research Commitment,Environmental,All Businesses - Strong,Delegate Vinage,Individuality-ness,8115,3499,2012-02-21 00:00:01-05:00
+183,Defense of Self and Others,Civil Rights,Significant,Ossitania,,8566,3185,2012-02-25 00:00:01-05:00
+184,"Repeal ""Habeas Corpus""",Repeal,67,Quelesh,,8419,2560,2012-02-29 00:00:01-05:00
+185,"Repeal ""WA Copyright Charter""",Repeal,61,Embolalia,,8880,1851,2012-03-08 00:00:01-05:00
+186,Medical Provisions in Blockade,Free Trade,Significant,Damanucus,Connopolis,9583,1699,2012-03-12 12:00:01-04:00
+187,Double Jeopardy Prohibition,Civil Rights,Significant,Quelesh,,5947,5247,2012-03-16 12:00:02-04:00
+188,"Repeal ""A Model World Assembly""",Repeal,165,Mallorea and Riva,Mousebumples,8787,2249,2012-03-20 12:00:01-04:00
+189,"Repeal ""For the Detained and Convicted""",Repeal,62,Mousebumples,,9756,1434,2012-04-05 12:00:02-04:00
+190,Habeas Corpus Act,Civil Rights,Strong,Quelesh,,8166,2714,2012-04-10 12:00:01-04:00
+191,"Repeal ""Animal Cruelty Prevention""",Repeal,145,Sciongrad,Knootoss,5780,5174,2012-04-18 12:00:01-04:00
+192,"Repeal ""Right to Privacy""",Repeal,58,Weed,,6354,4003,2012-04-22 12:00:01-04:00
+193,"Repeal ""Double Jeopardy Prohibition""",Repeal,187,Mousebumples,Mallorea and Riva,9388,1755,2012-04-26 12:00:01-04:00
+194,Treatment of Inmates,Civil Rights,Significant,Moronist Decisions,,8271,3026,2012-04-30 12:00:01-04:00
+195,"Repeal ""Habeas Corpus Act""",Repeal,190,Mousebumples,,8944,1775,2012-05-04 12:00:01-04:00
+196,Freedom of Information Act,Furtherment of Democracy,Significant,Auralia,Quadrimmina,6396,5168,2012-05-08 12:00:01-04:00
+197,Banning Extrajudicial Transfer,Civil Rights,Significant,Quadrimmina,,7810,3278,2012-05-12 12:00:01-04:00
+198,Preventing Multiple Trials,Civil Rights,Significant,Moronist Decisions,Ossitania,7757,3078,2012-05-20 12:00:01-04:00
+199,Sustainable Fishing Act,Environmental,All Businesses - Strong,Cowardly Pacifists,Bears Armed,9088,1697,2012-05-28 12:00:02-04:00
+200,Foreign Marriage Recognition,Civil Rights,Mild,Christian Democrats,,6045,5079,2012-06-05 12:00:01-04:00
+201,Habeas Corpus,Civil Rights,Significant,Sanctaria,,9126,2096,2012-06-09 12:00:02-04:00
+202,Convict Appellate Rights,Civil Rights,Significant,Ossitania,,9075,1902,2012-06-13 12:00:01-04:00
+203,"Repeal ""Nautical Pilotage Act""",Repeal,104,Moronist Decisions,Mousebumples,8927,1898,2012-06-17 12:00:01-04:00
+204,Nuclear Power Safety Act,Environmental,Mining,Silvadus,Lestaria and Neuchies,7976,2884,2012-06-21 12:00:01-04:00
+205,Freedom to Contract,Civil Rights,Strong,Cowardly Pacifists,,8806,1748,2012-06-25 12:00:02-04:00
+206,"Repeal ""Delineation of Borders Act""",Repeal,117,Ossitania,,7975,1125,2012-06-29 12:00:01-04:00
+207,Intangible Cultural Heritage,Education and Creativity,Cultural Heritage,Ile Royale,,7029,3120,2012-07-03 12:00:01-04:00
+208,Resolving WA Trade Disputes,Free Trade,Significant,Auralia,,7321,2054,2012-07-07 12:00:02-04:00
+209,World Assembly Trade Rights,Free Trade,Strong,Auralia,,7066,2420,2012-07-29 00:00:01-04:00
+210,"Repeal ""Numismatics Appreciation Act""",Repeal,56,Sciongrad,,8086,1466,2012-08-06 00:00:01-04:00
+211,"Repeal ""On Expiration Dates""",Repeal,149,Sciongrad,,9036,930,2012-08-18 00:00:02-04:00
+212,"Repeal ""Nuclear Power Safety Act""",Repeal,204,Bergnovinaia,Ossitania,6501,3615,2012-08-22 00:00:02-04:00
+213,Privacy Protection Act,Civil Rights,Significant,Christian Democrats,,7427,3173,2012-08-26 00:00:01-04:00
+214,"Repeal ""Intangible Cultural Heritage""",Repeal,207,Sciongrad,,8694,1121,2012-08-31 12:00:01-04:00
+215,"Repeal ""Organ and Blood Donations Act""",Repeal,175,Mousebumples,,8832,1241,2012-09-04 12:00:01-04:00
+216,"Repeal ""Stem Cells For Greater Health""",Repeal,49,Mousebumples,Oliver the Mediocre,8079,1466,2012-09-08 12:00:01-04:00
+217,Biomedical Donor Rights,Civil Rights,Significant,Mousebumples,,8856,816,2012-09-19 12:00:01-04:00
+218,Biomedical Recipient Rights,Civil Rights,Significant,Mousebumples,,8682,1020,2012-09-23 12:00:01-04:00
+219,Biomedical Innovation Org,Education and Creativity,Educational,Mousebumples,,8850,1130,2012-09-27 12:00:01-04:00
+220,"Repeal ""Child Protection Act""",Repeal,19,Mousebumples,,8434,1425,2012-10-01 12:00:01-04:00
+221,On Multilateral Trade Talks,Free Trade,Mild,Auralia,,5133,4146,2012-10-05 12:00:01-04:00
+222,Prevention of Child Abuse,Civil Rights,Significant,Sanctaria,The Dourian Embassy,9348,1002,2012-10-09 12:00:01-04:00
+223,Transboundary Water Use Act,Environmental,All Businesses - Strong,Anime Daisuki,,8421,1743,2012-10-27 00:00:01-04:00
+224,Promotion of Bee-keeping,Free Trade,Mild,Bears Armed Mission,,8599,2463,2012-11-02 12:00:02-04:00
+225,"Repeal ""Assitance Givers Protection""",Repeal,106,The Dourian Embassy,,9744,1004,2012-11-06 12:00:01-05:00
+226,WA Development Foundation,Free Trade,Mild,Auralia,,7156,4706,2012-11-24 00:00:01-05:00
+227,Rights of the Disabled Act,Civil Rights,Significant,Imperium Londinium,,8899,3686,2012-11-28 00:00:02-05:00
+228,Animal Protection Act ,Moral Decency,Significant,Ilstoria,,6922,6083,2012-12-02 00:00:01-05:00
+229,Access to Courts,Social Justice,Mild,Cowardly Pacifists,,9959,2696,2012-12-06 00:00:02-05:00
+230,The Early Learning Act,Education and Creativity,Educational,Isalenoria,,10824,2758,2012-12-18 00:00:01-05:00
+231,Marital Rape Justice Act,Moral Decency,Mild,Christian Democrats,,9741,2246,2012-12-26 00:00:02-05:00
+232,Foreign Copyright Recognition,Free Trade,Mild,Auralia,,8810,2581,2012-12-30 00:00:02-05:00
+233,Ban Profits on Workers' Deaths,Social Justice,Mild,Sionis Prioratus,Christian Democrats,9205,2260,2013-01-03 12:00:01-05:00
+234,Freedom to Read and Learn,Civil Rights,Significant,Sionis Prioratus,,10554,1830,2013-01-07 12:00:01-05:00
+235,Child Firearm Safety Act,Gun Control,0,Cowardly Pacifists,,8543,3924,2013-01-11 12:00:01-05:00
+236,Renewable Energy Installations,Environmental,All Businesses - Strong,Abacathea,,7948,4890,2013-01-15 12:00:01-05:00
+237,First Responder Protection Act,Civil Rights,Mild,Bushsucks-istan,Oppe Ruiver,8184,4093,2013-01-21 00:00:01-05:00
+238,"Repeal ""Marital Rape Justice Act""",Repeal,231,Ossitania,,9040,3485,2013-02-02 12:00:02-05:00
+239,Vehicle Emissions Convention,Environmental,Automotive,Abacathea,,8453,5055,2013-02-14 17:27:19-05:00
+240,Sexual Autonomy Guarantee,Civil Rights,Significant,Ossitania,,11506,1342,2013-02-19 00:00:01-05:00
+241,"Repeal ""Consumer Product Safety""",Repeal,139,Sciongrad,,8405,4080,2013-02-27 12:00:01-05:00
+242,Biological Warfare Convention,Global Disarmament,Significant,Sciongrad,,8606,4245,2013-03-03 12:00:02-05:00
+243,Language Preservation,Education and Creativity,Cultural Heritage,Ile Royale,,10898,3080,2013-03-12 00:00:01-04:00
+244,Physical Sites Protection Act,Environmental,All Businesses - Strong,Ceni,,7590,5846,2013-03-16 00:00:02-04:00
+245,"Repeal ""First Responder Protection Act""",Repeal,237,Suevo-prussia,,10960,1573,2013-03-24 00:00:01-04:00
+246,"Repeal ""Vehicle Emissions Convention""",Repeal,239,Auralia,,10051,2398,2013-03-28 00:00:01-04:00
+247,Rights of Crime Victims,Civil Rights,Significant,Cowardly Pacifists,,10327,2976,2013-04-08 00:00:02-04:00
+248,Against Corruption,Political Stability,Significant,Topid,,9319,4745,2013-04-18 00:00:02-04:00
+249,Stopping Suicide Seeds,Environmental,All Businesses - Strong,Christian Democrats,,9956,4312,2013-05-17 00:00:01-04:00
+250,"Repeal ""Reduction of Abortion Act""",Repeal,44,Studly Penguins,,9183,3977,2013-05-29 00:00:02-04:00
+251,"Repeal ""Physical Sites Protection Act""",Repeal,244,The Dourian Embassy,Gatchina,9593,3160,2013-06-02 00:00:02-04:00
+252,"Repeal ""International Competition Law""",Repeal,70,The Dourian Embassy,"Glen-Rhodes
+",10951,1634,2013-06-11 12:00:01-04:00
+253,"Repeal ""Freedom in Medical Research""",Repeal,171,Christian Democrats,,8777,2728,2013-06-29 00:00:01-04:00
+254,Invasive Species Response Act,Environmental,All Businesses - Strong,Icamera,Ceni,7321,3817,2013-07-07 12:00:01-04:00
+255,Rights of Neutral States,Global Disarmament,Mild,Sciongrad,,5833,5508,2013-07-16 12:00:02-04:00
+256,Foreign Trademark Recognition,Free Trade,Mild,Auralia,,8347,1774,2013-07-20 12:00:01-04:00
+257,Reducing Automobile Emissions,Environmental,Automotive,Abacathea,,8365,2390,2013-07-29 12:00:02-04:00
+258,"Repeal ""Invasive Species Response Act""",Repeal,254,Bergnovinaia,,8908,1814,2013-08-06 12:00:01-04:00
+259,Stopping Invasive Species,Environmental,All Businesses - Strong,Ceni,Icamera,7615,3517,2013-08-13 00:00:02-04:00
+260,"Repeal ""Access to Science in Schools""",Repeal,48,Auralia,,6046,4816,2013-08-18 00:00:02-04:00
+261,Rainforest Protection Act,Environmental,Logging,The Scientific States,Grobladonia,8966,3001,2013-08-22 00:00:01-04:00
+262,"Repeal ""Rainforest Protection Act""",Repeal,261,Auralia,,6429,5183,2013-09-11 00:00:01-04:00
+263,Uranium Mining Standards Act,Environmental,Mining,Abacathea,,6868,4126,2013-09-15 00:00:01-04:00
+264,"Repeal ""Language Preservation""",Repeal,243,Saveyou Island,The Last Homely House,8154,2756,2013-09-23 00:00:01-04:00
+265,"Repeal ""Animal Protection Act """,Repeal,228,The Dourian Embassy,,9762,2259,2013-10-12 00:00:01-04:00
+266,Chemical Weapons Protocol,International Security,Mild,Chester Pearson,,6857,5431,2013-10-16 00:00:02-04:00
+267,Sensible Limits on Hunting,Moral Decency,Mild,Bears Armed Mission,Hirota,7463,5398,2013-10-31 00:00:01-04:00
+268,"Repeal ""Chemical Weapons Protocol""",Repeal,266,The Dourian Embassy,Chester Pearson,10731,2036,2013-11-04 12:00:01-05:00
+269,"Repeal ""Against Corruption""",Repeal,248,The Dourian Embassy,"Cormac A Stark
+",10679,1850,2013-11-08 12:00:01-05:00
+270,"Repeal ""Rights of the Disabled Act""",Repeal,227,Mosktopia,,10464,1936,2013-11-12 12:00:02-05:00
+271,"Repeal ""Protection of Outer Space Act""",Repeal,63,The Dourian Embassy,,10895,1491,2013-11-22 00:00:02-05:00
+272,Chemical Weapons Accord,International Security,Mild,Chester Pearson,The Dourian Embassy,6689,5712,2013-11-26 00:00:01-05:00
+273,"Repeal ""Internet Net Neutrality Act""",Repeal,89,Auralia,,10019,2395,2013-11-30 00:00:01-05:00
+274,"Repeal ""Renewable Energy Installations""",Repeal,236,Mosktopia,Mousebumples,10385,1944,2013-12-04 00:00:01-05:00
+275,"Repeal ""Cultural Heritage Protection""",Repeal,72,The Dourian Embassy,,8859,3166,2013-12-08 00:00:02-05:00
+276,"Repeal ""The Early Learning Act""",Repeal,230,The Black Hat Guy,The Dourian Embassy,9605,2535,2013-12-20 00:00:01-05:00
+277,"Repeal ""Dignified End of Life Choices""",Repeal,54,The Dourian Embassy,Mousebumples,8972,2383,2013-12-24 00:00:02-05:00
+278,"Repeal ""Anti-Cyberterrorism Act """,Repeal,100,The Dourian Embassy,,8921,2301,2014-01-13 00:00:01-05:00
+279,Right of Emigration,Civil Rights,Significant,Abacathea,,9026,2627,2014-01-17 00:00:01-05:00
+280,"Repeal ""International Radio Act""",Repeal,75,Milograd,The Dourian Embassy,9609,1417,2014-01-21 00:00:01-05:00
+281,Industrial Pollution Control ,Environmental,All Businesses - Strong,Sakash,,7446,4361,2014-01-29 00:00:01-05:00
+282,"Repeal ""Protect War Correspondents""",Repeal,170,The Dourian Embassy,Venico,5928,4926,2014-02-02 00:00:01-05:00
+283,"Repeal ""Industrial Pollution Control """,Repeal,281,Auralia,,8029,3036,2014-02-18 00:00:02-05:00
+284,"Repeal ""Ethics in International Trade""",Repeal,118,Sciongrad,,8576,2364,2014-02-22 00:00:01-05:00
+285,Assisted Suicide Act,Civil Rights,Mild,Christian Democrats,,8052,3385,2014-02-26 00:00:02-05:00
+286,Reproductive Freedoms,Civil Rights,Significant,Eireann Fae,,7786,3649,2014-03-02 00:00:01-05:00
+287,Cultural Site Preservation,Education and Creativity,Cultural Heritage,Temple of the Maat,,7075,4135,2014-03-06 00:00:01-05:00
+288,Right to Adequate Sanitation,Social Justice,Significant,Elke and Elba,Sciongrad,7347,3553,2014-03-14 12:00:01-04:00
+289,Radiological Terrorism,International Security,Mild,Sciongrad,,7570,3489,2014-05-01 00:00:01-04:00
+290,Protecting Migratory Animals,Environmental,All Businesses - Strong,Mosktopia,,6042,4074,2014-05-05 00:00:01-04:00
+291,Sustainable Forest Management,Environmental,Logging,Cardoness,,8132,3525,2014-05-17 00:00:01-04:00
+292,Nuclear Security Convention,International Security,Mild,Chester Pearson,Abacathea,8806,1855,2014-06-14 00:00:02-04:00
+293,"Repeal ""International Criminal Court""",Repeal,102,Mousebumples,Ainocra,6071,4095,2014-06-18 00:00:01-04:00
+294,"Repeal ""Multilateral Prosecution Act""",Repeal,99,Mousebumples,,7746,2325,2014-06-22 00:00:02-04:00
+295,"Repeal ""Oil Tanker Standards Act""",Repeal,98,The Dourian Embassy,Renaissancistic People,7897,1548,2014-06-27 12:00:02-04:00
+296,Prevention of Wildfires,International Security,Mild,Bears Armed Mission,,7929,2032,2014-07-08 00:00:02-04:00
+297,Child Welfare in Adoption,Social Justice,Mild,Sanctaria,,7538,1499,2014-07-12 00:00:01-04:00
+298,Reducing Spills and Leaks,Environmental,All Businesses - Strong,The Dourian Embassy,,7189,2029,2014-07-16 00:00:01-04:00
+299,Legal Competence,Civil Rights,Significant,Bears Armed Mission,,7135,2282,2014-07-20 00:00:01-04:00
+300,Child Pornography Ban,Moral Decency,Significant,Wrapper,,8486,649,2014-07-24 00:00:02-04:00
+301,Ban on Leaded Fuel,Environmental,Automotive,Bears Armed Mission,,6255,2822,2014-08-17 12:00:04-04:00
+302,Individual Working Freedoms,Advancement of Industry,Labor Deregulation,Gruenberger Overseas Affiliate Territory,,6182,3235,2014-09-06 00:00:01-04:00
+303,Debris Prevention,Environmental,Manufacturing,Defwa,,5288,4595,2014-09-19 00:00:01-04:00
+304,"Repeal ""The Landmine Convention""",Repeal,40,The Dark Star Republic,,6869,2613,2014-10-04 12:00:01-04:00
+305,"Repeal ""The General Patent Charter""",Repeal,93,Railana,,6934,2081,2014-10-12 12:00:01-04:00
+306,Rules of Surrender,Civil Rights,Mild,Separatist Peoples,,7757,1416,2014-10-20 00:00:01-04:00
+307,Anti-Counterfeiting Pact,International Security,Mild,Separatist Peoples,,8995,1116,2014-11-24 00:00:01-05:00
+308,Nuclear Arms Protocol,Global Disarmament,Mild,Chester Pearson,,7805,2897,2015-01-03 12:00:02-05:00
+309,Marine Debris Accord,Environmental,All Businesses - Strong,Wilorin,,9657,2152,2015-01-15 00:00:02-05:00
+310,Disabled Voters Act,Furtherment of Democracy,Significant,Christian Democrats,,10278,2391,2015-01-24 00:00:01-05:00
+311,"Repeal ""Marine Debris Accord""",Repeal,309,Mundiferrum,,9574,2447,2015-01-28 00:00:01-05:00
+312,On Universal Jurisdiction,International Security,Significant,Railana,,9393,2376,2015-02-05 00:00:01-05:00
+313,"Repeal ""Freedom of Marriage Act""",Repeal,15,Omigodtheyclonedkenny,,9064,2611,2015-02-09 00:00:01-05:00
+314,"Repeal ""Defense of Self and Others""",Repeal,183,Bananaistan,,9911,2564,2015-02-13 00:00:01-05:00
+315,Nuclear Power Safeguards Act,Environmental,All Businesses - Strong,Pharthan,,6766,5451,2015-02-21 00:00:02-05:00
+316,"Repeal ""On Genetically Modified Foods""",Repeal,158,Schutzenphalia and West Ruhntuhnkuhnland,,10742,1767,2015-02-25 00:00:01-05:00
+317,Wartime Looting and Pillage,Civil Rights,Significant,Separatist Peoples,,10687,3295,2015-03-05 00:00:02-05:00
+318,"Repeal ""Nuclear Testing Safety""",Repeal,119,Jean Pierre Trudeau,,11754,1684,2015-03-09 12:00:02-04:00
+319,"Repeal ""Cooperation in Science Act""",Repeal,92,Ainocra,,11902,1965,2015-03-17 12:00:01-04:00
+320,Infectious Disease Control,Health,Healthcare,Schutzenphalia and West Ruhntuhnkuhnland,,13434,924,2015-03-21 12:00:01-04:00
+321,"Repeal ""International Expositions Act""",Repeal,172,Jean Pierre Trudeau,,12220,1510,2015-03-29 12:00:02-04:00
+322,On Scientific Cooperation,Education and Creativity,Educational,Ainocra,,12737,1517,2015-04-02 12:00:02-04:00
+323,No Penalty Without Law,Civil Rights,Significant,Sciongrad,,7586,6512,2015-04-07 00:00:01-04:00
+324,"Repeal ""Reducing Automobile Emissions""",Repeal,257,The Dark Star Republic,,10623,3829,2015-04-11 00:00:01-04:00
+325,Responsible Arms Trading,Global Disarmament,Mild,Sciongrad,,10205,5177,2015-05-06 15:48:32-04:00
+326,"Repeal ""Responsible Arms Trading""",Repeal,325,Imperium Anglorum,,11921,3885,2015-05-15 00:00:01-04:00
+327,"Repeal ""Sexual Privacy Act""",Repeal,16,The Dark Star Republic,,12262,3397,2015-05-24 12:00:01-04:00
+328,Rights of Indigenous Peoples,Civil Rights,Mild,Vancouvia,,9611,5657,2015-06-01 12:00:01-04:00
+329,"Repeal ""Rights of Indigenous Peoples""",Repeal,328,Imperium Anglorum,,9876,4693,2015-06-08 00:00:01-04:00
+330,Nuclear Testing Protocol,International Security,Mild,Jean Pierre Trudeau,Pharthan,8042,4512,2015-06-16 00:00:02-04:00
+331,"Repeal ""The Gem Trading Accord""",Repeal,113,Losthaven,,10925,1641,2015-06-24 00:00:01-04:00
+332,"Repeal ""Nuclear Power Safeguards Act""",Repeal,315,Jean Pierre Trudeau,,10590,2017,2015-06-28 00:00:01-04:00
+333,Preserving Antimicrobials,Health,Research,Imperium Anglorum,,10424,1865,2015-07-04 00:00:01-04:00
+334,Protected Status in Wartime,Civil Rights,Significant,Separatist Peoples,,10177,2044,2015-07-08 00:00:01-04:00
+335,Prohibiting Animal Abuse,Moral Decency,Significant,Losthaven,,8882,3618,2015-07-15 00:00:01-04:00
+336,World Space Administration,Education and Creativity,Educational,Bitely,,6727,6443,2015-07-19 00:00:02-04:00
+337,"Repeal ""Prohibiting Animal Abuse""",Repeal,335,Imperium Anglorum,,9465,1961,2015-07-23 00:00:01-04:00
+338,Protection of Sapient Rights,Civil Rights,Significant,Excidium Planetis,,8489,2438,2015-07-27 00:00:01-04:00
+339,"Repeal ""World Space Administration""",Repeal,336,Tinfect,,10051,3432,2015-07-31 00:00:01-04:00
+340,Access to Humanitarian Aid,Health,International Aid,Separatist Peoples,,10008,1387,2015-08-10 12:00:02-04:00
+341,"Repeal ""Living Wage Act""",Repeal,21,Celsuis,,9572,2345,2015-08-28 12:00:02-04:00
+342,Civilian Aircraft Accord,International Security,Mild,John Turner,Separatist Peoples,8067,3743,2015-09-08 00:00:02-04:00
+343,"Repeal ""Debris Prevention""",Repeal,303,Vancouvia,,11086,1953,2015-09-14 00:00:02-04:00
+344,Minimum Standard of Living Act,Social Justice,Strong,Railana,,9226,4971,2015-09-18 00:00:01-04:00
+345,Proscription on Living Shields,Civil Rights,Mild,Separatist Peoples,,11048,2679,2015-10-06 12:00:01-04:00
+346,Researching Unique Ecosystems,Education and Creativity,Educational,Caracasus,,11189,2164,2015-10-10 12:00:01-04:00
+347,Foreign Patent Recognition,Free Trade,Mild,Railana,,9881,4513,2015-10-14 12:00:01-04:00
+348,Convention on Ceasefires,Global Disarmament,Mild,Separatist Peoples,,12364,2894,2015-10-29 00:00:02-04:00
+349,To Prevent Dangerous Debris,Environmental,Manufacturing,The Defwaen Confederation,,11807,2352,2015-11-16 12:00:01-05:00
+350,"Repeal ""Nuclear Security Convention""",Repeal,292,Imperium Anglorum,,10269,3764,2015-11-22 00:00:01-05:00
+351,Nuclear Material Safeguards,International Security,Mild,Imperium Anglorum,,7729,7500,2015-12-02 00:00:02-05:00
+352,"Repeal ""Protection of Sapient Rights""",Repeal,338,The Global Republic,Excidium Planetis,13072,1600,2015-12-08 12:00:01-05:00
+353,"Repeal ""Renewable Research Commitment""",Repeal,182,Vancouvia,,10013,3539,2015-12-24 00:00:01-05:00
+354,AI Coexistence Protocol,Civil Rights,Mild,Sierra Lyricalia,,9222,3833,2016-01-01 00:00:01-05:00
+355,Rights of Sapient Species,Civil Rights,Strong,Excidium Planetis,,12483,2795,2016-01-09 12:00:01-05:00
+356,Landmine Safety Protocol,International Security,Mild,Separatist Peoples,,12764,1888,2016-01-25 12:00:02-05:00
+357,Promotion of Clean Energy,Environmental,All Businesses - Strong,Vancouvia,,11743,3897,2016-02-05 00:00:01-05:00
+358,Explosive Remnants of War,Health,International Aid,Separatist Peoples,,11028,3826,2016-02-09 00:00:01-05:00
+359,Sexual Health and Education Act,Education and Creativity,Educational,Zenatias,,13691,5624,2016-03-17 00:00:02-04:00
+360,Cyber Security Convention,International Security,Significant,John Turner,,14100,4749,2016-03-21 00:00:02-04:00
+361,"Repeal ""Nuclear Material Safeguards""",Repeal,351,Wrapper,,15559,2520,2016-03-25 00:00:01-04:00
+362,"Repeal ""Sexual Health and Education Act""",Repeal,359,Vancouvia,,11801,4260,2016-03-29 00:00:01-04:00
+363,Preservation of Artefacts,Education and Creativity,Cultural Heritage,Abacathea,,15585,2523,2016-04-02 00:00:01-04:00
+364,"Repeal ""Cyber Security Convention""",Repeal,360,Tinfect,,17739,2281,2016-04-10 00:00:02-04:00
+365,Law Enforcement Education,International Security,Significant,Happy People Land,,13200,7404,2016-04-14 00:00:02-04:00
+366,"Repeal ""Stopping Suicide Seeds""",Repeal,249,Imperium Anglorum,,16428,3589,2016-04-22 00:00:02-04:00
+367,"Repeal ""Preservation of Artefacts""",Repeal,363,Imperium Anglorum,,13328,6337,2016-04-30 00:00:02-04:00
+368,"Repeal ""Law Enforcement Education""",Repeal,365,Excidium Planetis,,12955,6190,2016-05-04 00:00:01-04:00
+369,Reproductive Education Act,Education and Creativity,Educational,Wallenburg,,14365,4689,2016-05-08 00:00:01-04:00
+370,"Repeal ""Stopping Invasive Species""",Repeal,259,Abacathea,,14844,2954,2016-05-12 00:00:01-04:00
+371,Toxic Heavy Metals Act,Environmental,All Businesses - Strong,Kaboomlandia,Wrapper,13805,4639,2016-05-20 12:00:02-04:00
+372,Preventing Animal Abuse,Moral Decency,Significant,Losthaven,,14994,3777,2016-05-24 12:00:01-04:00
+373,"Repeal ""Convention on Execution""",Repeal,112,Christian Democrats,,9937,8435,2016-05-28 12:00:02-04:00
+374,The Rule of Law,Civil Rights,Strong,Sciongrad,,13347,2557,2016-06-01 12:00:02-04:00
+375,Crime and Punishment,Civil Rights,Significant,"SchutteGod
+",,12853,3932,2016-06-05 12:00:01-04:00
+376,Pesticide Regulations,Environmental,Agriculture,New Dukaine,Araraukar,12239,2169,2016-06-18 00:00:01-04:00
+377,"Repeal ""Preventing Animal Abuse""",Repeal,372,Imperium Anglorum,,11285,2720,2016-06-29 00:00:01-04:00
+378,Digital Network Defense,International Security,Mild,Excidium Planetis,,10125,3165,2016-07-04 12:00:01-04:00
+379,"Repeal ""Nuclear Arms Protocol""",Repeal,308,Plessur,,8605,3977,2016-07-11 00:00:01-04:00
+380,Humanitarian Aid Expansion Act,Health,International Aid,Ichu,,10684,6221,2016-07-20 00:00:01-04:00
+381,"Repeal ""Humanitarian Aid Expansion Act""",Repeal,380,Imperium Anglorum,,10879,3533,2016-07-28 12:00:02-04:00
+382,Environmental Warfare Act,Global Disarmament,Mild,West Angola,,10201,5906,2016-08-10 12:00:02-04:00
+383,Right to Sexual Privacy,Civil Rights,Significant,Bananaistan,,12233,2027,2016-08-20 12:00:02-04:00
+384,"Repeal ""Foreign Patent Recognition""",Repeal,347,Wallenburg,Caracasus,9830,5654,2016-08-24 12:00:01-04:00
+385,Quarantine Regulation,Health,Healthcare,Umeria,,12728,1642,2016-09-03 00:00:01-04:00
+386,Reducing Statelessness,Civil Rights,Mild,Imperium Anglorum,,14100,3517,2016-10-24 12:00:02-04:00
+387,"Repeal ""Quarantine Regulation""",Repeal,385,Umeria,,15674,2653,2016-11-07 12:00:01-05:00
+388,Foreign Patent Act,Free Trade,Mild,Wallenburg,,10008,9026,2016-11-27 12:00:02-05:00
+389,Rights of the Quarantined,Health,Healthcare,Umeria,,14782,4632,2016-12-02 12:00:02-05:00
+390,Compliance Commission,International Security,Mild,Imperium Anglorum,,13286,5812,2016-12-12 00:00:01-05:00
+391,Securing Nuclear Materials from dastardly Menaces,International Security,Mild,Imperium Anglorum,,10874,8848,2016-12-16 00:00:02-05:00
+392,"Repeal ""Securing Nuclear Materials from dastardly Menaces""",Repeal,391,Wallenburg,,13394,4244,2016-12-24 00:00:01-05:00
+393,"Repeal ""Foreign Patent Act""",Repeal,388,Auralia,,15011,2798,2017-02-27 12:00:01-05:00
+394,International Patent Agreement,Free Trade,Mild,Auralia,,13985,4134,2017-03-11 12:00:01-05:00
+395,Open Internet Order,Social Justice,Mild,The Free and Sovereign State of Thailand,,14893,3487,2017-03-16 00:00:01-04:00
+396,"Repeal ""Open Internet Order""",Repeal,395,Imperium Anglorum,,14459,3232,2017-03-22 00:00:02-04:00
+397,World Assembly Central Library Compact,Education and Creativity,Cultural Heritage,The United Royal Islands of Euramathania,,16203,1754,2017-03-26 12:00:01-04:00
+398,Internet Neutrality Act,Social Justice,Mild,Draconae,,13631,5017,2017-04-07 00:00:01-04:00
+399,Responsibility in Transferring Arms,Global Disarmament,Mild,Sciongrad,,12006,5040,2017-04-16 00:00:01-04:00
+400,World Assembly Central Medicinal Database Compact,Health,Research,Xerox Prime,,14370,3837,2017-05-09 12:00:01-04:00
+401,Stock Exchanges and Foreign investment,Free Trade,Mild,United Federated States of Omega,,11041,7627,2017-05-13 12:00:02-04:00
+402,"Repeal ""World Assembly Central Medicinal Database Compact""",Repeal,400,Helaw,,10788,7169,2017-05-17 12:00:02-04:00
+403,Trade of Endangered Organisms ,Environmental,All Businesses - Strong,Ransium,Bears Armed,11311,3130,2017-06-28 12:00:02-04:00
+404,Enabling The Disabled In Academia,Education and Creativity,Educational,The United Federation of Algorenia,,9219,5744,2017-07-25 03:01:18-04:00
+405,"Repeal ""Enabling The Disabled In Academia""",Repeal,404,Imperium Anglorum,,10400,3714,2017-08-06 12:00:02-04:00
+406,"Repeal ""Internet Neutrality Act""",Repeal,398,Auralia,,9305,5290,2017-08-21 12:00:02-04:00
+407,Convention on Internet Neutrality,Free Trade,Mild,Auralia,,13899,1331,2017-09-16 00:00:01-04:00
+408,Ban on Secret Treaties,Furtherment of Democracy,Mild,Imperium Anglorum,,9189,5768,2017-10-02 12:00:01-04:00
+409,Ocean Noise Reduction,Environmental,All Businesses - Strong,Imperium Anglorum,,11514,3587,2017-10-09 00:00:01-04:00
+410,Marriage Equality,Civil Rights,Significant,The Provisional State of Nevada,New Gren Artle,10476,6179,2017-10-13 00:00:01-04:00
+411,"Repeal ""Marriage Equality""",Repeal,410,Imperium Anglorum,,12704,3219,2017-10-21 00:00:02-04:00
+412,Public Health and Vaccinations Act,Health,Healthcare,Imperium Anglorum,,15388,1738,2017-10-30 12:00:01-04:00
+413,Wetland Protection Protocol,Environmental,All Businesses - Strong,Separatist Peoples,,14511,2751,2017-11-09 00:00:02-05:00
+414,Freedom to Seek Medical Care,Civil Rights,Mild,New Waldensia,,9643,7425,2017-11-14 00:00:02-05:00
+415,"Repeal ""Freedom to Seek Medical Care""",Repeal,414,Separatist Peoples,,14161,3093,2017-11-19 00:00:01-05:00
+416,Ban on Ritual Sacrifice,Civil Rights,Mild,Imperial Polk County,,11976,5035,2017-11-25 12:00:02-05:00
+417,Restrictions on Hydraulic Fracturing,Environmental,All Businesses - Strong,United Massachusetts,,12080,5327,2017-11-29 12:00:01-05:00
+418,Safeguarding Nuclear Materials,International Security,Mild,Imperium Anglorum,,14404,3501,2017-12-13 00:00:02-05:00
+419,Voting Equality for Freed Inmates,Furtherment of Democracy,Mild,United Massachusetts,,14315,3117,2018-01-05 00:00:02-05:00
+420,Protection of Biomedical Research,Health,Research,Tinfect Diplomatic Enclave,,13766,3856,2018-01-11 12:00:01-05:00
+421,Ozone Layer Protection,Environmental,Manufacturing,Bears Armed Mission,,15214,2998,2018-01-15 12:00:02-05:00
+422,Promoting Sustainable Timber,Advancement of Industry,Protective Tariffs,Uan aa Boa,,11707,6787,2018-02-07 12:00:02-05:00
+423,"Repeal ""Promoting Sustainable Timber""",Repeal,422,Kranostav,,12645,6418,2018-02-16 00:00:01-05:00
+424,"Repeal ""Protection of Biomedical Research""",Repeal,420,Auralia,,10293,9288,2018-02-27 00:00:02-05:00
+425,Protection of Biomedical Research,Health,Research,Tinfect Diplomatic Enclave,,15041,4595,2018-03-04 00:00:02-05:00
+426,Protecting Minority Languages,Education and Creativity,Cultural Heritage,Stoskavanya,,16681,3620,2018-03-16 12:00:01-04:00
+427,Convention on Foreign Political Corruption,Furtherment of Democracy,Significant,Auralia,,15322,4545,2018-04-08 12:00:03-04:00
+428,Ban on Statutory Limitations for Heinous Crimes,Civil Rights,Mild,Auralia,,16701,3659,2018-04-14 12:00:01-04:00
+429,Traditional Medicine,Health,Research,Bears Armed Mission,,15760,3933,2018-05-10 00:00:02-04:00
+430,Freedom of Religion,Civil Rights,Significant,United Massachusetts,,14304,4471,2018-05-31 00:00:03-04:00
+431,Agricultural Invasive Species Act,Advancement of Industry,Protective Tariffs,The Wallenburgian World Assembly Offices,,11131,6364,2018-06-04 00:00:01-04:00
+432,Preventing Desertification,Environmental,Agriculture,Erithaca,,11231,6925,2018-06-08 00:00:01-04:00
+433,"Repeal ""Freedom of Expression""",Repeal,30,Imperium Anglorum,,13250,3681,2018-06-22 00:00:02-04:00
+434,Preventing the Illicit Trade of Cultural Artefacts,Education and Creativity,Cultural Heritage,Stoskavanya,,13524,1968,2018-06-27 00:00:01-04:00
+435,"Asbestos Consumption, Disposal and Worker Protection",Environmental,All Businesses - Mild,Erithaca,,8721,5516,2018-07-01 00:00:02-04:00
+436,Protecting Free Expression,Civil Rights,Significant,United Massachusetts,,12495,3443,2018-08-02 12:00:02-04:00
+437,Ban on Conversion Therapy,Civil Rights,Mild,United Massachusetts,,14123,2300,2018-08-06 12:00:02-04:00
+438,"Repeal ""Crime and Punishment""",Repeal,375,United Massachusetts,,11284,3827,2018-08-16 12:00:02-04:00
+439,Uniform Labeling of Hazardous Goods,Free Trade,Mild,Ransium,,14184,1108,2018-08-20 12:00:02-04:00
+440,Administrative Compliance Act,Furtherment of Democracy,Significant,Separatist Peoples,Imperium Anglorum,11084,4011,2018-08-28 12:00:02-04:00
+441,Convention on Freshwater Shortages,Environmental,All Businesses - Mild,Rovikstead,"Araraukar, Kenmoria",12864,2161,2018-09-01 12:00:02-04:00
+442,Circulation of World Assembly Law,Education and Creativity,Educational,The Wallenburgian World Assembly Offices,,12053,2588,2018-09-09 12:00:02-04:00
+443,Preventing the Execution of Innocents,Civil Rights,Mild,Imperium Anglorum,,9244,8475,2018-09-18 00:00:01-04:00
+444,Convention on International Oil Spills,Environmental,Mining,Rovikstead,,12810,4372,2018-09-26 00:00:01-04:00
+445,Greenhouse Gas Cap and Trade Program ,Environmental,All Businesses - Strong,Ransium,Imperium Anglorum,13741,2606,2018-10-10 00:00:02-04:00
+446,"Repeal ""Convention on International Oil Spills""",Repeal,444,Lord Dominator,,13189,3151,2018-10-14 00:00:01-04:00
+447,Respondeat Superior,Regulation,Legal Reform,Separatist Peoples,,8727,7070,2018-10-25 00:00:01-04:00
+448,Right to Self-defense,Civil Rights,Mild,Nueva Rico,Dirito-opolis,9737,7685,2018-11-02 00:00:01-04:00
+449,"Repeal ""Right to Self-defense""",Repeal,448,Imperium Anglorum,,13666,3895,2018-11-07 00:00:01-05:00
+450,Don't Kill the Poor Act,Civil Rights,Significant,The Wallenburgian World Assembly Offices,,14051,3344,2018-11-15 00:00:02-05:00
+451,International Aero-Space Administration,Education and Creativity,Educational,Separatist Peoples,,13992,1357,2018-11-27 00:00:01-05:00
+452,"Repeal ""On Universal Jurisdiction""",Repeal,312,Imperium Anglorum,,14849,2065,2018-12-01 00:00:02-05:00
+453,Preventing Groundwater Contamination,Environmental,All Businesses - Mild,Wallenburg,,13538,2183,2019-01-09 12:00:02-05:00
+454,Debtor Voting Rights,Furtherment of Democracy,Mild,Imperium Anglorum,,9614,6991,2019-01-18 00:00:02-05:00
+455,"Repeal ""Debtor Voting Rights""",Repeal,454,Nagatar Karumuttu Chettiar,,10936,5079,2019-01-23 00:00:02-05:00
+456,Freedom to Seek Medical Care II,Civil Rights,Mild,New Waldensia,,8071,7772,2019-01-27 00:00:01-05:00
+457,defending the rights of sexual and gender minorities,Civil Rights,Significant,Maowi,,8777,7400,2019-02-12 00:00:02-05:00
+458,Command Responsibility,International Security,Mild,Separatist Peoples,,13019,3121,2019-02-19 00:00:02-05:00
+459,On Tobacco and Electronic Cigarettes,Regulation,Consumer Protection,Cosmosplosion,"Akohos, Courelli",14396,2960,2019-02-23 00:00:01-05:00
+460,Astronomical Data Repository,Education and Creativity,Educational,Kranostav,,16667,988,2019-04-06 00:00:02-04:00
+461,Protecting Personal Data,Regulation,Consumer Protection,Marxist Germany,,9867,6438,2019-04-15 00:00:02-04:00
+462,"Repeal ""Protecting Personal Data""",Repeal,461,Imperium Anglorum,,11917,4013,2019-04-24 00:00:01-04:00
+463,"Repeal ""Endangered Species Protection""",Repeal,66,Ransium,,13539,2859,2019-04-30 12:00:02-04:00
+464,Protection of Airspace,Regulation,Transportation,East Meranopirus,,9737,6749,2019-05-05 00:00:02-04:00
+465,Preventing Species Extinction,Environmental,All Businesses - Strong,Ransium,,13529,1521,2019-05-09 00:00:02-04:00
+466,World Assembly Justice Accord,Civil Rights,Strong,Wallenburg,,11753,3001,2019-06-11 12:00:02-04:00
+467,Affordable Transgender Hormone Therapy,Civil Rights,Mild,Morover,United Massachusetts,10855,3309,2019-07-16 12:00:01-04:00
+468,Prohibit Private Prisons,Social Justice,Mild,Christian Democrats,,8576,6401,2019-07-22 00:00:02-04:00
+469,Reducing Food Waste,Social Justice,Mild,Kenmoria,"Australian Republic, Dmitry II",11161,1902,2019-08-22 00:00:02-04:00
+470,"Repeal ""Prohibit Private Prisons""",Repeal,468,Marxist Germany,,10599,3354,2019-09-28 00:00:01-04:00
+471,"Repeal ""Preventing Desertification""",Repeal,432,Concrete Slab,,11639,1797,2019-10-04 12:00:02-04:00
+472,Ban on Sterilisation of Minors etc,Civil Rights,Mild,Imperium Anglorum,,10312,3139,2019-10-22 00:00:02-04:00
+473,Responsible Land Management,Environmental,Agriculture,Refuge Isle,,11351,3409,2019-10-26 00:00:02-04:00
+474,Financial and Economic Education,Education and Creativity,Educational,Imperium Anglorum,,11435,2185,2019-10-30 00:00:02-04:00
+475,Promoting Natural Sciences in Schools,Education and Creativity,Educational,Kenmoria,,13316,1246,2019-11-03 12:00:02-05:00
+476,Protecting Borrower Rights,Civil Rights,Significant,Imperium Anglorum,,11637,3020,2019-11-07 12:00:02-05:00
+477,Convention on Animal Testing,Health,Bioethics,Marxist Germany,United States of Americanas,7621,7310,2019-11-19 12:00:02-05:00
+478,Ensuring Commercial Vessel Navigation,Regulation,Transportation,Terttia,Araraukar,11876,2056,2019-12-24 12:00:02-05:00
+479,"Repeal ""Convention on Animal Testing""",Repeal,477,Concrete Slab,Maowi,11532,1193,2020-01-01 12:00:02-05:00
+480,Wartime Healthcare Protections,Global Disarmament,Mild,Maowi,Araraukar,9966,3340,2020-01-05 12:00:02-05:00
+481,Data Protection Accord,Regulation,Consumer Protection,Marxist Germany,Kenmoria,11297,2875,2020-01-14 12:00:02-05:00
+482,Ensuring Safe Syringe Use,Health,Healthcare,Sylvai,,13592,2041,2020-01-25 00:00:04-05:00
+483,Promotion of Recycling,Environmental,All Businesses - Mild,Greifenburg,,12338,3334,2020-02-28 12:00:02-05:00
+484,Disease Naming Compact,Health,Bioethics,Tinhampton,,8493,7204,2020-03-17 00:00:02-04:00
+485,"Repeal ""Disease Naming Compact""",Repeal,484,Gorundu,Kelssek,12939,2006,2020-03-29 12:00:02-04:00
+486,Prevention Of Forced Sterilisation,Civil Rights,Mild,Maowi,"Marxist Germany, Imperium Anglorum",20764,2989,2020-04-24 12:00:02-04:00
+487,Ban on the Administration of Unwanted Substances,Regulation,Safety,Morover,,14543,9120,2020-05-06 12:00:02-04:00
+488,"Repeal ""Ensuring Safe Syringe Use""",Repeal,482,Morover,,19244,3770,2020-05-22 12:00:03-04:00
+489,Ethical Treatment of Animals in Research,Health,Bioethics,Maowi,,18363,3675,2020-05-26 12:00:03-04:00
+490,Military Identification Tag Act,International Security,Mild,Alba and Cymru,,18296,3235,2020-05-30 12:00:03-04:00
+491,Rights of the employed,Civil Rights,Strong,The Greater Soviet North America,Tinhampton,11828,10133,2020-06-07 12:00:02-04:00
+492,Proper Hygiene For Medical Instruments,Health,Healthcare,Morover,Imperium Anglorum,18256,1803,2020-06-11 12:00:02-04:00
+493,Language and Education Rights for Deaf Individuals,Education and Creativity,Cultural Heritage,Morover,,17814,1221,2020-06-15 12:00:03-04:00
+494,Regulating Desalination,Environmental,All Businesses - Mild,Honeydewistania,Kenmoria,11930,6378,2020-06-19 12:00:03-04:00
+495,Supporting and Valuing the Humanities,Education and Creativity,Educational,Castle Federation,,15221,3197,2020-06-23 12:00:02-04:00
+496,Fair Arbitration Act,Regulation,Legal Reform,Cretox State,,13157,2532,2020-07-01 12:00:02-04:00
+497,"Repeal ""Military Identification Tag Act""",Repeal,490,Morover,,13289,3283,2020-07-05 12:00:02-04:00
+498,Ban on Forced Blood Sports,Moral Decency,Mild,Honeydewistania,,9460,8062,2020-07-09 12:00:02-04:00
+499,Access to Abortion,Health,Healthcare,Imperium Anglorum,,12266,4936,2020-07-14 00:00:03-04:00
+500,International Criminal Protocol,Civil Rights,Strong,Tinfect,,10490,6680,2020-07-22 00:00:02-04:00
+501,Wartime Journalism Protection Act,Education and Creativity,Free Press,Foril,,10942,5955,2020-07-26 00:00:02-04:00
+502,"Repeal ""Freedom to Seek Medical Care II""",Repeal,456,Honeydewistania,,14055,2353,2020-08-03 00:00:05-04:00
+503,Protecting Legal Rights of Workers,Regulation,Labour Rights,Cretox State,,12221,3567,2020-08-07 00:00:03-04:00
+504,Integrity in Law Enforcement,International Security,Mild,Cretox State,,11267,4259,2020-08-11 00:00:02-04:00
+505,"Repeal ""Wartime Journalism Protection Act""",Repeal,501,Refuge Isle,,10740,4272,2020-08-15 00:00:03-04:00
+506,Public Access to Court Records,Regulation,Legal Reform,Imperium Anglorum,,13277,2105,2020-08-19 00:00:03-04:00
+507,"Repeal ""Promotion of Recycling""",Repeal,483,Honeydewistania,Sierra Lyricalia,12971,2495,2020-08-23 00:00:02-04:00
+508,Restrictions on Forced Eugenics,Civil Rights,Significant,Maowi,,12006,2939,2020-08-27 00:00:02-04:00
+509,GMO International Trade Accord,Regulation,Consumer Protection,Cretox State,,10610,4187,2020-08-31 00:00:03-04:00
+510,Marine Protection Act,Environmental,All Businesses - Strong,Cretox State,,11880,3672,2020-09-08 00:00:02-04:00
+511,Ensuring Effectual Recycling,Environmental,All Businesses - Strong,Honeydewistania,Kenmoria,13205,2300,2020-09-12 00:00:02-04:00
+512,Commercial Arbitration Recognition,Free Trade,Significant,Cretox State,,10131,4015,2020-09-20 00:00:02-04:00
+513,Sovereign Justice Accord,Regulation,Legal Reform,Pope Saint Peter the Apostle,Imperium Anglorum,10994,2799,2020-09-28 12:00:02-04:00
+514,Ending School Segregation,Education and Creativity,Educational,Imperium Anglorum,,12837,1915,2020-10-02 12:00:02-04:00
+515,International Bankruptcy Protocol,Regulation,Legal Reform,Separatist Peoples,,12326,2263,2020-10-06 12:00:02-04:00
+516,"Repeal ""Ban on Sterilisation of Minors etc""",Repeal,472,Gorundu,,11044,3487,2020-10-16 00:00:03-04:00
+517,"Repeal ""World Assembly Trade Rights""",Repeal,209,Imperium Anglorum,,12627,1081,2020-10-20 00:00:02-04:00
+518,Reducing Disease Vectors,Health,Research,Honeydewistania,,11850,2992,2020-10-24 00:00:02-04:00
+519,Provisional Rule in Wartime,International Security,Significant,Separatist Peoples,,10596,3915,2020-10-28 00:00:02-04:00
+520,Landfill Regulation Act,Environmental,All Businesses - Mild,Cretox State,,11790,3123,2020-11-06 00:00:02-05:00
+521,"Repeal ""GMO International Trade Accord""",Repeal,509,Regnum Italiae,Honeydewistania,11317,2913,2020-11-10 00:00:02-05:00
+522,Protecting Sites of Religious Significance,Civil Rights,Mild,Boston Castle,,9548,5263,2020-11-14 00:00:03-05:00
+523,Patient Travel Freedoms,Health,Healthcare,Cretox State,,12426,2892,2020-11-18 00:00:02-05:00
+524,"Repeal ""Supporting and Valuing the Humanities""",Repeal,495,Imperium Anglorum,,12646,2253,2020-11-22 00:00:02-05:00
+525,"Repeal ""Landfill Regulation Act""",Repeal,520,Honeydewistania,,9244,5630,2020-11-26 00:00:01-05:00
+526,Land Reclamation Regulation,Environmental,All Businesses - Mild,Orca and Narwhal,Honeydewistania,10940,3324,2020-11-30 00:00:02-05:00
+527,Protected Working Leave,Regulation,Labour Rights,Cretox State,,12324,2954,2020-12-04 00:00:02-05:00
+528,"Repeal ""Protecting Sites of Religious Significance""",Repeal,522,Honeydewistania,Verdant Haven,10299,4715,2020-12-08 00:00:02-05:00
+529,"Repeal ""Rights of the employed""",Repeal,491,Cretox State,,11901,2963,2020-12-13 00:00:02-05:00
+530,Fairness in Collective Bargaining,Regulation,Labour Rights,Cretox State,,8677,4627,2020-12-25 12:00:02-05:00
+531,Tariffs and Trade Convention,Free Trade,Strong,Imperium Anglorum,,8420,5183,2020-12-29 12:00:02-05:00
+532,International Radio Standards Act,Regulation,Safety,Merni,,9761,3137,2021-01-02 12:00:02-05:00
+533,"Repeal ""International Criminal Protocol""",Repeal,500,Greater Cesnica,"Pope Saint Peter the Apostle, Tinhampton",9879,3112,2021-01-19 12:00:02-05:00
+534,Fair Treatment of Prisoners,Civil Rights,Strong,Greater Cesnica,Barfleur,13026,2479,2021-01-24 12:00:03-05:00
+535,Death Penalty Ban,Civil Rights,Significant,Imperium Anglorum,Cretox State,10416,5052,2021-01-28 12:00:02-05:00
+536,"Repeal ""Freedom of Assembly""",Repeal,27,Wymondham,Maowi,8808,6373,2021-02-05 12:00:02-05:00
+537,Right to Assemble,Furtherment of Democracy,Strong,Maowi,Wymondham,12301,3191,2021-02-13 12:00:02-05:00
+538,Right To Secure Digital Communication,Civil Rights,Significant,Greater Cesnica,,12533,2282,2021-02-17 12:00:03-05:00
+539,Whistleblower Protection Act,Civil Rights,Significant,Boston Castle,,11900,3390,2021-02-21 12:00:02-05:00
+540,Supporting People with Disabilities,Civil Rights,Significant,Free Las Pinas,Tinhampton,13400,2781,2021-02-25 12:00:03-05:00
+541,"Repeal ""Fairness in Collective Bargaining""",Repeal,530,Sylh Alanor,Junitaki-cho,13274,1879,2021-03-01 12:00:02-05:00
+542,Gay Panic defense Ban,Civil Rights,Mild,Crowheim,Imperium Anglorum,13832,2155,2021-03-05 12:00:03-05:00
+543,Protecting the Rights of Labour Unions,Regulation,Labour Rights,Junitaki-cho,Sylh Alanor,11396,3913,2021-03-09 12:00:02-05:00
+544,Prohibition Of Honor-Based Violence,Civil Rights,Mild,Greater Cesnica,,13108,2721,2021-03-13 12:00:02-05:00

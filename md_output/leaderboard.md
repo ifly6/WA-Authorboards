@@ -1,6 +1,6 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         35 |             5 |        17 |       19 |      40 |
+| Imperium Anglorum                        |         36 |             6 |        17 |       21 |      42 |
 | **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
 | **[PLAYER]** Auralia                     |         23 |             0 |         9 |       11 |      23 |
@@ -8,11 +8,11 @@
 | Auralia                                  |         19 |             0 |         8 |       10 |      19 |
 | Separatist Peoples                       |         17 |             1 |         1 |       17 |      18 |
 | Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
+| **[PLAYER]** Cretox State                |         12 |             1 |         1 |        8 |      13 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
+| Cretox State                             |         11 |             1 |         1 |        8 |      12 |
 | **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
-| **[PLAYER]** Cretox State                |         12 |             0 |         1 |        8 |      12 |
 | **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
-| Cretox State                             |         11 |             0 |         1 |        8 |      11 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
 | **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
@@ -26,11 +26,11 @@
 | **[PLAYER]** Wallenburg                  |          9 |             0 |         2 |        6 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
 | Glen-Rhodes                              |          7 |             1 |         1 |        3 |       8 |
+| Maowi                                    |          6 |             2 |         0 |        6 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
 | United Massachusetts                     |          6 |             1 |         1 |        6 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
 | Kenmoria                                 |          2 |             4 |         0 |        6 |       6 |
-| Maowi                                    |          5 |             1 |         0 |        5 |       6 |
 | Morover                                  |          6 |             0 |         2 |        4 |       6 |
 | Quelesh                                  |          5 |             1 |         1 |        1 |       6 |
 | Sanctaria                                |          6 |             0 |         1 |        5 |       6 |
@@ -44,14 +44,16 @@
 | Ransium                                  |          5 |             0 |         1 |        4 |       5 |
 | Vancouvia                                |          5 |             0 |         3 |        1 |       5 |
 | **[PLAYER]** Omigodtheykilledkenny       |          5 |             0 |         1 |        2 |       5 |
-| **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        2 |       5 |
+| **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        1 |       5 |
 | **[PLAYER]** Topid                       |          5 |             0 |         1 |        2 |       5 |
 | Araraukar                                |          0 |             4 |         0 |        4 |       4 |
 | Embolalia                                |          4 |             0 |         1 |        3 |       4 |
+| Greater Cesnica                          |          4 |             0 |         1 |        3 |       4 |
 | Jean Pierre Trudeau                      |          4 |             0 |         3 |        1 |       4 |
 | Mahaj WA Seat                            |          4 |             0 |         0 |        0 |       4 |
 | Railana                                  |          4 |             0 |         1 |        1 |       4 |
 | Studly Penguins                          |          4 |             0 |         1 |        0 |       4 |
+| Tinhampton                               |          1 |             3 |         0 |        1 |       4 |
 | Topid                                    |          4 |             0 |         0 |        2 |       4 |
 | **[PLAYER]** Ainocra                     |          3 |             1 |         1 |        2 |       4 |
 | **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        3 |       4 |
@@ -71,7 +73,7 @@
 | Serrland                                 |          3 |             0 |         0 |        2 |       3 |
 | The Dark Star Republic                   |          3 |             0 |         3 |        0 |       3 |
 | The Wallenburgian World Assembly Offices |          3 |             0 |         0 |        3 |       3 |
-| Tinfect                                  |          3 |             0 |         2 |        1 |       3 |
+| Tinfect                                  |          3 |             0 |         2 |        0 |       3 |
 | Umeria                                   |          3 |             0 |         1 |        1 |       3 |
 | Wrapper                                  |          2 |             1 |         1 |        2 |       3 |
 | **[PLAYER]** Goddess Relief Office       |          3 |             0 |         1 |        2 |       3 |
@@ -82,6 +84,7 @@
 | American Capitalist                      |          2 |             0 |         0 |        1 |       2 |
 | Bananaistan                              |          2 |             0 |         1 |        1 |       2 |
 | Bears Armed                              |          0 |             2 |         0 |        2 |       2 |
+| Boston Castle                            |          2 |             0 |         0 |        1 |       2 |
 | Caracasus                                |          1 |             1 |         0 |        1 |       2 |
 | Cardoness                                |          1 |             1 |         0 |        1 |       2 |
 | Concrete Slab                            |          2 |             0 |         2 |        0 |       2 |
@@ -96,6 +99,7 @@
 | Icamera                                  |          1 |             1 |         0 |        0 |       2 |
 | Ile Royale                               |          2 |             0 |         0 |        0 |       2 |
 | John Turner                              |          2 |             0 |         0 |        1 |       2 |
+| Junitaki-cho                             |          1 |             1 |         0 |        1 |       2 |
 | Kranostav                                |          2 |             0 |         1 |        1 |       2 |
 | Krioval                                  |          2 |             0 |         1 |        1 |       2 |
 | Mendosia                                 |          2 |             0 |         0 |        0 |       2 |
@@ -103,16 +107,18 @@
 | New Leicestershire                       |          2 |             0 |         0 |        1 |       2 |
 | New Waldensia                            |          2 |             0 |         0 |        0 |       2 |
 | Pharthan                                 |          1 |             1 |         0 |        1 |       2 |
+| Pope Saint Peter the Apostle             |          1 |             1 |         0 |        1 |       2 |
 | Refuge Isle                              |          2 |             0 |         1 |        1 |       2 |
 | Rovikstead                               |          2 |             0 |         0 |        1 |       2 |
 | Schutzenphalia and West Ruhntuhnkuhnland |          2 |             0 |         1 |        1 |       2 |
 | Sierra Lyricalia                         |          1 |             1 |         0 |        1 |       2 |
 | Stoskavanya                              |          2 |             0 |         0 |        2 |       2 |
+| Sylh Alanor                              |          1 |             1 |         1 |        1 |       2 |
 | Tinfect Diplomatic Enclave               |          2 |             0 |         0 |        1 |       2 |
-| Tinhampton                               |          1 |             1 |         0 |        0 |       2 |
 | Unibot                                   |          0 |             2 |         0 |        1 |       2 |
 | Urgench                                  |          2 |             0 |         0 |        1 |       2 |
 | Wachichi                                 |          1 |             1 |         1 |        1 |       2 |
+| Wymondham                                |          1 |             1 |         1 |        1 |       2 |
 | **[PLAYER]** Defwa                       |          2 |             0 |         0 |        1 |       2 |
 | Akohos                                   |          0 |             1 |         0 |        1 |       1 |
 | Alba and Cymru                           |          1 |             0 |         0 |        0 |       1 |
@@ -122,9 +128,9 @@
 | Astro-Malsitari WA Seat                  |          1 |             0 |         0 |        0 |       1 |
 | Atrigea                                  |          1 |             0 |         0 |        0 |       1 |
 | Australian Republic                      |          0 |             1 |         0 |        1 |       1 |
+| Barfleur                                 |          0 |             1 |         0 |        1 |       1 |
 | Belarum                                  |          1 |             0 |         0 |        1 |       1 |
 | Bitely                                   |          1 |             0 |         0 |        0 |       1 |
-| Boston Castle                            |          1 |             0 |         0 |        0 |       1 |
 | Broughdom                                |          1 |             0 |         0 |        1 |       1 |
 | Buffett and Colbert                      |          1 |             0 |         0 |        0 |       1 |
 | Burninati0n                              |          1 |             0 |         0 |        0 |       1 |
@@ -133,10 +139,11 @@
 | Celsuis                                  |          1 |             0 |         1 |        0 |       1 |
 | Charlottle Ryberg                        |          0 |             1 |         0 |        0 |       1 |
 | Cievan                                   |          0 |             1 |         0 |        1 |       1 |
-| Cookesland                               |          1 |             0 |         0 |        1 |       1 |
+| Cookesland                               |          1 |             0 |         0 |        0 |       1 |
 | Cormac A Stark                           |          0 |             1 |         0 |        0 |       1 |
 | Cosmosplosion                            |          1 |             0 |         0 |        1 |       1 |
 | Courelli                                 |          0 |             1 |         0 |        1 |       1 |
+| Crowheim                                 |          1 |             0 |         0 |        1 |       1 |
 | Damanucus                                |          1 |             0 |         0 |        1 |       1 |
 | Darenjon WA Embassy                      |          1 |             0 |         1 |        0 |       1 |
 | Defwa                                    |          1 |             0 |         0 |        0 |       1 |
@@ -152,6 +159,7 @@
 | Erythrina                                |          1 |             0 |         0 |        1 |       1 |
 | Forensatha                               |          1 |             0 |         0 |        1 |       1 |
 | Foril                                    |          1 |             0 |         0 |        0 |       1 |
+| Free Las Pinas                           |          1 |             0 |         0 |        1 |       1 |
 | Freewilltoall                            |          1 |             0 |         1 |        0 |       1 |
 | Frisbeeteria                             |          1 |             0 |         0 |        1 |       1 |
 | Gatchina                                 |          0 |             1 |         0 |        0 |       1 |
@@ -204,7 +212,6 @@
 | Parilisa                                 |          1 |             0 |         0 |        0 |       1 |
 | Philimbesi                               |          1 |             0 |         0 |        0 |       1 |
 | Plessur                                  |          1 |             0 |         1 |        0 |       1 |
-| Pope Saint Peter the Apostle             |          1 |             0 |         0 |        1 |       1 |
 | R539                                     |          1 |             0 |         0 |        0 |       1 |
 | Regnum Italiae                           |          1 |             0 |         1 |        0 |       1 |
 | Rehochipe                                |          0 |             1 |         0 |        1 |       1 |
