@@ -39,5 +39,5 @@ ax.annotate(
 plt.axvline(x=year_mean, color='k', linestyle='--')
 
 f.tight_layout()
-f.savefig('year_counts.jpg')
+f.savefig('../../output/year_counts.jpg')
 print('wrote chart')
