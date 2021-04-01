@@ -231,8 +231,8 @@ class WaPassedResolution:
             repeals=int(xml.xpath('/WA/RESOLUTION/REPEALS_COUNCILID')[0].text) if resolution_is_a_repeal else None,
 
             # text and author
-            text=resolution_text,
-            author=author,
+            text=resolution_text.strip(),
+            author=author.strip(),
 
             # vote data
             votes_for=int(xml.xpath('/WA/RESOLUTION/TOTAL_VOTES_FOR')[0].text),

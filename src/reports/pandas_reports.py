@@ -73,7 +73,7 @@ def create_leaderboards(db: Database, how='markdown', keep_puppets=True):
     df.sort_values(by=['Total', 'Name'], ascending=[False, True], inplace=True)
     df.reset_index(drop=True, inplace=True)
 
-    # create ranks, but only if enumerating players
+    # create ranking, but only if enumerating players
     if keep_puppets is False:
         df.insert(0, 'Rank', '')
         for i, row in df.iterrows():
