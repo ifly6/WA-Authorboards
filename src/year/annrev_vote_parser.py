@@ -1,5 +1,8 @@
+import glob
+import os
 import re
 import time
+from functools import lru_cache
 from typing import List
 
 import pandas as pd
@@ -29,6 +32,17 @@ assert duplicates(['...', '...']) is False
 assert duplicates([1, 1, 2]) is True
 
 
+@lru_cache(maxsize=None)  # cached to minimise IO time
+def get_full_author_list():
+    df = pd.read_csv(max(glob.glob('../../db/resolutions*.csv'), key=os.path.getctime))
+    df['Co-authors'] = df['Co-authors'].fillna('')
+    joined = df[['Author', 'Co-authors']] \
+        .apply(lambda r: [ref(s) for s in set(','.join(r.values).split(','))], axis=1) \
+        .explode()
+    joined = joined[joined != '']
+    return set(joined.values)
+
+
 class AnnRevEntry:
     def __init__(self, voter, post_num, ranking, max_entries=10):
         rank_list = [i for i, _ in ranking]  # list of numbers as ranking
@@ -36,7 +50,7 @@ class AnnRevEntry:
         if max([i for i, _ in ranking]) > max_entries: raise RuntimeError('more provided rankings than max')
         if duplicates(rank_list, excluding=[]): raise RuntimeError('duplicate entry of same rank')
         if duplicates(resolution_list): raise RuntimeError('same resolution provided more than once')
-        if not self.__is_valid_voter(voter): raise RuntimeError('voter {} ineligible'.format(voter))
+        if not self.is_valid_voter(voter): raise RuntimeError('voter {} ineligible'.format(voter))
 
         self.voter_name = ref(voter)
         self.post_num = post_num
@@ -64,8 +78,11 @@ class AnnRevEntry:
         return False
 
     @staticmethod
-    def __is_valid_voter(voter_name):
-        """ Returns true if nation has trophy saying it is a GA or UN resolution author. """
+    def is_valid_voter(voter_name):
+        """ Returns true if nation is a GA resolution author or co-author or if has trophy saying it is a GA or UN
+        resolution author. """
+        if ref(voter_name) in get_full_author_list(): return True
+
         url = 'https://www.nationstates.net/nation={}'.format(voter_name.lower().replace(' ', '_'))
         title_list = [i.attrs['title'] for i in
                       BeautifulSoup(requests.get(url).text, 'lxml').select('div.trophyline span.trophyrack img')]
@@ -76,6 +93,12 @@ class AnnRevEntry:
     def __str__(self):
         return f'AnnRevEntry[voter={self.voter_name}, post_num={self.post_num}]'
 
+
+assert AnnRevEntry.is_valid_voter('imperium anglorum') is True
+assert AnnRevEntry.is_valid_voter('araraukar') is True
+assert AnnRevEntry.is_valid_voter('separatist peoples') is True
+assert AnnRevEntry.is_valid_voter('knootoss') is True
+assert AnnRevEntry.is_valid_voter('transilia') is False
 
 print('starting parse')
 entry_list = []
@@ -135,7 +158,8 @@ for i in range(10):  # 10 pages max
     if page_postnum in posts_seen:
         break
 
-    time.sleep(2)  # sleep 5 seconds between pages
+    if not (i == 0 or i == 9):
+        time.sleep(2)  # sleep 5 seconds __between__ pages, exclude first and last
 
 print('loaded web ballot data')
 
