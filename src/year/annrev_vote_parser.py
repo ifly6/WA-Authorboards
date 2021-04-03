@@ -44,13 +44,13 @@ class AnnRevEntry:
         print(f'validated entry {self}')
 
     def generate_scores(self, max_entries=10):
-        """ Generates dict with entries 'title_lowercase': int(score)."""
+        """ Generates dict with entries 'title lowercase': int(score)."""
         scores = {}
 
         for rank_tuple in self.ranks:
             points = max_entries + 1 - rank_tuple[0]
             resolution = rank_tuple[1]
-            scores[str(resolution).lower()] = int(points)
+            scores[str(resolution).lower().strip()] = int(points)
 
         return scores
 
@@ -140,9 +140,9 @@ for i in range(10):  # 10 pages max
 print('loaded web ballot data')
 
 resolutions = pd.read_csv('../../output/ANNUAL_resolutions.csv')
-resolutions['Date Implemented'] = pd.to_datetime(resolutions['Date Implemented'], utc=True)
+resolutions['Implemented'] = pd.to_datetime(resolutions['Implemented'], utc=True)
 resolutions['Score'] = 0
-resolutions['_lowercase_titles'] = resolutions['Title'].str.lower()
+resolutions['_lowercase_titles'] = resolutions['Title'].str.lower().str.strip()
 print('loaded resolutions data')
 
 # check for puppets
@@ -180,7 +180,7 @@ for entry in entry_list:
             error_list.append(f'skipped non-existent resolution \'{k}\' in entry {entry}')
 
 # remove extraneous columns
-resolutions.sort_values(by='Score', ascending=False, inplace=True)
+resolutions.sort_values(by=['Score', 'Pct For'], ascending=False, inplace=True)
 resolutions.drop(columns=[s for s in resolutions.columns if s.startswith('_')], inplace=True)
 
 # print
