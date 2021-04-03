@@ -1,5 +1,6 @@
 import re
 import time
+from typing import List
 
 import pandas as pd
 import requests
@@ -14,17 +15,33 @@ def ref(s: str):
     return s.strip().lower().replace(' ', '_')
 
 
+def duplicates(collection: List, excluding=['...']):
+    seen = set()
+    for i in collection:
+        if i in seen and i not in excluding:
+            return True
+        seen.add(i)
+    return False
+
+
+assert ref('   IMPERIUM ANGLORUM     ') == 'imperium_anglorum'
+assert duplicates(['...', '...']) is False
+assert duplicates([1, 1, 2]) is True
+
+
 class AnnRevEntry:
     def __init__(self, voter, post_num, ranking, max_entries=10):
         rank_list = [i for i, _ in ranking]  # list of numbers as ranking
         resolution_list = [s for _, s in ranking]  # list of numbers as ranking
         if max([i for i, _ in ranking]) > max_entries: raise RuntimeError('more provided rankings than max')
-        if len(rank_list) != len(set(rank_list)): raise RuntimeError('duplicate entry of same rank')
-        if len(resolution_list) != len(set(resolution_list)): raise RuntimeError('resolution provided more than once')
+        if duplicates(rank_list, excluding=[]): raise RuntimeError('duplicate entry of same rank')
+        if duplicates(resolution_list): raise RuntimeError('same resolution provided more than once')
+        if not self.__is_valid_voter(voter): raise RuntimeError('voter {} ineligible'.format(voter))
 
         self.voter_name = ref(voter)
         self.post_num = post_num
         self.ranks = ranking  # internally is [[1, 'title'], [2, 'title']]
+        print(f'validated entry {self}')
 
     def generate_scores(self, max_entries=10):
         """ Generates dict with entries 'title_lowercase': int(score)."""
@@ -33,25 +50,38 @@ class AnnRevEntry:
         for rank_tuple in self.ranks:
             points = max_entries + 1 - rank_tuple[0]
             resolution = rank_tuple[1]
-            scores[str(resolution).lower()] = points
+            scores[str(resolution).lower()] = int(points)
 
         return scores
 
-    def is_valid_voter(self):
-        """ Returns true if nation has trophy saying it is a GA resolution author. """
-        ref_name = self.voter_name.lower().replace(' ', '_')
-        url = f'https://www.nationstates.net/nation={ref_name}'
-        soup = BeautifulSoup(requests.get(url).text, 'lxml')
-        return any('general assembly resolution author' in i.attrs['title'].lower() for i in
-                   soup.select('div.trophyline span.trophyrack img'))
+    @staticmethod
+    def __badge_check(title_list):
+        accepted = list(map(lambda s: ref(s), ['general assembly resolution author', 'Historical Resolution Author']))
+        title_list = list(map(lambda s: ref(s), title_list))
+        for accept in accepted:
+            if any(accept in s for s in title_list):
+                return True
+        return False
+
+    @staticmethod
+    def __is_valid_voter(voter_name):
+        """ Returns true if nation has trophy saying it is a GA or UN resolution author. """
+        url = 'https://www.nationstates.net/nation={}'.format(voter_name.lower().replace(' ', '_'))
+        title_list = [i.attrs['title'] for i in
+                      BeautifulSoup(requests.get(url).text, 'lxml').select('div.trophyline span.trophyrack img')]
+
+        time.sleep(2)  # rate limit
+        return AnnRevEntry.__badge_check(title_list)
 
     def __str__(self):
         return f'AnnRevEntry[voter={self.voter_name}, post_num={self.post_num}]'
 
 
+print('starting parse')
 entry_list = []
 error_list = []
 for i in range(10):  # 10 pages max
+    print(f'starting parse for page {i + 1}')
     skip_value = i * 25
     current_url = base_url + f'&start={skip_value}'
     soup = BeautifulSoup(requests.get(current_url).text, 'lxml')
@@ -79,23 +109,26 @@ for i in range(10):  # 10 pages max
                     ranking.append([int(parsed_line.group(1)), parsed_line.group(2)])
 
                 try:
-                    # throw error if saving duplicate
+                    # throws error on validation fail
                     new_entry = AnnRevEntry(author_name, post_number, ranking)
 
+                    # if attempting to vote twice, skip
                     if author_name in set(entry.voter_name for entry in entry_list):
                         error_list.append(
-                            f'voter {author_name} attempted to vote twice at post id {post_number}. skipped!')
+                            f'voter {author_name} attempted to vote twice! post id {post_number}. skipped')
 
+                    # throw error if saving duplicate
                     if post_number in set(entry.post_num for entry in entry_list):
-                        raise RuntimeError('duplicate post number for entry:' + str(new_entry))
+                        raise RuntimeError('duplicate post number for entry:' + str(new_entry))  # shouldn't happen
 
                     entry_list.append(new_entry)
 
                 except RuntimeError as e:
-                    error_list.append(f'error! could not create entry for {author_name} at post {post_number}! {e}')
+                    # log validation error
+                    error_list.append(f'entry for {author_name} at post {post_number} failed validation: {e}')
 
             else:
-                error_list.append(f'error! post by {author_name} has ballot tag but no #end ?')
+                error_list.append(f'post by {author_name} has ballot tag but no #end ?')
 
     # break out of loop if hitting duplicate
     page_postnum = int(re.search(r'\d+', soup.select('p.author a')[0].attrs['href']).group(0))  # get post number
@@ -111,15 +144,6 @@ resolutions['Date Implemented'] = pd.to_datetime(resolutions['Date Implemented']
 resolutions['Score'] = 0
 resolutions['_lowercase_titles'] = resolutions['Title'].str.lower()
 print('loaded resolutions data')
-
-# check for validity
-for entry in list(entry_list):  # iterate over copy of list
-    valid = entry.is_valid_voter()
-    print(f'entry {entry} is ' + ('' if valid else 'not ') + 'a GA resolution author')
-    if not valid:
-        entry_list.remove(entry)
-
-    time.sleep(2)
 
 # check for puppets
 aliases = pd.read_csv('../../db/aliases.csv')
@@ -148,10 +172,10 @@ for entry in entry_list:
     score_dict = entry.generate_scores()
     for k, v in score_dict.items():
         try:
-            old_score = resolutions.loc[resolutions['_lowercase_titles'] == k, 'Score'].values[0]  # unwrap from series
+            old_score = resolutions.loc[resolutions['_lowercase_titles'] == k, 'Score'].values[0]  # unwrap series
             new_score = old_score + v
             resolutions.loc[resolutions['_lowercase_titles'] == k, 'Score'] = new_score
-            print(f'from entry {entry} modified score for {k} from {old_score} to {new_score}')
+            print(f'from {entry} modified score for {k} from {old_score} to {new_score}')
         except IndexError:
             error_list.append(f'skipped non-existent resolution \'{k}\' in entry {entry}')
 
@@ -164,4 +188,7 @@ resolutions.to_csv('../../output/ANNUAL_resolutions_tally.csv', index=False)
 
 # tell user
 print('complete')
-print('got errors: ' + str(error_list))
+
+if len(error_list) != 0:
+    print('got errors: ')
+    print('\n'.join('\t' + str(s) for s in error_list))

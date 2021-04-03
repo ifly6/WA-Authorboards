@@ -8,6 +8,8 @@ import pandas as pd
 
 from src.helpers import write_file
 
+SMALL_TABLE = False
+
 # load our latest data
 resolutions_list = glob.glob('../../db/resolutions*.csv')
 df = pd.read_csv(max(resolutions_list, key=os.path.getctime), parse_dates=['Date Implemented'])
@@ -29,7 +31,13 @@ def truncate_time(dt):
 # drop extraneous columns and column descriptions
 this_year['Date Implemented'] = truncate_time(this_year['Date Implemented'])
 this_year.rename(columns={'Date Implemented': 'Implemented', 'Number': '#'}, inplace=True)
-this_year.drop(columns=['Votes For', 'Votes Against', 'Author', 'Co-authors'], inplace=True)  # remove for full table
+
+this_year['Pct For'] = (this_year['Votes For'] * 100 / (this_year['Votes For'] + this_year['Votes Against'])) \
+    .apply(lambda s: '{:,.2f}%'.format(s))
+
+if SMALL_TABLE:
+    this_year.drop(columns=['Votes For', 'Votes Against', 'Author', 'Co-authors'], inplace=True)  # remove for full table
+    this_year.drop(columns=['Pct For'], inplace=True)
 
 this_year['Sub-category'] = this_year.apply(
     lambda r: 'GA ' + r['Sub-category'] if r['Category'] == 'Repeal' else r['Sub-category'],
