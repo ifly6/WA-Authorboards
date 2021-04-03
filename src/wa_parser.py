@@ -3,6 +3,7 @@ import html
 import io
 import re
 from datetime import datetime
+from functools import cache
 from typing import Tuple
 
 import numpy as np
@@ -64,16 +65,13 @@ def localised(dt: 'datetime', tz='US/Eastern'):
     return timezone(tz).localize(dt)
 
 
-def as_ref_name(s: str) -> str:
+def ref(s: str) -> str:
     """ Turn it into a NationStates ref name """
     return s.strip().replace(' ', '_').lower()
 
 
-def _translate_category(category: str, s: str) -> Tuple[bool, str]:
-    if s != '0':
-        # if it isn't 0, then it doesn't apply
-        return False, s
-
+@cache
+def _category_map():
     d = {'Advancement of Industry': 'Environmental Deregulation',
          'Civil Rights': 'Mild',
          'Education and Creativity': 'Artistic',
@@ -87,12 +85,17 @@ def _translate_category(category: str, s: str) -> Tuple[bool, str]:
          'Political Stability': 'Mild',
          'Regulation': 'Consumer Protection',
          'Social Justice': 'Mild'}
-    d = {as_ref_name(k): v for k, v in d.items()}  # force ref name for matching
+    return {ref(k): v for k, v in d.items()}  # force ref name for matching
+    # nb that this is identical to dict( ( ref(k), v ) for k, v in d.items() )
 
-    try:
-        return True, d[as_ref_name(category)]  # yield correct name from ref name of category
-    except KeyError:
-        return False, s  # if not in the list, what is given
+
+def _translate_category(category: str, s: str) -> Tuple[bool, str]:
+    if category in _category_map() and s == '0':
+        return True, _category_map()[ref(category)]  # yield correct name from ref name of category
+
+    # if it isn't 0, then it doesn't apply, return given
+    # if not in the list, return given
+    return False, s
 
 
 def capitalise(s):
@@ -275,10 +278,20 @@ class WaPassedResolution:
                 coauthors = re.split(r'(,? and )|(, )', coauthor_line, re.IGNORECASE)
                 coauthors = [i for i in coauthors if i is not None and i.strip() != 'and']  # post facto patching...
 
-            coauthors = [as_ref_name(s).replace('.', '') for s in coauthors]  # cast to reference name
+            coauthors = [ref(s).replace('.', '') for s in coauthors]  # cast to reference name
             print(f'\tidentified coauthors as {coauthors}')
 
             # pass each co-author in turn
+            '''
+            While it could be changed so that the original line's capitalisation is preserved, doing this might 
+            introduce inconsistency in capitalisation of the same nation. Eg '[nation]imperium_anglorum[/nation]' would
+            be done under capitalisation rules while something provided as 'imperiuM angloruM' would be let through.
+            
+            Because some authors use a ref'd name IN the nation tags, something like [nation]transilia[/nation] cannot
+            be disentangled from 'Transilia' if the former is proper and the latter is not. A proper-capitalisation
+            dictionary would be necessary and I am unwilling to download and parse all historical daily dumps for 
+            something this minor. 
+            '''
             try:
                 resolution.coauthor0 = capitalise(coauthors[0])
             except IndexError:
