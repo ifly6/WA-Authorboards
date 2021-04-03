@@ -2,7 +2,7 @@ import glob
 import os
 import re
 import time
-from functools import lru_cache
+from functools import cache
 from typing import List
 
 import pandas as pd
@@ -32,7 +32,7 @@ assert duplicates(['...', '...']) is False
 assert duplicates([1, 1, 2]) is True
 
 
-@lru_cache(maxsize=None)  # cached to minimise IO time
+@cache  # cached to minimise IO time
 def get_full_author_list():
     df = pd.read_csv(max(glob.glob('../../db/resolutions*.csv'), key=os.path.getctime))
     df['Co-authors'] = df['Co-authors'].fillna('')
