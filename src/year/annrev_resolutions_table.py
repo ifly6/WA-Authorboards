@@ -15,9 +15,9 @@ resolutions_list = glob.glob('../../db/resolutions*.csv')
 df = pd.read_csv(max(resolutions_list, key=os.path.getctime), parse_dates=['Date Implemented'])
 df['Date Implemented'] = pd.to_datetime(df['Date Implemented'], utc=True)
 
-# load implementation
+# load data
 this_year = df[df['Date Implemented'].dt.year == 2020].copy()
-this_year.to_csv('../../output/ANNUAL_resolutions.csv', index=False)
+this_year['Pct For'] = (this_year['Votes For'] * 100 / (this_year['Votes For'] + this_year['Votes Against'])).round(2)
 
 
 def tag(c, param):
@@ -32,16 +32,17 @@ def truncate_time(dt):
 this_year['Date Implemented'] = truncate_time(this_year['Date Implemented'])
 this_year.rename(columns={'Date Implemented': 'Implemented', 'Number': '#'}, inplace=True)
 
-this_year['Pct For'] = (this_year['Votes For'] * 100 / (this_year['Votes For'] + this_year['Votes Against'])) \
-    .apply(lambda s: '{:,.2f}%'.format(s))
-
-if SMALL_TABLE:
-    this_year.drop(columns=['Votes For', 'Votes Against', 'Author', 'Co-authors'], inplace=True)  # remove for full table
-    this_year.drop(columns=['Pct For'], inplace=True)
-
+# rename repeal subcategories
 this_year['Sub-category'] = this_year.apply(
     lambda r: 'GA ' + r['Sub-category'] if r['Category'] == 'Repeal' else r['Sub-category'],
     axis=1)
+
+# save resolutions csv
+this_year.to_csv('../../output/ANNUAL_resolutions.csv', index=False)
+
+if SMALL_TABLE:
+    this_year.drop(columns=['Votes For', 'Votes Against', 'Author', 'Co-authors', 'Pct For'],
+                   inplace=True)
 
 # to table
 strings = [tag(''.join(tag(tag(c, 'b'), 'td') for c in this_year.columns), 'tr')]  # first row is headers
