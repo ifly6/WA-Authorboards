@@ -14,6 +14,7 @@ from lxml import etree
 from pytz import timezone
 from ratelimit import limits, sleep_and_retry
 
+from helpers import ref
 from src import wa_cacher
 
 """ Imperium Anglorum:
@@ -63,11 +64,6 @@ def clean_chamber_input(chamber):
 
 def localised(dt: 'datetime', tz='US/Eastern'):
     return timezone(tz).localize(dt)
-
-
-def ref(s: str) -> str:
-    """ Turn it into a NationStates ref name """
-    return s.strip().replace(' ', '_').lower()
 
 
 @cache
@@ -270,7 +266,7 @@ class WaPassedResolution:
                 .replace('[/u]', '')
 
             if '[nation' in coauthor_line.lower():  # scion used the [Nation] tag instead of lower case once
-                amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower()) # remove 'noflag' etc
+                amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower())  # remove 'noflag' etc
                 coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[/nation\])', amended_line.lower())
 
             else:
@@ -285,7 +281,7 @@ class WaPassedResolution:
             '''
             While it could be changed so that the original line's capitalisation is preserved, doing this might 
             introduce inconsistency in capitalisation of the same nation. Eg '[nation]imperium_anglorum[/nation]' would
-            be done under capitalisation rules while something provided as 'imperiuM angloruM' would be let through.
+            be done under capitalisation rules while something provided as 'Imperium ANGLORUM' would be let through.
             
             Because some authors use a ref'd name IN the nation tags, something like [nation]transilia[/nation] cannot
             be disentangled from 'Transilia' if the former is proper and the latter is not. A proper-capitalisation
