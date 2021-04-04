@@ -8,3 +8,11 @@ def write_file(path, s, print_input=False):
 
     with open(path, 'w') as f:
         f.write(s)
+
+
+def ref(s: str) -> str:
+    """ Turn it into a NationStates ref name """
+    return s.strip().replace(' ', '_').lower()
+
+
+assert ref('IMPERIUM ANGLORUM  ') == 'imperium_anglorum'

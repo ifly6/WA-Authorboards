@@ -1,6 +1,6 @@
 # Copyright (c) 2020 ifly6
 import json
-from functools import lru_cache
+from functools import cache
 
 
 class Cacher(object):
@@ -33,7 +33,7 @@ class Cacher(object):
             return Cacher(d)
 
 
-@lru_cache(maxsize=None)
+@cache
 def load_capitalisation_exceptions(p='../db/names.txt'):
     """ Cached to reduce disk IO times on repeated calls. Data here should not change. """
     with open(p, 'r') as f:

@@ -9,13 +9,11 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+from helpers import ref
+
 base_url = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'
 ballot_tag = '#2020_ga_ann_rev_1'
 posts_seen = [38509070]
-
-
-def ref(s: str):
-    return s.strip().lower().replace(' ', '_')
 
 
 def duplicates(collection: List, excluding=['...']):
@@ -27,7 +25,6 @@ def duplicates(collection: List, excluding=['...']):
     return False
 
 
-assert ref('   IMPERIUM ANGLORUM     ') == 'imperium_anglorum'
 assert duplicates(['...', '...']) is False
 assert duplicates([1, 1, 2]) is True
 
