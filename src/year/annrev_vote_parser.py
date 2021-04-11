@@ -2,10 +2,12 @@ import glob
 import os
 import re
 import time
+from datetime import datetime, timedelta
 from functools import cache
 from typing import List
 
 import pandas as pd
+import pytz
 import requests
 from bs4 import BeautifulSoup
 
@@ -30,14 +32,32 @@ assert duplicates([1, 1, 2]) is True
 
 
 @cache  # cached to minimise IO time
-def get_full_author_list():
+def load_latest_db():
     df = pd.read_csv(max(glob.glob('../../db/resolutions*.csv'), key=os.path.getctime))
+    df['Date Implemented'] = pd.to_datetime(df['Date Implemented'])
+    return df
+
+
+def join_author_lists_as_set(df):
+    df = df.copy()
     df['Co-authors'] = df['Co-authors'].fillna('')
     joined = df[['Author', 'Co-authors']] \
         .apply(lambda r: [ref(s) for s in set(','.join(r.values).split(','))], axis=1) \
         .explode()
     joined = joined[joined != '']
     return set(joined.values)
+
+
+@cache
+def get_full_author_list():
+    return join_author_lists_as_set(load_latest_db())
+
+
+@cache
+def get_latest_author_list(within_days=365 * 2):
+    df = load_latest_db()
+    df = df[df['Date Implemented'] > (datetime.now(pytz.utc) - timedelta(days=within_days))]
+    return join_author_lists_as_set(df)
 
 
 class AnnRevEntry:
@@ -213,3 +233,13 @@ print('complete')
 if len(error_list) != 0:
     print('got errors: ')
     print('\n'.join('\t' + str(s) for s in error_list))
+
+# print out the authors from the last two years who have not yet voted
+latest_authors = get_latest_author_list()
+entry_authors = [e.voter_name for e in entry_list]
+missing_authors = [s for s in latest_authors if ref(s) not in entry_authors]
+if len(missing_authors) > 0:
+    print('the following authors have not voted')
+    for s in missing_authors:
+        print(f'\t {s}')
+
