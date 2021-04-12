@@ -16,17 +16,20 @@ from helpers import ref
 # CORE PARAMETERS
 THREAD_URL = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'  # thread to look in
 BALLOT_TAG = '#2020_ga_ann_rev_1'  # starting tag for ballot
-PRINT_MISSING_AUTHORS = False      # prints missing authors if True
-posts_seen = [38509070]            # include posts to exclude here, only works properly if posts on first page
+PRINT_MISSING_AUTHORS = False  # prints missing authors if True
+posts_seen = [38509070]  # include posts to exclude here, only works properly if posts on first page
 
 
 # HELPER FUNCTIONS
-def duplicates(collection: List, excluding=['...']):
+def duplicates(collection: List, excluding=None):
+    if excluding is None:
+        excluding = ['...']
+
     seen = set()
-    for i in collection:
-        if i in seen and i not in excluding:
+    for element in collection:
+        if element in seen and element not in excluding:
             return True
-        seen.add(i)
+        seen.add(element)
     return False
 
 
@@ -64,24 +67,28 @@ def get_latest_author_list(within_days=365 * 2):
 
 
 class AnnRevEntry:
-    def __init__(self, voter, post_num, ranking, max_entries=10):
-        rank_list = [i for i, _ in ranking]  # list of numbers as ranking
-        resolution_list = [s for _, s in ranking]  # list of numbers as ranking
-        if max([i for i, _ in ranking]) > max_entries: raise RuntimeError('more provided rankings than max')
-        if duplicates(rank_list, excluding=[]): raise RuntimeError('duplicate entry of same rank')
-        if duplicates(resolution_list): raise RuntimeError('same resolution provided more than once')
+    def __init__(self, voter, post_num, parsed_ballot, max_entries=10):
+        self.voter_name = ref(voter)
         if not self.is_valid_voter(voter): raise RuntimeError('voter {} ineligible'.format(voter))
 
-        self.voter_name = ref(voter)
+        self.ballot = parsed_ballot  # internally is [[1, 'title'], [2, 'title']]
+        ranks, resolution_list = [], []
+        for internal_list in parsed_ballot:
+            ranks.append(internal_list[0])  # list of numbers as parsed_ballot
+            resolution_list.append(internal_list[1])  # list of resolution titles in parsed_ballot
+
+        if max(ranks) > max_entries: raise RuntimeError('more provided rankings than max')
+        if duplicates(ranks, excluding=[]): raise RuntimeError('duplicate entry of same rank')
+        if duplicates(resolution_list): raise RuntimeError('same resolution provided more than once')
+
         self.post_num = post_num
-        self.ranks = ranking  # internally is [[1, 'title'], [2, 'title']]
         print(f'validated entry {self}')
 
     def generate_scores(self, max_entries=10):
-        """ Generates dict with entries 'title lowercase': int(score)."""
+        """ Generates dict with entries 'title lowercase': int(score). Scores determined by Borda count. """
         scores = {}
 
-        for rank_tuple in self.ranks:
+        for rank_tuple in self.ballot:
             points = max_entries + 1 - rank_tuple[0]
             resolution = rank_tuple[1]
             scores[str(resolution).lower().strip()] = int(points)
@@ -104,7 +111,7 @@ class AnnRevEntry:
         if ref(voter_name) in get_full_author_list(): return True
 
         url = 'https://www.nationstates.net/nation={}'.format(voter_name.lower().replace(' ', '_'))
-        title_list = [i.attrs['title'] for i in
+        title_list = [image.attrs['title'] for image in
                       BeautifulSoup(requests.get(url).text, 'lxml').select('div.trophyline span.trophyrack img')]
 
         time.sleep(2)  # rate limit
@@ -210,7 +217,7 @@ for alias_list in aliases['_joined'].values:
         print('removing later vote')
 
         matching_entries = sorted([e for e in entry_list if e.voter_name in duplicate_names],
-                                  key=lambda i: i.post_num, reverse=False)
+                                  key=lambda the_ballot: the_ballot.post_num, reverse=False)
         r_entries = matching_entries[1:]  # everything after last
 
         for r_entry in r_entries:
@@ -255,4 +262,3 @@ if PRINT_MISSING_AUTHORS:
         print('the following authors have not voted')
         for s in missing_authors:
             print(f'\t {s}')
-
