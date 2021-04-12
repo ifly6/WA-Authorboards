@@ -13,11 +13,14 @@ from bs4 import BeautifulSoup
 
 from helpers import ref
 
-base_url = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'
-ballot_tag = '#2020_ga_ann_rev_1'
-posts_seen = [38509070]
+# CORE PARAMETERS
+THREAD_URL = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'  # thread to look in
+BALLOT_TAG = '#2020_ga_ann_rev_1'  # starting tag for ballot
+PRINT_MISSING_AUTHORS = False      # prints missing authors if True
+posts_seen = [38509070]            # include posts to exclude here, only works properly if posts on first page
 
 
+# HELPER FUNCTIONS
 def duplicates(collection: List, excluding=['...']):
     seen = set()
     for i in collection:
@@ -123,8 +126,16 @@ error_list = []
 for i in range(10):  # 10 pages max
     print(f'starting parse for page {i + 1}')
     skip_value = i * 25
-    current_url = base_url + f'&start={skip_value}'
-    soup = BeautifulSoup(requests.get(current_url).text, 'lxml')
+    current_url = THREAD_URL + f'&start={skip_value}'
+
+    # check response
+    response = requests.get(current_url)
+    if response.status_code != 200 or \
+            'Sorry but the board is temporarily unavailable, please try again in a few minutes.' in response.text:
+        print('NS forum is down')
+        quit(1)
+
+    soup = BeautifulSoup(response.text, 'lxml')
 
     posts = soup.select('div.post')
     for post in posts:
@@ -137,8 +148,8 @@ for i in range(10):  # 10 pages max
         author_name = post.select('p.author a')[1].text
 
         post_content = post.select_one('div.content').get_text(separator='\n')
-        if ballot_tag in post_content:
-            ballot = re.search(r'(?<=' + ballot_tag + r')(.|\n)*(?=#end)', post_content)
+        if BALLOT_TAG in post_content:
+            ballot = re.search(r'(?<=' + BALLOT_TAG + r')(.|\n)*(?=#end)', post_content)
             if ballot:
                 ballot_str = ballot.group(0).strip()
                 # print(ballot_str)
@@ -172,7 +183,8 @@ for i in range(10):  # 10 pages max
 
     # break out of loop if hitting duplicate
     page_postnum = int(re.search(r'\d+', soup.select('p.author a')[0].attrs['href']).group(0))  # get post number
-    if page_postnum in posts_seen:
+    if page_postnum in posts_seen and i != 0:
+        print(f'seen duplicate post number {page_postnum}; breaking loop')
         break
 
     if not (i == 0 or i == 9):
@@ -235,11 +247,12 @@ if len(error_list) != 0:
     print('\n'.join('\t' + str(s) for s in error_list))
 
 # print out the authors from the last two years who have not yet voted
-latest_authors = get_latest_author_list()
-entry_authors = [e.voter_name for e in entry_list]
-missing_authors = [s for s in latest_authors if ref(s) not in entry_authors]
-if len(missing_authors) > 0:
-    print('the following authors have not voted')
-    for s in missing_authors:
-        print(f'\t {s}')
+if PRINT_MISSING_AUTHORS:
+    latest_authors = get_latest_author_list()
+    entry_authors = [e.voter_name for e in entry_list]
+    missing_authors = [s for s in latest_authors if ref(s) not in entry_authors]
+    if len(missing_authors) > 0:
+        print('the following authors have not voted')
+        for s in missing_authors:
+            print(f'\t {s}')
 
