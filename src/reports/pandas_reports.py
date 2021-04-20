@@ -12,7 +12,7 @@ def _flatten(l):
     return [item for sublist in l for item in sublist]
 
 
-def _df_to_bbcode(df, column_predicate={}):
+def df_to_bbcode(df, column_predicate={}):
     lines = [''.join('[td]{}[/td]'.format(str(s)) for s in df.columns)]  # init with header
     for _, row in df.iterrows():
         cells = ''.join('[td]{}[/td]'.format(str(s)) for s in row.values)
@@ -47,7 +47,7 @@ def create_aliases(alias_path='', how='markdown'):
 
     if how == 'bbCode' or how == 'bbcode':
         aliases['Player'] = '[nation]' + aliases['Player'].astype(str) + '[/nation]'
-        return _df_to_bbcode(aliases)
+        return df_to_bbcode(aliases)
 
     raise ValueError(f'input, {how}, invalid')
 
@@ -95,7 +95,7 @@ def create_leaderboards(db: Database, how='markdown', keep_puppets=True):
 
     if how == 'bbCode' or how == 'bbcode':
         df['Name'] = '[nation]' + df['Name'].astype(str) + '[/nation]'
-        return _df_to_bbcode(df)
+        return df_to_bbcode(df)
 
     if how == 'string' or how == 'str':
         return df.to_string(index=False)

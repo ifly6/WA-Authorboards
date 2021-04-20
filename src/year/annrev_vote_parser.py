@@ -11,12 +11,14 @@ import pytz
 import requests
 from bs4 import BeautifulSoup
 
-from helpers import ref
+from helpers import ref, write_file
 
 # CORE PARAMETERS
+from reports.pandas_reports import df_to_bbcode
+
 THREAD_URL = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'  # thread to look in
 BALLOT_TAG = '#2020_ga_ann_rev_1'  # starting tag for ballot
-PRINT_MISSING_AUTHORS = False  # prints missing authors if True
+PRINT_MISSING_AUTHORS = True  # prints missing authors if True
 posts_seen = [38509070]  # include posts to exclude here, only works properly if posts on first page
 
 
@@ -243,15 +245,27 @@ for entry in entry_list:
 resolutions.sort_values(by=['Score', 'Pct For'], ascending=False, inplace=True)
 resolutions.drop(columns=[s for s in resolutions.columns if s.startswith('_')], inplace=True)
 
-# print
+# print full results
 resolutions.to_csv('../../output/ANNUAL_resolutions_tally.csv', index=False)
+
+# print summary results for forum
+formatted_resolutions = resolutions.fillna('')\
+    .drop(columns=['Pct For', 'Votes For', 'Votes Against', 'Implemented', 'Author', 'Co-authors']) \
+    .query('Score != 0')
+promoted_resolutions = formatted_resolutions.head(10)
+write_file('../../output/ANNUAL_resolutions_tally_table.txt', df_to_bbcode(formatted_resolutions))
+write_file('../../output/ANNUAL_resolutions_tally_table_top10.txt', df_to_bbcode(promoted_resolutions))
 
 # tell user
 print('complete')
 
+# if we have errors, print them
 if len(error_list) != 0:
     print('got errors: ')
     print('\n'.join('\t' + str(s) for s in error_list))
+
+else:
+    print('no errors')
 
 # print out the authors from the last two years who have not yet voted
 if PRINT_MISSING_AUTHORS:
