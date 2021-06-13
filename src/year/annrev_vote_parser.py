@@ -12,14 +12,13 @@ import requests
 from bs4 import BeautifulSoup
 
 from helpers import ref, write_file
-
-# CORE PARAMETERS
 from reports.pandas_reports import df_to_bbcode
 
+# CORE PARAMETERS
 THREAD_URL = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'  # thread to look in
-BALLOT_TAG = '#2020_ga_ann_rev_1'  # starting tag for ballot
+BALLOT_TAG = '#2020_ga_ann_rev_2'  # starting tag for ballot
 PRINT_MISSING_AUTHORS = True  # prints missing authors if True
-posts_seen = [38509070]  # include posts to exclude here, only works properly if posts on first page
+posts_seen = [38509070, 38574108]  # include posts to exclude here, only works properly if posts on first page
 
 
 # HELPER FUNCTIONS
@@ -123,11 +122,11 @@ class AnnRevEntry:
         return f'AnnRevEntry[voter={self.voter_name}, post_num={self.post_num}]'
 
 
-assert AnnRevEntry.is_valid_voter('imperium anglorum') is True
-assert AnnRevEntry.is_valid_voter('araraukar') is True
-assert AnnRevEntry.is_valid_voter('separatist peoples') is True
-assert AnnRevEntry.is_valid_voter('knootoss') is True
-assert AnnRevEntry.is_valid_voter('transilia') is False
+assert AnnRevEntry.is_valid_voter('imperium anglorum') is True  # has badges
+assert AnnRevEntry.is_valid_voter('araraukar') is True  # has co-authors
+assert AnnRevEntry.is_valid_voter('separatist peoples') is True  # is gensec, isn't WA?
+assert AnnRevEntry.is_valid_voter('knootoss') is True  # is older author
+assert AnnRevEntry.is_valid_voter('transilia') is False  # is not a WA author
 
 print('starting parse')
 entry_list = []
@@ -145,6 +144,13 @@ for i in range(10):  # 10 pages max
         quit(1)
 
     soup = BeautifulSoup(response.text, 'lxml')
+
+    # break out of loop if hitting duplicate
+    # break section must be before main post parsing
+    page_postnum = int(re.search(r'\d+', soup.select('p.author a')[0].attrs['href']).group(0))  # get post number
+    if page_postnum in posts_seen and i != 0:
+        print(f'seen duplicate post number {page_postnum}; breaking loop')
+        break
 
     posts = soup.select('div.post')
     for post in posts:
@@ -189,12 +195,6 @@ for i in range(10):  # 10 pages max
 
             else:
                 error_list.append(f'post by {author_name} has ballot tag but no #end ?')
-
-    # break out of loop if hitting duplicate
-    page_postnum = int(re.search(r'\d+', soup.select('p.author a')[0].attrs['href']).group(0))  # get post number
-    if page_postnum in posts_seen and i != 0:
-        print(f'seen duplicate post number {page_postnum}; breaking loop')
-        break
 
     if not (i == 0 or i == 9):
         time.sleep(2)  # sleep 5 seconds __between__ pages, exclude first and last
@@ -249,7 +249,7 @@ resolutions.drop(columns=[s for s in resolutions.columns if s.startswith('_')], 
 resolutions.to_csv('../../output/ANNUAL_resolutions_tally.csv', index=False)
 
 # print summary results for forum
-formatted_resolutions = resolutions.fillna('')\
+formatted_resolutions = resolutions.fillna('') \
     .drop(columns=['Pct For', 'Votes For', 'Votes Against', 'Implemented', 'Author', 'Co-authors']) \
     .query('Score != 0')
 promoted_resolutions = formatted_resolutions.head(10)
