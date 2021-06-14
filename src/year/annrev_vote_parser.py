@@ -87,15 +87,27 @@ class AnnRevEntry:
         self.post_num = post_num
         print(f'validated entry {self}')
 
-    def generate_scores(self, max_entries=10):
-        """ Generates dict with entries 'title lowercase': int(score). Scores determined by Borda count. """
+    def generate_scores(self, max_entries=10, count_type='borda'):
+        """ Generates dict with entries 'title lowercase': int(score). Scoring determined by count_type.
+
+        Borda count assigns a rank and then all later ranks are given a score one less than the top rank.
+
+        Harmonic yields scores of 1000 / rank, so rank 1 -> 1000, 2 -> 500, 3 -> 333, etc. This weights more heavily
+        towards top preferences. Geometric even more heavily weights top preferences: for 1, it follows
+        1000 / 2^(rank - 1), so 1 -> 1000, 2 -> 500, 3 -> 250, etc."""
         scores = {}
+        for rank, title in self.ballot:
+            if count_type == 'borda' or count_type == 'arithmetic':
+                points = max_entries + 1 - rank
+            elif count_type == 'harmonic':
+                points = 1000 / rank  # need more precision, 10/9 approx == 10/10 after rounding, use 1000
+            elif count_type == 'geometric':
+                points = 1000 / (2 ** (rank - 1))  # need even more precision, 1000 / 2^10 = 0.97, approx 1.
+            else:
+                raise TypeError(f'provided count type "{count_type}" is not supported')
 
-        for rank_tuple in self.ballot:
-            points = max_entries + 1 - rank_tuple[0]
-            resolution = rank_tuple[1]
-            scores[str(resolution).lower().strip()] = int(points)
-
+            resolution = title
+            scores[str(resolution).lower().strip()] = round(points)
         return scores
 
     @staticmethod
