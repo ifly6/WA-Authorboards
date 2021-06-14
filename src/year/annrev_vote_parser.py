@@ -90,7 +90,8 @@ class AnnRevEntry:
     def generate_scores(self, max_entries=10, count_type='borda'):
         """ Generates dict with entries 'title lowercase': int(score). Scoring determined by count_type.
 
-        Borda count assigns a rank and then all later ranks are given a score one less than the top rank.
+        Borda count assigns a rank and then all later ranks are given a score one less than the previous rank: thus,
+        1 -> 10, 2 -> 9, 3 -> 8, etc.
 
         Harmonic yields scores of 1000 / rank, so rank 1 -> 1000, 2 -> 500, 3 -> 333, etc. This weights more heavily
         towards top preferences. Geometric even more heavily weights top preferences: for 1, it follows
