@@ -229,16 +229,35 @@ for alias_list in aliases['_joined'].values:
 
 # tally scores
 for entry in entry_list:
-    entry: AnnRevEntry
-
     score_dict = entry.generate_scores()
     for k, v in score_dict.items():
-        try:
-            old_score = resolutions.loc[resolutions['_lowercase_titles'] == k, 'Score'].values[0]  # unwrap series
-            new_score = old_score + v
-            resolutions.loc[resolutions['_lowercase_titles'] == k, 'Score'] = new_score
-            print(f'from {entry} modified score for {k} from {old_score} to {new_score}')
-        except IndexError:
+        completed = False
+
+        # correct possible spelling localisation errors, one of the fixes works, then it is kept and breaks loop,
+        # otherwise it continues attempting error fixes until there are no more, when it will print that an entry was
+        # skipped due to non-completion
+        for error, correction in [('', ''),
+                                  (r'zation(?=\s|$)', 'sation'),  # civilization -> civilisation
+                                  (r'sation(?=\s|$)', 'zation'),
+                                  (r'or(?=\s|$)', 'our'),  # honor -> honour
+                                  (r'our(?=\s|$)', 'or'),
+                                  (r'(?<=\s|^)arti', 'arte'),  # artifact -> artefact
+                                  (r'(?<=\s|^)arte', 'arti'), ]:
+            try:
+                new_key = re.sub(error, correction, k)
+                old_score = resolutions.loc[resolutions['_lowercase_titles'] == new_key, 'Score'].values[0]
+                new_score = old_score + v
+                resolutions.loc[resolutions['_lowercase_titles'] == new_key, 'Score'] = new_score
+                print(f'from {entry} modified score for {k} from {old_score} to {new_score}')
+
+                # mark complete
+                completed = True
+                break
+
+            except IndexError:
+                pass
+
+        if not completed:
             error_list.append(f'skipped non-existent resolution \'{k}\' in entry {entry}')
 
 # remove extraneous columns
