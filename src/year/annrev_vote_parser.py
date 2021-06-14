@@ -68,7 +68,7 @@ def get_latest_author_list(within_days=365 * 2):
 
 
 class AnnRevEntry:
-    def __init__(self, voter, post_num, parsed_ballot, max_entries=10):
+    def __init__(self, voter, post_num, parsed_ballot, max_entries=10, require_all_ranks=False):
         self.voter_name = ref(voter)
         if not self.is_valid_voter(voter): raise RuntimeError('voter {} ineligible'.format(voter))
 
@@ -81,6 +81,8 @@ class AnnRevEntry:
         if max(ranks) > max_entries: raise RuntimeError('more provided rankings than max')
         if duplicates(ranks, excluding=[]): raise RuntimeError('duplicate entry of same rank')
         if duplicates(resolution_list): raise RuntimeError('same resolution provided more than once')
+        if set(ranks) != set(range(1, max_entries + 1)) and require_all_ranks:
+            raise RuntimeError('incomplete, rankings not fully expressed')
 
         self.post_num = post_num
         print(f'validated entry {self}')
