@@ -9,6 +9,7 @@ import pandas as pd
 from src.helpers import write_file
 
 SMALL_TABLE = False
+OUR_YEAR = 2021
 
 # load our latest data
 resolutions_list = glob.glob('../../db/resolutions*.csv')
@@ -16,7 +17,7 @@ df = pd.read_csv(max(resolutions_list, key=os.path.getctime), parse_dates=['Date
 df['Date Implemented'] = pd.to_datetime(df['Date Implemented'], utc=True)
 
 # load data
-this_year = df[df['Date Implemented'].dt.year == 2020].copy()
+this_year = df[df['Date Implemented'].dt.year == OUR_YEAR].copy()
 this_year['Pct For'] = (this_year['Votes For'] * 100 / (this_year['Votes For'] + this_year['Votes Against'])).round(2)
 
 
