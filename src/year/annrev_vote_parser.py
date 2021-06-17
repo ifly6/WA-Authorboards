@@ -15,9 +15,10 @@ from helpers import ref, write_file
 from reports.pandas_reports import df_to_bbcode
 
 # CORE PARAMETERS
-THREAD_URL = 'https://forum.nationstates.net/viewtopic.php?f=9&t=501821'  # thread to look in
-BALLOT_TAG = '#2020_ga_ann_rev_2'  # starting tag for ballot
+THREAD_URL = ... # thread to look in
+BALLOT_TAG = '#2021_ga_ann_rev_1'  # starting tag for ballot
 PRINT_MISSING_AUTHORS = True  # prints missing authors if True
+COUNT_TYPE = 'harmonic'
 posts_seen = [38509070, 38574108]  # include posts to exclude here, only works properly if posts on first page
 
 
@@ -87,7 +88,7 @@ class AnnRevEntry:
         self.post_num = post_num
         print(f'validated entry {self}')
 
-    def generate_scores(self, max_entries=10, count_type='borda'):
+    def generate_scores(self, max_entries=10, count_type=COUNT_TYPE):
         """ Generates dict with entries 'title lowercase': int(score). Scoring determined by count_type.
 
         Borda count assigns a rank and then all later ranks are given a score one less than the previous rank: thus,
