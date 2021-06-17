@@ -15,7 +15,7 @@ from helpers import ref, write_file
 from reports.pandas_reports import df_to_bbcode
 
 # CORE PARAMETERS
-THREAD_URL = ... # thread to look in
+THREAD_URL = ...  # thread to look in
 BALLOT_TAG = '#2021_ga_ann_rev_1'  # starting tag for ballot
 PRINT_MISSING_AUTHORS = True  # prints missing authors if True
 COUNT_TYPE = 'harmonic'
@@ -95,8 +95,9 @@ class AnnRevEntry:
         1 -> 10, 2 -> 9, 3 -> 8, etc.
 
         Harmonic yields scores of 1000 / rank, so rank 1 -> 1000, 2 -> 500, 3 -> 333, etc. This weights more heavily
-        towards top preferences. Geometric even more heavily weights top preferences: for 1, it follows
-        1000 / 2^(rank - 1), so 1 -> 1000, 2 -> 500, 3 -> 250, etc."""
+        towards top preferences. Geometric also heavily weights for top preferences: 1000 / rank^2, so 1 -> 1000,
+        2 -> 250, 3 -> 111 ... 10 -> 10. Exponential even more heavily weights top preferences: for 1, it follows
+        1000 / 2^(rank - 1), so 1 -> 1000, 2 -> 500, 3 -> 250, ... 10 -> approx 2."""
         scores = {}
         for rank, title in self.ballot:
             if count_type == 'borda' or count_type == 'arithmetic':
@@ -104,6 +105,8 @@ class AnnRevEntry:
             elif count_type == 'harmonic':
                 points = 1000 / rank  # need more precision, 10/9 approx == 10/10 after rounding, use 1000
             elif count_type == 'geometric':
+                points = 1000 / (rank ** 2)  # needs more precision
+            elif count_type == 'exponential':
                 points = 1000 / (2 ** (rank - 1))  # need even more precision, 1000 / 2^10 = 0.97, approx 1.
             else:
                 raise TypeError(f'provided count type "{count_type}" is not supported')
