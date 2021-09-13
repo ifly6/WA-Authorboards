@@ -113,6 +113,11 @@ def capitalise(s):
         for i, w in enumerate(s.split())
     ).strip()  # avoid apostrophe capitalisations
 
+    # but capitalise st -> St
+    for exception in ['St']:
+        s = ' '.join((exception if w.lower() == exception.lower() else w)
+                     for w in s.split())
+
     # for split in ['-']:
     #     # as first should always be capitalised, not checking doesn't matter
     #     s = split.join(w[:1].upper() + w[1:] for i, w in enumerate(s.split(split)))  # capitalise first letter only
