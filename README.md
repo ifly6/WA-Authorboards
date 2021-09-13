@@ -6,9 +6,11 @@ WA Authorboards is forked from Auralia's [nswadb](https://github.com/auralia/nsw
 
 * Python scripts that generate a bbCode list of General Assembly resolutions by author, as well as a number of associated bbCode tables containing statistical information;
 
-* parsing code to poll the NS API to generate an updated version of that database, along with code necessary to properly capitalise names, categories, etc; **You should check automated parser output for errors**; and
+* parsing code to poll the NS API to generate an updated version of that database, along with code necessary to properly capitalise names, categories, etc; **You should check automated parser output for errors**;
 
-* code to generate tables, tally votes, etc for the GA Annual Review.
+* code to generate tables, tally votes, etc for the GA Annual Review; and
+
+* code to generate a hypothetical sunset queue.
 
 ## Contributions ##
 
