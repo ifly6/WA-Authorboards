@@ -1,67 +1,74 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         36 |             6 |        17 |       21 |      42 |
-| **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |       10 |      24 |
+| Imperium Anglorum                        |         37 |             6 |        17 |       21 |      43 |
+| **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |        9 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
-| **[PLAYER]** Auralia                     |         23 |             0 |         9 |       11 |      23 |
+| **[PLAYER]** Auralia                     |         23 |             0 |         9 |       10 |      23 |
 | The Dourian Embassy                      |         16 |             4 |        13 |        5 |      20 |
-| Auralia                                  |         19 |             0 |         8 |       10 |      19 |
+| Auralia                                  |         19 |             0 |         8 |        9 |      19 |
 | Separatist Peoples                       |         17 |             1 |         1 |       17 |      18 |
-| Sciongrad                                |         13 |             1 |         6 |        7 |      14 |
+| Sciongrad                                |         13 |             1 |         6 |        6 |      14 |
+| **[PLAYER]** Bears Armed                 |          9 |             4 |         0 |       13 |      13 |
 | **[PLAYER]** Cretox State                |         12 |             1 |         1 |        8 |      13 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
 | Cretox State                             |         11 |             1 |         1 |        8 |      12 |
-| **[PLAYER]** Bears Armed                 |          9 |             3 |         0 |       12 |      12 |
+| **[PLAYER]** Honeydewistania             |         10 |             2 |         5 |        6 |      12 |
 | **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
+| Honeydewistania                          |          9 |             2 |         4 |        6 |      11 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
 | **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
-| Charlotte Ryberg                         |          8 |             2 |         1 |        3 |      10 |
+| **[PLAYER]** Wallenburg                  |         11 |             0 |         4 |        6 |      11 |
+| Bears Armed Mission                      |          9 |             1 |         0 |       10 |      10 |
+| Charlotte Ryberg                         |          8 |             2 |         1 |        2 |      10 |
 | Connopolis                               |          6 |             4 |         1 |        3 |      10 |
-| Honeydewistania                          |          8 |             2 |         4 |        5 |      10 |
-| Bears Armed Mission                      |          9 |             0 |         0 |        9 |       9 |
 | Knootoss                                 |          6 |             3 |         2 |        6 |       9 |
+| Morover                                  |          9 |             0 |         4 |        5 |       9 |
 | Ossitania                                |          6 |             3 |         2 |        5 |       9 |
 | **[PLAYER]** Gruenberg                   |          9 |             0 |         4 |        4 |       9 |
-| **[PLAYER]** Wallenburg                  |          9 |             0 |         2 |        6 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
 | Glen-Rhodes                              |          7 |             1 |         1 |        3 |       8 |
 | Maowi                                    |          6 |             2 |         0 |        6 |       8 |
+| Tinhampton                               |          5 |             3 |         3 |        2 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
-| United Massachusetts                     |          6 |             1 |         1 |        6 |       7 |
+| Wallenburg                               |          8 |             0 |         4 |        3 |       8 |
+| Greater Cesnica                          |          6 |             1 |         2 |        5 |       7 |
+| United Massachusetts                     |          6 |             1 |         1 |        4 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
 | Kenmoria                                 |          2 |             4 |         0 |        6 |       6 |
-| Morover                                  |          6 |             0 |         2 |        4 |       6 |
 | Quelesh                                  |          5 |             1 |         1 |        1 |       6 |
 | Sanctaria                                |          6 |             0 |         1 |        5 |       6 |
-| Wallenburg                               |          6 |             0 |         2 |        3 |       6 |
+| Araraukar                                |          0 |             5 |         0 |        5 |       5 |
 | Bergnovinaia                             |          5 |             0 |         2 |        0 |       5 |
 | Chester Pearson                          |          4 |             1 |         0 |        1 |       5 |
 | Cowardly Pacifists                       |          5 |             0 |         0 |        5 |       5 |
-| Excidium Planetis                        |          4 |             1 |         1 |        2 |       5 |
+| Excidium Planetis                        |          4 |             1 |         1 |        1 |       5 |
 | Marxist Germany                          |          4 |             1 |         1 |        2 |       5 |
-| Quadrimmina                              |          2 |             3 |         0 |        4 |       5 |
+| Quadrimmina                              |          2 |             3 |         0 |        3 |       5 |
 | Ransium                                  |          5 |             0 |         1 |        4 |       5 |
 | Vancouvia                                |          5 |             0 |         3 |        1 |       5 |
+| **[PLAYER]** Araraukar                   |          0 |             5 |         0 |        5 |       5 |
 | **[PLAYER]** Omigodtheykilledkenny       |          5 |             0 |         1 |        2 |       5 |
 | **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        1 |       5 |
-| **[PLAYER]** Topid                       |          5 |             0 |         1 |        2 |       5 |
-| Araraukar                                |          0 |             4 |         0 |        4 |       4 |
+| **[PLAYER]** Topid                       |          5 |             0 |         1 |        1 |       5 |
+| **[PLAYER]** Yelda                       |          4 |             1 |         0 |        4 |       5 |
+| Daarwyrth                                |          3 |             1 |         1 |        2 |       4 |
 | Embolalia                                |          4 |             0 |         1 |        3 |       4 |
-| Greater Cesnica                          |          4 |             0 |         1 |        3 |       4 |
 | Jean Pierre Trudeau                      |          4 |             0 |         3 |        1 |       4 |
 | Mahaj WA Seat                            |          4 |             0 |         0 |        0 |       4 |
 | Railana                                  |          4 |             0 |         1 |        1 |       4 |
 | Studly Penguins                          |          4 |             0 |         1 |        0 |       4 |
-| Tinhampton                               |          1 |             3 |         0 |        1 |       4 |
-| Topid                                    |          4 |             0 |         0 |        2 |       4 |
+| Topid                                    |          4 |             0 |         0 |        1 |       4 |
 | **[PLAYER]** Ainocra                     |          3 |             1 |         1 |        2 |       4 |
-| **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        3 |       4 |
+| **[PLAYER]** Boston Castle               |          4 |             0 |         0 |        3 |       4 |
+| **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        2 |       4 |
 | Ainocra                                  |          2 |             1 |         1 |        1 |       3 |
+| Boston Castle                            |          3 |             0 |         0 |        2 |       3 |
 | Ceni                                     |          2 |             1 |         0 |        0 |       3 |
 | Cool Egg Sandwich                        |          2 |             1 |         1 |        0 |       3 |
 | Darenjo                                  |          3 |             0 |         1 |        0 |       3 |
 | Grays Harbor                             |          3 |             0 |         2 |        1 |       3 |
+| Jedinsto                                 |          3 |             0 |         2 |        1 |       3 |
 | Kelssek                                  |          2 |             1 |         0 |        2 |       3 |
 | Losthaven                                |          3 |             0 |         1 |        0 |       3 |
 | Mallorea and Riva                        |          2 |             1 |         2 |        0 |       3 |
@@ -70,24 +77,24 @@
 | Mosktopia                                |          3 |             0 |         2 |        1 |       3 |
 | Omigodtheykilledkenny                    |          3 |             0 |         0 |        2 |       3 |
 | Quintessence of Dust                     |          3 |             0 |         0 |        2 |       3 |
+| Refuge Isle                              |          3 |             0 |         1 |        2 |       3 |
 | Serrland                                 |          3 |             0 |         0 |        2 |       3 |
 | The Dark Star Republic                   |          3 |             0 |         3 |        0 |       3 |
 | The Wallenburgian World Assembly Offices |          3 |             0 |         0 |        3 |       3 |
 | Tinfect                                  |          3 |             0 |         2 |        0 |       3 |
 | Umeria                                   |          3 |             0 |         1 |        1 |       3 |
-| Wrapper                                  |          2 |             1 |         1 |        2 |       3 |
+| Wrapper                                  |          2 |             1 |         1 |        1 |       3 |
 | **[PLAYER]** Goddess Relief Office       |          3 |             0 |         1 |        2 |       3 |
 | **[PLAYER]** Gorundu                     |          3 |             0 |         2 |        1 |       3 |
 | **[PLAYER]** Rovikstead                  |          2 |             1 |         0 |        2 |       3 |
-| **[PLAYER]** Yelda                       |          2 |             1 |         0 |        2 |       3 |
 | A Mean Old Man                           |          1 |             1 |         0 |        0 |       2 |
-| American Capitalist                      |          2 |             0 |         0 |        1 |       2 |
+| American Capitalist                      |          2 |             0 |         0 |        0 |       2 |
 | Bananaistan                              |          2 |             0 |         1 |        1 |       2 |
 | Bears Armed                              |          0 |             2 |         0 |        2 |       2 |
-| Boston Castle                            |          2 |             0 |         0 |        1 |       2 |
 | Caracasus                                |          1 |             1 |         0 |        1 |       2 |
 | Cardoness                                |          1 |             1 |         0 |        1 |       2 |
 | Concrete Slab                            |          2 |             0 |         2 |        0 |       2 |
+| Crowheim                                 |          2 |             0 |         0 |        2 |       2 |
 | Erithaca                                 |          2 |             0 |         0 |        1 |       2 |
 | Flibbleites                              |          2 |             0 |         0 |        2 |       2 |
 | Gobbannaen WA Mission                    |          2 |             0 |         1 |        0 |       2 |
@@ -108,7 +115,6 @@
 | New Waldensia                            |          2 |             0 |         0 |        0 |       2 |
 | Pharthan                                 |          1 |             1 |         0 |        1 |       2 |
 | Pope Saint Peter the Apostle             |          1 |             1 |         0 |        1 |       2 |
-| Refuge Isle                              |          2 |             0 |         1 |        1 |       2 |
 | Rovikstead                               |          2 |             0 |         0 |        1 |       2 |
 | Schutzenphalia and West Ruhntuhnkuhnland |          2 |             0 |         1 |        1 |       2 |
 | Sierra Lyricalia                         |          1 |             1 |         0 |        1 |       2 |
@@ -130,6 +136,7 @@
 | Australian Republic                      |          0 |             1 |         0 |        1 |       1 |
 | Barfleur                                 |          0 |             1 |         0 |        1 |       1 |
 | Belarum                                  |          1 |             0 |         0 |        1 |       1 |
+| Big Boyz                                 |          1 |             0 |         0 |        0 |       1 |
 | Bitely                                   |          1 |             0 |         0 |        0 |       1 |
 | Broughdom                                |          1 |             0 |         0 |        1 |       1 |
 | Buffett and Colbert                      |          1 |             0 |         0 |        0 |       1 |
@@ -138,12 +145,11 @@
 | Castle Federation                        |          1 |             0 |         0 |        0 |       1 |
 | Celsuis                                  |          1 |             0 |         1 |        0 |       1 |
 | Charlottle Ryberg                        |          0 |             1 |         0 |        0 |       1 |
-| Cievan                                   |          0 |             1 |         0 |        1 |       1 |
+| Cievan                                   |          0 |             1 |         0 |        0 |       1 |
 | Cookesland                               |          1 |             0 |         0 |        0 |       1 |
 | Cormac A Stark                           |          0 |             1 |         0 |        0 |       1 |
 | Cosmosplosion                            |          1 |             0 |         0 |        1 |       1 |
 | Courelli                                 |          0 |             1 |         0 |        1 |       1 |
-| Crowheim                                 |          1 |             0 |         0 |        1 |       1 |
 | Damanucus                                |          1 |             0 |         0 |        1 |       1 |
 | Darenjon WA Embassy                      |          1 |             0 |         1 |        0 |       1 |
 | Defwa                                    |          1 |             0 |         0 |        0 |       1 |
@@ -171,6 +177,7 @@
 | Happy People Land                        |          1 |             0 |         0 |        0 |       1 |
 | Helaw                                    |          1 |             0 |         1 |        0 |       1 |
 | Hirota                                   |          0 |             1 |         0 |        1 |       1 |
+| Hulldom                                  |          1 |             0 |         0 |        1 |       1 |
 | Ichu                                     |          1 |             0 |         0 |        0 |       1 |
 | Ilstoria                                 |          1 |             0 |         0 |        0 |       1 |
 | Imperial Polk County                     |          1 |             0 |         0 |        1 |       1 |
@@ -179,7 +186,7 @@
 | Intellect and the Arts                   |          0 |             1 |         0 |        0 |       1 |
 | Isalenoria                               |          1 |             0 |         0 |        0 |       1 |
 | Jey                                      |          1 |             0 |         1 |        0 |       1 |
-| Kaboomlandia                             |          1 |             0 |         0 |        1 |       1 |
+| Kaboomlandia                             |          1 |             0 |         0 |        0 |       1 |
 | Lestaria and Neuchies                    |          0 |             1 |         0 |        0 |       1 |
 | Libertytopia                             |          0 |             1 |         0 |        0 |       1 |
 | Linux and the X                          |          1 |             0 |         0 |        0 |       1 |
@@ -190,6 +197,7 @@
 | Maxtopia                                 |          1 |             0 |         0 |        1 |       1 |
 | Merni                                    |          1 |             0 |         0 |        1 |       1 |
 | Milograd                                 |          1 |             0 |         1 |        0 |       1 |
+| Minskiev                                 |          1 |             0 |         0 |        1 |       1 |
 | Misrahistan                              |          1 |             0 |         0 |        0 |       1 |
 | Mundiferrum                              |          1 |             0 |         1 |        0 |       1 |
 | Nagatar Karumuttu Chettiar               |          1 |             0 |         1 |        0 |       1 |
@@ -212,6 +220,7 @@
 | Parilisa                                 |          1 |             0 |         0 |        0 |       1 |
 | Philimbesi                               |          1 |             0 |         0 |        0 |       1 |
 | Plessur                                  |          1 |             0 |         1 |        0 |       1 |
+| Qvait                                    |          1 |             0 |         0 |        1 |       1 |
 | R539                                     |          1 |             0 |         0 |        0 |       1 |
 | Regnum Italiae                           |          1 |             0 |         1 |        0 |       1 |
 | Rehochipe                                |          0 |             1 |         0 |        1 |       1 |
@@ -219,16 +228,19 @@
 | Revolutionist Britain                    |          1 |             0 |         0 |        1 |       1 |
 | Robert Hawkins                           |          0 |             1 |         0 |        0 |       1 |
 | Rutianas                                 |          1 |             0 |         0 |        0 |       1 |
+| Saint Tomas and the Northern Ice Islands |          1 |             0 |         1 |        0 |       1 |
 | Sakash                                   |          1 |             0 |         0 |        0 |       1 |
 | Saveyou Island                           |          1 |             0 |         1 |        0 |       1 |
+| Scalizagasti                             |          1 |             0 |         0 |        1 |       1 |
 | SchutteGod                               |          1 |             0 |         0 |        0 |       1 |
 | Silvadus                                 |          1 |             0 |         0 |        0 |       1 |
 | South Oceana                             |          1 |             0 |         0 |        0 |       1 |
+| South St Maarten                         |          1 |             0 |         0 |        1 |       1 |
 | Southeastern Evropa                      |          1 |             0 |         1 |        0 |       1 |
 | St Edmund                                |          0 |             1 |         0 |        1 |       1 |
 | Stash Kroh                               |          1 |             0 |         0 |        0 |       1 |
 | Suevo-prussia                            |          1 |             0 |         1 |        0 |       1 |
-| Sydia                                    |          1 |             0 |         0 |        1 |       1 |
+| Sydia                                    |          1 |             0 |         0 |        0 |       1 |
 | Sylvai                                   |          1 |             0 |         0 |        0 |       1 |
 | Temple of the Maat                       |          1 |             0 |         0 |        1 |       1 |
 | Terttia                                  |          1 |             0 |         0 |        1 |       1 |
@@ -250,6 +262,7 @@
 | The Scientific States                    |          1 |             0 |         0 |        0 |       1 |
 | The United Federation of Algorenia       |          1 |             0 |         0 |        0 |       1 |
 | The United Royal Islands of Euramathania |          1 |             0 |         0 |        1 |       1 |
+| The Wary Walrus                          |          1 |             0 |         0 |        1 |       1 |
 | Uan aa Boa                               |          1 |             0 |         0 |        0 |       1 |
 | Unibot II                                |          0 |             1 |         0 |        0 |       1 |
 | United Federated States of Omega         |          1 |             0 |         0 |        1 |       1 |

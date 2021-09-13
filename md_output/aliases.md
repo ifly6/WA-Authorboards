@@ -1,14 +1,17 @@
 | Player                      | Aliases                                                                                                                                                 |
 |:----------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ainocra                     | The Ainocran Embassy                                                                                                                                    |
+| Araraukar                   | Potted Plants United                                                                                                                                    |
 | Auralia                     | Railana                                                                                                                                                 |
 | Bears Armed                 | Bears Armed Mission, St Edmund                                                                                                                          |
+| Boston Castle               | Hulldom                                                                                                                                                 |
 | Cowardly Pacifists          | Mosktopia, Losthaven                                                                                                                                    |
 | Cretox State                | Xerox Prime                                                                                                                                             |
 | Defwa                       | The Defwaen Confederation                                                                                                                               |
 | Goddess Relief Office       | Anime Daisuki                                                                                                                                           |
 | Gorundu                     | East Meranopirus                                                                                                                                        |
 | Gruenberg                   | Quintessence of Dust, The Dark Star Republic, Gruenberger Overseas Affiliate Territory, Schutzenphalia and West Ruhntuhnkuhnland, Hannasea, Graintfjall |
+| Honeydewistania             | Saint Tomas and the Northern Ice Islands                                                                                                                |
 | Omigodtheykilledkenny       | Schuttegod, Omigodtheyclonedkenny                                                                                                                       |
 | Rovikstead                  | Dmitry II                                                                                                                                               |
 | Sciongrad                   | Connopolis                                                                                                                                              |
@@ -18,4 +21,4 @@
 | United Federation of Canada | Chester Pearson, John Turner, Jean Pierre Trudeau, The Silver Sentinel, Wayneactia                                                                      |
 | Wallenburg                  | The Wallenburgian World Assembly Offices                                                                                                                |
 | Wrapper                     | Imperial Polk County                                                                                                                                    |
-| Yelda                       | New Leicestershire, Hiriraurtung Arororugul                                                                                                             |
+| Yelda                       | New Leicestershire, Hiriaurtung Arororugul                                                                                                              |
