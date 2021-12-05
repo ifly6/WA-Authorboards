@@ -1,6 +1,6 @@
 | Name                                     |   Authored |   Co-authored |   Repeals |   Active |   Total |
 |:-----------------------------------------|-----------:|--------------:|----------:|---------:|--------:|
-| Imperium Anglorum                        |         37 |             6 |        17 |       21 |      43 |
+| Imperium Anglorum                        |         38 |             6 |        17 |       22 |      44 |
 | **[PLAYER]** Sciongrad                   |         19 |             5 |         7 |        9 |      24 |
 | Mousebumples                             |         16 |             7 |         9 |        8 |      23 |
 | **[PLAYER]** Auralia                     |         23 |             0 |         9 |       10 |      23 |
@@ -9,12 +9,12 @@
 | Separatist Peoples                       |         17 |             1 |         1 |       17 |      18 |
 | Sciongrad                                |         13 |             1 |         6 |        6 |      14 |
 | **[PLAYER]** Bears Armed                 |          9 |             4 |         0 |       13 |      13 |
-| **[PLAYER]** Cretox State                |         12 |             1 |         1 |        8 |      13 |
+| **[PLAYER]** Cretox State                |         12 |             1 |         1 |        7 |      13 |
+| **[PLAYER]** Honeydewistania             |         10 |             3 |         5 |        7 |      13 |
 | Christian Democrats                      |         11 |             1 |         2 |        6 |      12 |
-| Cretox State                             |         11 |             1 |         1 |        8 |      12 |
-| **[PLAYER]** Honeydewistania             |         10 |             2 |         5 |        6 |      12 |
+| Cretox State                             |         11 |             1 |         1 |        7 |      12 |
+| Honeydewistania                          |          9 |             3 |         4 |        7 |      12 |
 | **[PLAYER]** Unibot                      |          9 |             3 |         0 |        6 |      12 |
-| Honeydewistania                          |          9 |             2 |         4 |        6 |      11 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
 | **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        6 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
@@ -22,17 +22,18 @@
 | Bears Armed Mission                      |          9 |             1 |         0 |       10 |      10 |
 | Charlotte Ryberg                         |          8 |             2 |         1 |        2 |      10 |
 | Connopolis                               |          6 |             4 |         1 |        3 |      10 |
+| Morover                                  |         10 |             0 |         4 |        6 |      10 |
+| Tinhampton                               |          6 |             4 |         3 |        4 |      10 |
 | Knootoss                                 |          6 |             3 |         2 |        6 |       9 |
-| Morover                                  |          9 |             0 |         4 |        5 |       9 |
+| Maowi                                    |          6 |             3 |         0 |        7 |       9 |
 | Ossitania                                |          6 |             3 |         2 |        5 |       9 |
 | **[PLAYER]** Gruenberg                   |          9 |             0 |         4 |        4 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
-| Glen-Rhodes                              |          7 |             1 |         1 |        3 |       8 |
-| Maowi                                    |          6 |             2 |         0 |        6 |       8 |
-| Tinhampton                               |          5 |             3 |         3 |        2 |       8 |
+| Glen-Rhodes                              |          7 |             1 |         1 |        2 |       8 |
+| Greater Cesnica                          |          7 |             1 |         2 |        6 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        5 |       8 |
 | Wallenburg                               |          8 |             0 |         4 |        3 |       8 |
-| Greater Cesnica                          |          6 |             1 |         2 |        5 |       7 |
+| **[PLAYER]** Boston Castle               |          7 |             1 |         1 |        6 |       8 |
 | United Massachusetts                     |          6 |             1 |         1 |        4 |       7 |
 | Cobdenia                                 |          4 |             2 |         0 |        5 |       6 |
 | Kenmoria                                 |          2 |             4 |         0 |        6 |       6 |
@@ -43,10 +44,11 @@
 | Chester Pearson                          |          4 |             1 |         0 |        1 |       5 |
 | Cowardly Pacifists                       |          5 |             0 |         0 |        5 |       5 |
 | Excidium Planetis                        |          4 |             1 |         1 |        1 |       5 |
+| Hulldom                                  |          4 |             1 |         1 |        4 |       5 |
 | Marxist Germany                          |          4 |             1 |         1 |        2 |       5 |
 | Quadrimmina                              |          2 |             3 |         0 |        3 |       5 |
 | Ransium                                  |          5 |             0 |         1 |        4 |       5 |
-| Vancouvia                                |          5 |             0 |         3 |        1 |       5 |
+| Vancouvia                                |          5 |             0 |         3 |        0 |       5 |
 | **[PLAYER]** Araraukar                   |          0 |             5 |         0 |        5 |       5 |
 | **[PLAYER]** Omigodtheykilledkenny       |          5 |             0 |         1 |        2 |       5 |
 | **[PLAYER]** Tinfect                     |          5 |             0 |         2 |        1 |       5 |
@@ -60,7 +62,6 @@
 | Studly Penguins                          |          4 |             0 |         1 |        0 |       4 |
 | Topid                                    |          4 |             0 |         0 |        1 |       4 |
 | **[PLAYER]** Ainocra                     |          3 |             1 |         1 |        2 |       4 |
-| **[PLAYER]** Boston Castle               |          4 |             0 |         0 |        3 |       4 |
 | **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        2 |       4 |
 | Ainocra                                  |          2 |             1 |         1 |        1 |       3 |
 | Boston Castle                            |          3 |             0 |         0 |        2 |       3 |
@@ -73,6 +74,7 @@
 | Losthaven                                |          3 |             0 |         1 |        0 |       3 |
 | Mallorea and Riva                        |          2 |             1 |         2 |        0 |       3 |
 | Meekinos                                 |          1 |             2 |         0 |        0 |       3 |
+| Minskiev                                 |          3 |             0 |         1 |        2 |       3 |
 | Moronist Decisions                       |          3 |             0 |         1 |        2 |       3 |
 | Mosktopia                                |          3 |             0 |         2 |        1 |       3 |
 | Omigodtheykilledkenny                    |          3 |             0 |         0 |        2 |       3 |
@@ -125,6 +127,7 @@
 | Urgench                                  |          2 |             0 |         0 |        1 |       2 |
 | Wachichi                                 |          1 |             1 |         1 |        1 |       2 |
 | Wymondham                                |          1 |             1 |         1 |        1 |       2 |
+| Xernon                                   |          2 |             0 |         1 |        1 |       2 |
 | **[PLAYER]** Defwa                       |          2 |             0 |         0 |        1 |       2 |
 | Akohos                                   |          0 |             1 |         0 |        1 |       1 |
 | Alba and Cymru                           |          1 |             0 |         0 |        0 |       1 |
@@ -177,7 +180,6 @@
 | Happy People Land                        |          1 |             0 |         0 |        0 |       1 |
 | Helaw                                    |          1 |             0 |         1 |        0 |       1 |
 | Hirota                                   |          0 |             1 |         0 |        1 |       1 |
-| Hulldom                                  |          1 |             0 |         0 |        1 |       1 |
 | Ichu                                     |          1 |             0 |         0 |        0 |       1 |
 | Ilstoria                                 |          1 |             0 |         0 |        0 |       1 |
 | Imperial Polk County                     |          1 |             0 |         0 |        1 |       1 |
@@ -197,7 +199,6 @@
 | Maxtopia                                 |          1 |             0 |         0 |        1 |       1 |
 | Merni                                    |          1 |             0 |         0 |        1 |       1 |
 | Milograd                                 |          1 |             0 |         1 |        0 |       1 |
-| Minskiev                                 |          1 |             0 |         0 |        1 |       1 |
 | Misrahistan                              |          1 |             0 |         0 |        0 |       1 |
 | Mundiferrum                              |          1 |             0 |         1 |        0 |       1 |
 | Nagatar Karumuttu Chettiar               |          1 |             0 |         1 |        0 |       1 |
@@ -277,6 +278,7 @@
 | Wildeson                                 |          1 |             0 |         0 |        0 |       1 |
 | Wilorin                                  |          1 |             0 |         0 |        0 |       1 |
 | Wolfish                                  |          0 |             1 |         0 |        0 |       1 |
+| Xanthorrhoea                             |          1 |             0 |         0 |        1 |       1 |
 | Xerox Prime                              |          1 |             0 |         0 |        0 |       1 |
 | Yelda                                    |          0 |             1 |         0 |        1 |       1 |
 | Zarquon Froods                           |          1 |             0 |         1 |        0 |       1 |
