@@ -264,6 +264,7 @@
 | The United Federation of Algorenia       |          1 |             0 |         0 |        0 |       1 |
 | The United Royal Islands of Euramathania |          1 |             0 |         0 |        1 |       1 |
 | The Wary Walrus                          |          1 |             0 |         0 |        1 |       1 |
+| Thousand Branches                        |          0 |             1 |         0 |        1 |       1 |
 | Uan aa Boa                               |          1 |             0 |         0 |        0 |       1 |
 | Unibot II                                |          0 |             1 |         0 |        0 |       1 |
 | United Federated States of Omega         |          1 |             0 |         0 |        1 |       1 |

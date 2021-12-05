@@ -217,6 +217,7 @@
 |     95 | The United Federation of Algorenia       |          1 |             0 |         0 |        0 |       1 |
 |     95 | The United Royal Islands of Euramathania |          1 |             0 |         0 |        1 |       1 |
 |     95 | The Wary Walrus                          |          1 |             0 |         0 |        1 |       1 |
+|     95 | Thousand Branches                        |          0 |             1 |         0 |        1 |       1 |
 |     95 | Uan aa Boa                               |          1 |             0 |         0 |        0 |       1 |
 |     95 | United Federated States of Omega         |          1 |             0 |         0 |        1 |       1 |
 |     95 | United States of Americanas              |          0 |             1 |         0 |        0 |       1 |
