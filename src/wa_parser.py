@@ -248,65 +248,87 @@ class WaPassedResolution:
             resolution.strength = str(int(resolution.repeals))  # cast to integer
 
         # check for co-authors
-        cleaned_resolution_text = resolution_text \
-            .replace('[i]', '').replace('[/i]', '') \
-            .replace('[b]', '').replace('[/b]', '') \
-            .replace('[u]', '').replace('[/u]', '')
-        coauthor_matches = [s for s in cleaned_resolution_text.splitlines()
-                            if re.search(
-                r'(Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:?)|'
-                r'(This resolution includes significant contributions made by\s+)',
-                s, re.IGNORECASE
-            )]
-        if len(coauthor_matches) > 0:
-            coauthor_line = re.sub(r'Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:? ', repl='',
-                                   string=coauthor_matches[0], flags=re.IGNORECASE)
-            print(f'\tidentified coauthor line: "{coauthor_line}"')
-            coauthor_line = coauthor_line \
-                .replace('[i]', '') \
-                .replace('[/i]', '') \
-                .replace('[b]', '') \
-                .replace('[/b]', '') \
-                .replace('[u]', '') \
-                .replace('[/u]', '')
+        coauth_list = xml.xpath('/WA/RESOLUTION/COAUTHOR/N')
+        if len(coauth_list) != 0:
+            print('received from API coauthors: {}'.format(
+                ', '.join([capitalise(n.text) for n in coauth_list])
+            ))
 
-            if '[nation' in coauthor_line.lower():  # scion used the [Nation] tag instead of lower case once
-                amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower())  # remove 'noflag' etc
-                coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[/nation\])', amended_line.lower())
-
-            else:
-                # this will break with names like "Sch'tz and West Runk'land"
-                coauthors = re.split(r'(,? and )|(, )', coauthor_line, re.IGNORECASE)
-                coauthors = [i for i in coauthors if i is not None and i.strip() != 'and']  # post facto patching...
-
-            coauthors = [ref(s).replace('.', '') for s in coauthors]  # cast to reference name
-            print(f'\tidentified coauthors as {coauthors}')
-
-            # pass each co-author in turn
-            '''
-            While it could be changed so that the original line's capitalisation is preserved, doing this might 
-            introduce inconsistency in capitalisation of the same nation. Eg '[nation]imperium_anglorum[/nation]' would
-            be done under capitalisation rules while something provided as 'Imperium ANGLORUM' would be let through.
-            
-            Because some authors use a ref'd name IN the nation tags, something like [nation]transilia[/nation] cannot
-            be disentangled from 'Transilia' if the former is proper and the latter is not. A proper-capitalisation
-            dictionary would be necessary and I am unwilling to download and parse all historical daily dumps for 
-            something this minor. 
-            '''
             try:
-                resolution.coauthor0 = capitalise(coauthors[0])
+                resolution.coauthor0 = capitalise(coauth_list[0].text)
             except IndexError:
                 pass
 
             try:
-                resolution.coauthor1 = capitalise(coauthors[1])
+                resolution.coauthor1 = capitalise(coauth_list[1].text)
             except IndexError:
                 pass
 
             try:
-                resolution.coauthor2 = capitalise(coauthors[2])
+                resolution.coauthor2 = capitalise(coauth_list[2].text)
             except IndexError:
                 pass
+
+        else:
+            cleaned_resolution_text = resolution_text \
+                .replace('[i]', '').replace('[/i]', '') \
+                .replace('[b]', '').replace('[/b]', '') \
+                .replace('[u]', '').replace('[/u]', '')
+            coauthor_matches = [s for s in cleaned_resolution_text.splitlines()
+                                if re.search(
+                    r'(Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:?)|'
+                    r'(This resolution includes significant contributions made by\s+)',
+                    s, re.IGNORECASE
+                )]
+            if len(coauthor_matches) > 0:
+                coauthor_line = re.sub(r'Co-?((Author(ed)?:?)|written|writer) ?(by|with)? ?:? ', repl='',
+                                       string=coauthor_matches[0], flags=re.IGNORECASE)
+                print(f'\tidentified coauthor line: "{coauthor_line}"')
+                coauthor_line = coauthor_line \
+                    .replace('[i]', '') \
+                    .replace('[/i]', '') \
+                    .replace('[b]', '') \
+                    .replace('[/b]', '') \
+                    .replace('[u]', '') \
+                    .replace('[/u]', '')
+
+                if '[nation' in coauthor_line.lower():  # scion used the [Nation] tag instead of lower case once
+                    amended_line = re.sub(r'(?<=\[nation)=(.*?)(?=\])', '', coauthor_line.lower())  # remove 'noflag' etc
+                    coauthors = re.findall(r'(?<=\[nation\])(.*?)(?=\[/nation\])', amended_line.lower())
+
+                else:
+                    # this will break with names like "Sch'tz and West Runk'land"
+                    coauthors = re.split(r'(,? and )|(, )', coauthor_line, re.IGNORECASE)
+                    coauthors = [i for i in coauthors if i is not None and i.strip() != 'and']  # post facto patching...
+
+                coauthors = [ref(s).replace('.', '') for s in coauthors]  # cast to reference name
+                print(f'\tidentified coauthors as {coauthors}')
+
+                # pass each co-author in turn
+                '''
+                While it could be changed so that the original line's capitalisation is preserved, doing this might 
+                introduce inconsistency in capitalisation of the same nation. Eg '[nation]imperium_anglorum[/nation]' would
+                be done under capitalisation rules while something provided as 'Imperium ANGLORUM' would be let through.
+                
+                Because some authors use a ref'd name IN the nation tags, something like [nation]transilia[/nation] cannot
+                be disentangled from 'Transilia' if the former is proper and the latter is not. A proper-capitalisation
+                dictionary would be necessary and I am unwilling to download and parse all historical daily dumps for 
+                something this minor. 
+                '''
+                try:
+                    resolution.coauthor0 = capitalise(coauthors[0])
+                except IndexError:
+                    pass
+
+                try:
+                    resolution.coauthor1 = capitalise(coauthors[1])
+                except IndexError:
+                    pass
+
+                try:
+                    resolution.coauthor2 = capitalise(coauthors[2])
+                except IndexError:
+                    pass
 
         cacher.save()
         return resolution
