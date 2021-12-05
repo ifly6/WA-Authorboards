@@ -22,5 +22,6 @@ Otherwise, this respository gets updated whenver I feel like it. If you want som
 
 ## Licence ##
 
-This project is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). A large number of
-files herein have been modified from Auralia's source. Modification copyright 2021 ifly6. Other modification copyrights property of their owners.
+This project is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). A large number of files herein have been modified from Auralia's source. Modification copyright 2021 ifly6. Other modification copyrights property of their owners.
+
+The outputs in this respository in the `md_output` folder, which I generated, are not licenced under the Apache Licence. I reserve all rights thereto.
