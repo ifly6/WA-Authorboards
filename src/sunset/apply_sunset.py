@@ -74,3 +74,30 @@ inplace=True)
 
 # save it
 expiry.to_csv('~/Desktop/ga-expiration-test.csv', index=False)
+
+# latex
+renames = {
+    'number': 'GA \#',
+    'title': 'Title',
+    'age': 'Age (days)',
+    'pct_for': '\% for',
+    'score7': 'Score ($N = 7$)',
+    'rank1': 'Rank 1',
+    'rank3': 'Rank 3',
+    'rank5': 'Rank 5',
+    'rank7': 'Rank 7',
+    'rank9': 'Rank 9',
+}
+pretty = expiry.rename(columns=renames)[renames.values()]
+
+pretty['Age (days)'] = pretty['Age (days)'].map(lambda s: '{:,}'.format(s).replace(',', '~'))
+pretty['Score ($N = 7$)'] = pretty['Score ($N = 7$)'].map(lambda s: '{:,.2f}'.format(s).replace(',', '~'))
+pretty.columns = pd.MultiIndex.from_tuples(
+    ('Rank' if 'Rank' in s else '', s if 'Rank' not in s else s[-1])
+    for s in pretty.columns)
+
+print(pretty.head(20).to_latex(
+    float_format="%.2f", escape=False, index=False, na_rep=''
+))
+
+
