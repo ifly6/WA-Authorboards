@@ -70,6 +70,7 @@ def localised(dt: 'datetime', tz='US/Eastern'):
 def _category_map():
     d = {'Advancement of Industry': 'Environmental Deregulation',
          'Civil Rights': 'Mild',
+         'Human Rights': 'Mild',
          'Education and Creativity': 'Artistic',
          'Environmental': 'Automotive',
          'Free Trade': 'Mild',
@@ -80,13 +81,14 @@ def _category_map():
          'Moral Decency': 'Mild',
          'Political Stability': 'Mild',
          'Regulation': 'Consumer Protection',
+         'Gun Control': 'Tighten',
          'Social Justice': 'Mild'}
     return {ref(k): v for k, v in d.items()}  # force ref name for matching
     # nb that this is identical to dict( ( ref(k), v ) for k, v in d.items() )
 
 
 def _translate_category(category: str, s: str) -> Tuple[bool, str]:
-    if category in _category_map() and s == '0':
+    if ref(category) in _category_map() and s == '0':
         return True, _category_map()[ref(category)]  # yield correct name from ref name of category
 
     # if it isn't 0, then it doesn't apply, return given
@@ -243,6 +245,10 @@ class WaPassedResolution:
             votes_against=int(xml.xpath('/WA/RESOLUTION/TOTAL_VOTES_AGAINST')[0].text)
         )
 
+        assert resolution.strength != '0', 'resolution {} has strength 0 with category {}'.format(
+            resolution.title, resolution.category
+        )
+
         # overwrite category if repeal with the repeals field; NS API is broken sometimes for some reason
         if resolution_is_a_repeal:
             resolution.strength = str(int(resolution.repeals))  # cast to integer
@@ -392,6 +398,10 @@ def parse() -> 'pd.DataFrame':
     df['Co-authors'] = df[['coauthor0', 'coauthor1', 'coauthor2']] \
         .replace({np.nan: ''}) \
         .agg(join_coauthors, axis=1)
+
+    assert all(df['Sub-category'] != '0'), 'resolutions {} have sub-category 0'.format(
+        df.loc[df['Sub-category'] != '0', 'Title'].values
+    )
 
     return df[['Number', 'Title', 'Category', 'Sub-category', 'Author', 'Co-authors',
                'Votes For', 'Votes Against', 'Date Implemented']].copy()  # take only relevant vars

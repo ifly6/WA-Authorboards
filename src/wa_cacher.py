@@ -1,6 +1,10 @@
 # Copyright (c) 2020 ifly6
+import glob
 import json
+import os
+from datetime import datetime
 from functools import cache
+from json import JSONDecodeError
 
 
 class Cacher(object):
@@ -22,15 +26,30 @@ class Cacher(object):
     def update(self, k, v):
         self.d[k] = v
 
-    def save(self, path='../db/api_cache.json'):
+    def save(self, path=None):
+        if path is None:
+            path = '../db/cache/api_cache_{}.json'.format(datetime.now().strftime('%Y-%m-%d'))
+
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(self.d, f, ensure_ascii=False, indent=4)
 
     @staticmethod
-    def load(path='../db/api_cache.json'):
+    def load(path=None, attempt=0):
+        if path is None:
+            fs = glob.glob('../db/cache/api_cache*.json')
+            fs.sort(key=os.path.getsize, reverse=True)  # get largest json
+            path = fs[0 + attempt]  # get next largest if the largest doesn't work
+
         with open(path, 'r') as f:
-            d = json.load(f)
-            return Cacher(d)
+            try:
+                d = json.load(f)
+                return Cacher(d)
+            except JSONDecodeError as e:
+                if attempt == 0:
+                    return Cacher.load(attempt=1)
+                else:
+                    # rethrow error if on second try it doesn't work
+                    raise e
 
 
 @cache

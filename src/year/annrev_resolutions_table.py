@@ -8,7 +8,6 @@ import pandas as pd
 
 from src.helpers import write_file
 
-SMALL_TABLE = False
 OUR_YEAR = 2021
 
 # load our latest data
@@ -20,6 +19,7 @@ df['Date Implemented'] = pd.to_datetime(df['Date Implemented'], utc=True)
 this_year = df[df['Date Implemented'].dt.year == OUR_YEAR].copy()
 this_year['Pct For'] = (this_year['Votes For'] * 100 / (this_year['Votes For'] + this_year['Votes Against'])).round(2)
 
+assert all(this_year['Sub-category'] != '0')
 
 def tag(c, param):
     return f'[{param}]{c}[/{param}]'
@@ -41,18 +41,22 @@ this_year['Sub-category'] = this_year.apply(
 # save resolutions csv
 this_year.to_csv('../../output/ANNUAL_resolutions.csv', index=False)
 
-if SMALL_TABLE:
-    this_year.drop(columns=['Votes For', 'Votes Against', 'Author', 'Co-authors', 'Pct For'],
-                   inplace=True)
+for small_table in [True, False]:
+    df = this_year.copy()
+    if small_table:
+        df = df.drop(columns=['Votes For', 'Votes Against', 'Author', 'Co-authors', 'Pct For'])
 
-# to table
-strings = [tag(''.join(tag(tag(c, 'b'), 'td') for c in this_year.columns), 'tr')]  # first row is headers
-for row in this_year.replace({np.nan: ''}).values:
-    strings.append(
-        tag(''.join(tag(c, 'td') for c in row), 'tr')
-    )
+    # to table
+    strings = [tag(''.join(tag(tag(c, 'b'), 'td') for c in df.columns), 'tr')]  # first row is headers
+    for row in df.replace({np.nan: ''}).values:
+        strings.append(
+            tag(''.join(tag(c, 'td') for c in row), 'tr')
+        )
 
-annual_table = tag(''.join(strings), 'table')
-print(annual_table)
+    annual_table = tag(''.join(strings), 'table')
+    if small_table:
+        print(annual_table)
 
-write_file('../../output/ANNUAL_table.txt', annual_table)
+    write_file('../../output/{}'.format(
+        'ANNUAL_table.txt' if small_table is False else 'ANNUAL_table_small.txt'),
+        annual_table)
