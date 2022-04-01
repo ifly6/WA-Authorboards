@@ -1,10 +1,10 @@
 # Copyright (c) 2020 ifly6
 import glob
 import json
-import os
 from datetime import datetime
 from functools import cache
 from json import JSONDecodeError
+from os.path import getsize
 
 
 class Cacher(object):
@@ -37,8 +37,8 @@ class Cacher(object):
     def load(path=None, attempt=0):
         if path is None:
             fs = glob.glob('../db/cache/api_cache*.json')
-            fs.sort(key=os.path.getsize, reverse=True)  # get largest json
-            path = fs[0 + attempt]  # get next largest if the largest doesn't work
+            fs.sort(key=getsize, reverse=True)  # get largest json
+            path = fs[0 + attempt]  # get next largest if the largest doesn't work, don't use `max(fs, key=getsize)`
 
         with open(path, 'r') as f:
             try:

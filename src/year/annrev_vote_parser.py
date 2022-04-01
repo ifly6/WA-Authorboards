@@ -15,11 +15,13 @@ from helpers import ref, write_file
 from reports.pandas_reports import df_to_bbcode
 
 # CORE PARAMETERS
-THREAD_URL = ...  # thread to look in
+THREAD_URL = 'https://forum.nationstates.net/viewtopic.php?t=517245'  # thread to look in
 BALLOT_TAG = '#2021_ga_ann_rev_1'  # starting tag for ballot
 PRINT_MISSING_AUTHORS = True  # prints missing authors if True
 COUNT_TYPE = 'harmonic'
-posts_seen = [38509070, 38574108]  # include posts to exclude here, only works properly if posts on first page
+
+# include posts to exclude here, only works properly if posts on first page
+posts_seen = [38509070, 38574108, 39491425]
 
 
 # HELPER FUNCTIONS
@@ -204,7 +206,7 @@ for i in range(10):  # 10 pages max
 
                     # throw error if saving duplicate
                     if post_number in set(entry.post_num for entry in entry_list):
-                        raise RuntimeError('duplicate post number for entry:' + str(new_entry))  # shouldn't happen
+                        raise RuntimeError('duplicate post number for entry?? ' + str(new_entry))  # shouldn't happen
 
                     entry_list.append(new_entry)
 
