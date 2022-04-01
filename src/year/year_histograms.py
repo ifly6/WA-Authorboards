@@ -24,7 +24,10 @@ year_mean = year_counts['Number'].mean()
 print(f'mean resolutions per year is {year_mean}')
 
 f, ax = plt.subplots(figsize=(8.25, 11.71))
-ax.barh(year_counts['year'], year_counts['Number'], color=sns.color_palette('muted'), zorder=2)
+
+wa_green = [i / 255 for i in (80, 116, 72, 0.9 * 255)]
+hot_pink = [i / 255 for i in (231, 74, 188, 0.9 * 255)]
+ax.barh(year_counts['year'], year_counts['Number'], color=hot_pink, zorder=2)
 
 ax.invert_yaxis()
 ax.xaxis.set_minor_locator(AutoMinorLocator())
