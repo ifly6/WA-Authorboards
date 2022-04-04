@@ -231,22 +231,31 @@ print('loaded resolutions data')
 # check for puppets
 aliases = pd.read_csv('../../db/aliases.csv')
 aliases['_joined'] = aliases.apply(lambda r: [ref(s) for s in set(','.join(r.values).split(','))], axis=1)
+voters = [ref(e.voter_name) for e in entry_list]  # persist list of voters
+
+# validated 2022-04-04 15.54 cy.par
 for alias_list in aliases['_joined'].values:
-    voters = [ref(e.voter_name) for e in entry_list]
-    results_dict = dict([(a, a in voters) for a in alias_list])
+    # determine for all aliases whether the alias voted
+    results_dict = {a: a in voters for a in alias_list}
+
     if sum(results_dict.values()) > 1:
+        # if more than one alias voted... tell us
         duplicate_names = [k for k, v in results_dict.items() if v]
         print('aliases ' + str(duplicate_names) + ' appear more than once!')
         print('removing later vote')
 
+        # find entries of that player, sort by ballot post number
         matching_entries = sorted([e for e in entry_list if e.voter_name in duplicate_names],
                                   key=lambda the_ballot: the_ballot.post_num, reverse=False)
         r_entries = matching_entries[1:]  # everything after last
 
         for r_entry in r_entries:
+            # remove all entries but the first
             entry_list.remove(r_entry)
 
-        error_list.append(f'removed entries {r_entries} because entries attempted to vote twice')
+        error_list.append('removed entries {} because attempted vote-stuff'.format(
+            ';'.join(str(i) for i in r_entries)
+        ))
 
 # tally scores
 for entry in entry_list:
@@ -257,7 +266,7 @@ for entry in entry_list:
         # correct possible spelling localisation errors, one of the fixes works, then it is kept and breaks loop,
         # otherwise it continues attempting error fixes until there are no more, when it will print that an entry was
         # skipped due to non-completion
-        for error, correction in [('', ''),
+        for error, correction in [('', ''),  # do nothing, ie parse as is
                                   (r'zation(?=\s|$)', 'sation'),  # civilization -> civilisation
                                   (r'sation(?=\s|$)', 'zation'),
                                   (r'or(?=\s|$)', 'our'),  # honor -> honour
@@ -309,10 +318,25 @@ else:
 
 # print out the authors from the last two years who have not yet voted
 if PRINT_MISSING_AUTHORS:
+    # get the authors of the last few years
     latest_authors = get_latest_author_list()
-    entry_authors = [e.voter_name for e in entry_list]
-    missing_authors = [s for s in latest_authors if ref(s) not in entry_authors]
+
+    # join to get full list of aliases and the authors that voted
+    full_aliases = aliases.explode('_joined').rename(columns=str.lower)
+    entry_authors = pd.Series([ref(e.voter_name) for e in entry_list], name='voter').to_frame()
+    entry_authors_df = entry_authors.merge(
+        full_aliases, left_on='voter', right_on='_joined', how='left')
+
+    # union of authors and all their aliases, remove np.nan, and ref-format them
+    entry_authors_with_aliases = set(
+        ref(i) for i in entry_authors_df[['voter', 'player', '_joined']].values.flatten()
+        if pd.notnull(i)
+    )
+
+    # missing authors = all authors from last few years
+    # but not those authors (and their aliases) which already voted
+    missing_authors = [s for s in latest_authors if ref(s) not in entry_authors_with_aliases]
     if len(missing_authors) > 0:
         print('the following authors have not voted')
         for s in missing_authors:
-            print(f'\t {s}')
+            print(f'\t{s}')
