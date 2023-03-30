@@ -39,7 +39,7 @@ def create_aliases(alias_path='', how='markdown'):
     aliases = _get_aliases(how='pandas') \
         if alias_path == '' \
         else _get_aliases(path=alias_path, how='pandas')
-    aliases['Aliases'] = aliases['Aliases'].str.replace(r'\s*,\s*', ', ')
+    aliases['Aliases'] = aliases['Aliases'].str.replace(r'\s*,\s*', ', ', regex=True)
     aliases.sort_values(by='Player', ascending=True, inplace=True)
 
     if how == 'markdown':
