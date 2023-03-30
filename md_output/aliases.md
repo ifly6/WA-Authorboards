@@ -15,6 +15,7 @@
 | Omigodtheykilledkenny       | Schuttegod, Omigodtheyclonedkenny                                                                                                                       |
 | Rovikstead                  | Dmitry II                                                                                                                                               |
 | Sciongrad                   | Connopolis                                                                                                                                              |
+| The Ice States              | Apatosaurus, Apatosaurus II, Magecastle Embassy Building A5, The Forest of Aeneas, The Python                                                           |
 | Tinfect                     | Tinfect Diplomatic Enclave                                                                                                                              |
 | Topid                       | Weed                                                                                                                                                    |
 | Unibot                      | Unibotian WA Mission, Unibot II, Unibot III, Stash Kroh                                                                                                 |
