@@ -15,6 +15,7 @@ from pytz import timezone
 from ratelimit import limits, sleep_and_retry
 
 from helpers import ref
+from load_db import is_same_name
 from src import wa_cacher
 
 """ Imperium Anglorum:
@@ -102,7 +103,7 @@ def capitalise(s):
     # exceptions
     capitalisation_exceptions = wa_cacher.load_capitalisation_exceptions()
     for i in capitalisation_exceptions:
-        if s.strip().lower() == i.strip().lower():
+        if is_same_name(s, i):
             return i  # replace with manual correction
 
     # only capitalise words longer than 2 letters ('new') and always capitalise first
