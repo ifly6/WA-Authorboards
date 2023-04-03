@@ -1,15 +1,14 @@
 # Copyright (c) 2017 Auralia
 # Modifications, copyright (c) 2020 ifly6
-lxml~=4.6.2
-requests~=2.25.0
-ratelimit~=2.2.1
+lxml
+requests
+ratelimit
 
 pytz
 pandas
 numpy
 tabulate
 
-matplotlib~=3.3.3
-beautifulsoup4~=4.9.3
-
-seaborn~=0.11.0
+matplotlib
+beautifulsoup4
+seaborn
