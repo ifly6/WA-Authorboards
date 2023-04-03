@@ -12,18 +12,19 @@
 | Sciongrad                                |         13 |             1 |         6 |        6 |      14 |
 | **[PLAYER]** Bears Armed                 |          9 |             5 |         0 |       14 |      14 |
 | **[PLAYER]** Cretox State                |         13 |             1 |         2 |        7 |      14 |
+| **[PLAYER]** The Ice States              |         14 |             0 |         6 |        6 |      14 |
 | **[PLAYER]** Wallenburg                  |         14 |             0 |         6 |        7 |      14 |
 | Cretox State                             |         12 |             1 |         2 |        7 |      13 |
 | Morover                                  |         13 |             0 |         7 |        5 |      13 |
 | **[PLAYER]** Boston Castle               |         11 |             2 |         3 |        6 |      13 |
-| **[PLAYER]** The Ice States              |         13 |             0 |         5 |        6 |      13 |
 | Christian Democrats                      |         11 |             1 |         2 |        5 |      12 |
 | Greater Cesnica                          |          9 |             3 |         2 |        5 |      12 |
 | Honeydewistania                          |          9 |             3 |         4 |        6 |      12 |
+| **[PLAYER]** Cowardly Pacifists          |         12 |             0 |         3 |        6 |      12 |
 | **[PLAYER]** Unibot                      |          9 |             3 |         0 |        5 |      12 |
 | Bears Armed Mission                      |          9 |             2 |         0 |       11 |      11 |
 | Sionis Prioratus                         |         11 |             0 |         2 |        7 |      11 |
-| **[PLAYER]** Cowardly Pacifists          |         11 |             0 |         3 |        5 |      11 |
+| **[PLAYER]** Charlotte Ryberg            |          8 |             3 |         1 |        2 |      11 |
 | **[PLAYER]** United Federation of Canada |         10 |             1 |         3 |        3 |      11 |
 | Charlotte Ryberg                         |          8 |             2 |         1 |        2 |      10 |
 | Connopolis                               |          6 |             4 |         1 |        3 |      10 |
@@ -35,10 +36,10 @@
 | **[PLAYER]** Gruenberg                   |          9 |             0 |         4 |        4 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
 | Glen-Rhodes                              |          7 |             1 |         1 |        2 |       8 |
+| Magecastle Embassy Building A5           |          8 |             0 |         5 |        3 |       8 |
 | Minskiev                                 |          7 |             1 |         3 |        2 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        4 |       8 |
 | Excidium Planetis                        |          5 |             2 |         2 |        1 |       7 |
-| Magecastle Embassy Building a5           |          7 |             0 |         4 |        3 |       7 |
 | Sanctaria                                |          6 |             1 |         1 |        5 |       7 |
 | Simone Republic                          |          6 |             1 |         2 |        3 |       7 |
 | United Massachusetts                     |          6 |             1 |         1 |        2 |       7 |
@@ -62,7 +63,7 @@
 | **[PLAYER]** Topid                       |          5 |             0 |         1 |        1 |       5 |
 | **[PLAYER]** Yelda                       |          4 |             1 |         0 |        4 |       5 |
 | Barfleur                                 |          3 |             1 |         1 |        3 |       4 |
-| Embolalia                                |          4 |             0 |         1 |        3 |       4 |
+| Embolalia                                |          4 |             0 |         1 |        2 |       4 |
 | Jean Pierre Trudeau                      |          4 |             0 |         3 |        1 |       4 |
 | Mahaj WA Seat                            |          4 |             0 |         0 |        0 |       4 |
 | Railana                                  |          4 |             0 |         1 |        0 |       4 |
@@ -70,6 +71,8 @@
 | Thousand Branches                        |          2 |             2 |         0 |        2 |       4 |
 | Topid                                    |          4 |             0 |         0 |        1 |       4 |
 | **[PLAYER]** Ainocra                     |          3 |             1 |         1 |        1 |       4 |
+| **[PLAYER]** Gobbannium                  |          4 |             0 |         1 |        1 |       4 |
+| **[PLAYER]** Mallorea and Riva           |          3 |             1 |         2 |        0 |       4 |
 | **[PLAYER]** Wrapper                     |          3 |             1 |         1 |        2 |       4 |
 | Ainocra                                  |          2 |             1 |         1 |        0 |       3 |
 | Apatosaurus II                           |          3 |             0 |         0 |        1 |       3 |
@@ -140,6 +143,7 @@
 | Wachichi                                 |          1 |             1 |         1 |        0 |       2 |
 | Xernon                                   |          2 |             0 |         1 |        1 |       2 |
 | **[PLAYER]** Defwa                       |          2 |             0 |         0 |        1 |       2 |
+| **[PLAYER]** Erithaca                    |          2 |             0 |         0 |        1 |       2 |
 | Akohos                                   |          0 |             1 |         0 |        1 |       1 |
 | Alba and Cymru                           |          1 |             0 |         0 |        0 |       1 |
 | Alistia                                  |          1 |             0 |         0 |        1 |       1 |
