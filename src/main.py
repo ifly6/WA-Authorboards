@@ -3,6 +3,7 @@
 import glob
 import os
 from datetime import datetime
+from os.path import exists
 
 import pandas as pd
 import seaborn as sns
@@ -19,8 +20,12 @@ updating_database = True
 writing_files = True
 
 # ensure folders for relevant directories exist
-for p in ['../output', '../db']:
+for p in ['../output', '../md_output', '../db', '../db/cache']:
     os.makedirs(p, exist_ok=True)
+
+for p in ['../db/aliases.csv', '../db/names.txt']:
+    if not exists(p):
+        raise FileNotFoundError(f'file {p} must exist')
 
 if updating_database:
     print('updating database')
