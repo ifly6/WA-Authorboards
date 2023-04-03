@@ -56,7 +56,7 @@ write_file('../md_output/aliases.md', s, print_input=True)
 # create chart
 print('creating chart')
 ranks = create_leaderboards(db, how='pandas', keep_puppets=False)
-ranks['Name'] = ranks['Name'].str.replace(r'\[PLAYER\]', '').str.strip()  # de-dup from players
+ranks['Name'] = ranks['Name'].str.replace(r'\[PLAYER\]', '', regex=True).str.strip()  # de-dup from players
 ranks.drop_duplicates(subset='Name', keep='first', inplace=True)
 ranks = ranks[ranks['Rank'] <= 30]
 

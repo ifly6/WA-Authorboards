@@ -90,7 +90,7 @@ def create_leaderboards(db: Database, how='markdown', keep_puppets=True):
         return df
 
     if how == 'markdown':
-        df['Name'] = df['Name'].str.replace(r'\[PLAYER\]', r'**[PLAYER]**')
+        df['Name'] = df['Name'].str.replace(r'\[PLAYER\]', r'**[PLAYER]**', regex=True)
         return df.to_markdown(index=False)
 
     if how == 'bbCode' or how == 'bbcode':
