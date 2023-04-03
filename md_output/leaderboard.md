@@ -12,11 +12,11 @@
 | Sciongrad                                |         13 |             1 |         6 |        6 |      14 |
 | **[PLAYER]** Bears Armed                 |          9 |             5 |         0 |       14 |      14 |
 | **[PLAYER]** Cretox State                |         13 |             1 |         2 |        7 |      14 |
+| **[PLAYER]** The Ice States              |         14 |             0 |         6 |        6 |      14 |
 | **[PLAYER]** Wallenburg                  |         14 |             0 |         6 |        7 |      14 |
 | Cretox State                             |         12 |             1 |         2 |        7 |      13 |
 | Morover                                  |         13 |             0 |         7 |        5 |      13 |
 | **[PLAYER]** Boston Castle               |         11 |             2 |         3 |        6 |      13 |
-| **[PLAYER]** The Ice States              |         13 |             0 |         5 |        6 |      13 |
 | Christian Democrats                      |         11 |             1 |         2 |        5 |      12 |
 | Greater Cesnica                          |          9 |             3 |         2 |        5 |      12 |
 | Honeydewistania                          |          9 |             3 |         4 |        6 |      12 |
@@ -36,10 +36,10 @@
 | **[PLAYER]** Gruenberg                   |          9 |             0 |         4 |        4 |       9 |
 | Abacathea                                |          7 |             1 |         1 |        2 |       8 |
 | Glen-Rhodes                              |          7 |             1 |         1 |        2 |       8 |
+| Magecastle Embassy Building A5           |          8 |             0 |         5 |        3 |       8 |
 | Minskiev                                 |          7 |             1 |         3 |        2 |       8 |
 | Unibotian WA Mission                     |          8 |             0 |         0 |        4 |       8 |
 | Excidium Planetis                        |          5 |             2 |         2 |        1 |       7 |
-| Magecastle Embassy Building A5           |          7 |             0 |         4 |        3 |       7 |
 | Sanctaria                                |          6 |             1 |         1 |        5 |       7 |
 | Simone Republic                          |          6 |             1 |         2 |        3 |       7 |
 | United Massachusetts                     |          6 |             1 |         1 |        2 |       7 |
@@ -63,7 +63,7 @@
 | **[PLAYER]** Topid                       |          5 |             0 |         1 |        1 |       5 |
 | **[PLAYER]** Yelda                       |          4 |             1 |         0 |        4 |       5 |
 | Barfleur                                 |          3 |             1 |         1 |        3 |       4 |
-| Embolalia                                |          4 |             0 |         1 |        3 |       4 |
+| Embolalia                                |          4 |             0 |         1 |        2 |       4 |
 | Jean Pierre Trudeau                      |          4 |             0 |         3 |        1 |       4 |
 | Mahaj WA Seat                            |          4 |             0 |         0 |        0 |       4 |
 | Railana                                  |          4 |             0 |         1 |        0 |       4 |
@@ -153,7 +153,7 @@
 | Apatosaurus                              |          1 |             0 |         1 |        0 |       1 |
 | Astro-Malsitari WA Seat                  |          1 |             0 |         0 |        0 |       1 |
 | Atrigea                                  |          1 |             0 |         0 |        0 |       1 |
-| Australian rePublic                      |          0 |             1 |         0 |        1 |       1 |
+| Australian Republic                      |          0 |             1 |         0 |        1 |       1 |
 | Belarum                                  |          1 |             0 |         0 |        1 |       1 |
 | Big Boyz                                 |          1 |             0 |         0 |        0 |       1 |
 | Bitely                                   |          1 |             0 |         0 |        0 |       1 |
@@ -271,7 +271,7 @@
 | The Associated Peoples                   |          1 |             0 |         0 |        0 |       1 |
 | The Autumn Clans                         |          1 |             0 |         0 |        0 |       1 |
 | The Black Hat Guy                        |          1 |             0 |         1 |        0 |       1 |
-| The Cat-Tribe                            |          1 |             0 |         0 |        0 |       1 |
+| The Cat-tribe                            |          1 |             0 |         0 |        0 |       1 |
 | The Civitas Islands                      |          1 |             0 |         1 |        0 |       1 |
 | The Coyote Coalition                     |          0 |             1 |         0 |        0 |       1 |
 | The Defwaen Confederation                |          1 |             0 |         0 |        1 |       1 |
