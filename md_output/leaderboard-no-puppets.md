@@ -10,10 +10,10 @@
 |      7 | **[PLAYER]** Honeydewistania             |         12 |             3 |         7 |        6 |      15 |
 |      9 | **[PLAYER]** Bears Armed                 |          9 |             5 |         0 |       14 |      14 |
 |      9 | **[PLAYER]** Cretox State                |         13 |             1 |         2 |        7 |      14 |
+|      9 | **[PLAYER]** The Ice States              |         14 |             0 |         6 |        6 |      14 |
 |      9 | **[PLAYER]** Wallenburg                  |         14 |             0 |         6 |        7 |      14 |
-|     12 | Morover                                  |         13 |             0 |         7 |        5 |      13 |
-|     12 | **[PLAYER]** Boston Castle               |         11 |             2 |         3 |        6 |      13 |
-|     12 | **[PLAYER]** The Ice States              |         13 |             0 |         5 |        6 |      13 |
+|     13 | Morover                                  |         13 |             0 |         7 |        5 |      13 |
+|     13 | **[PLAYER]** Boston Castle               |         11 |             2 |         3 |        6 |      13 |
 |     15 | Christian Democrats                      |         11 |             1 |         2 |        5 |      12 |
 |     15 | Greater Cesnica                          |          9 |             3 |         2 |        5 |      12 |
 |     15 | **[PLAYER]** Cowardly Pacifists          |         12 |             0 |         3 |        6 |      12 |
@@ -48,7 +48,7 @@
 |     36 | **[PLAYER]** Topid                       |          5 |             0 |         1 |        1 |       5 |
 |     36 | **[PLAYER]** Yelda                       |          4 |             1 |         0 |        4 |       5 |
 |     48 | Barfleur                                 |          3 |             1 |         1 |        3 |       4 |
-|     48 | Embolalia                                |          4 |             0 |         1 |        3 |       4 |
+|     48 | Embolalia                                |          4 |             0 |         1 |        2 |       4 |
 |     48 | Mahaj WA Seat                            |          4 |             0 |         0 |        0 |       4 |
 |     48 | Studly Penguins                          |          4 |             0 |         1 |        0 |       4 |
 |     48 | Thousand Branches                        |          2 |             2 |         0 |        2 |       4 |
@@ -108,7 +108,7 @@
 |    102 | Antartica55                              |          1 |             0 |         0 |        0 |       1 |
 |    102 | Astro-Malsitari WA Seat                  |          1 |             0 |         0 |        0 |       1 |
 |    102 | Atrigea                                  |          1 |             0 |         0 |        0 |       1 |
-|    102 | Australian rePublic                      |          0 |             1 |         0 |        1 |       1 |
+|    102 | Australian Republic                      |          0 |             1 |         0 |        1 |       1 |
 |    102 | Belarum                                  |          1 |             0 |         0 |        1 |       1 |
 |    102 | Big Boyz                                 |          1 |             0 |         0 |        0 |       1 |
 |    102 | Bitely                                   |          1 |             0 |         0 |        0 |       1 |
@@ -214,7 +214,7 @@
 |    102 | The Associated Peoples                   |          1 |             0 |         0 |        0 |       1 |
 |    102 | The Autumn Clans                         |          1 |             0 |         0 |        0 |       1 |
 |    102 | The Black Hat Guy                        |          1 |             0 |         1 |        0 |       1 |
-|    102 | The Cat-Tribe                            |          1 |             0 |         0 |        0 |       1 |
+|    102 | The Cat-tribe                            |          1 |             0 |         0 |        0 |       1 |
 |    102 | The Civitas Islands                      |          1 |             0 |         1 |        0 |       1 |
 |    102 | The Coyote Coalition                     |          0 |             1 |         0 |        0 |       1 |
 |    102 | The Free and Sovereign State of Thailand |          1 |             0 |         0 |        0 |       1 |
